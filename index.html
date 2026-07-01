@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerry | Portfolio & CV</title>
+  <meta name="description" content="Portfolio dan CV Gerry - Software Engineer, Data Enthusiast, dan Tech Innovator." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            ink: '#090d16',
+            panel: '#111827',
+            cyanGlow: '#22d3ee',
+            blueGlow: '#38bdf8',
+          },
+          boxShadow: {
+            neon: '0 0 32px rgba(34, 211, 238, 0.24)',
+            soft: '0 18px 60px rgba(0, 0, 0, 0.32)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.12), transparent 28rem),
+        #090d16;
+    }
+
+    .glass {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .project-card {
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(34, 211, 238, 0.55);
+      box-shadow: 0 22px 70px rgba(8, 145, 178, 0.18);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: #22d3ee;
+      transition: width 200ms ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body class="font-inter text-slate-100 antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="#beranda" class="text-xl font-extrabold tracking-tight text-white">
+        <span class="text-cyanGlow"></span> GERRY DIMASARYA <span class="text-cyanGlow"></span>
+      </a>
+
+      <button id="menuButton" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow md:hidden" aria-label="Buka menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div id="desktopMenu" class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+        <a class="nav-link hover:text-white" href="#beranda">Beranda</a>
+        <a class="nav-link hover:text-white" href="#tentang">Tentang</a>
+        <a class="nav-link hover:text-white" href="#keahlian">Keahlian</a>
+        <a class="nav-link hover:text-white" href="#portofolio">Portofolio</a>
+        <a class="nav-link hover:text-white" href="#kontak">Kontak</a>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
+        <a class="mobile-link hover:text-cyanGlow" href="#beranda">Beranda</a>
+        <a class="mobile-link hover:text-cyanGlow" href="#tentang">Tentang</a>
+        <a class="mobile-link hover:text-cyanGlow" href="#keahlian">Keahlian</a>
+        <a class="mobile-link hover:text-cyanGlow" href="#portofolio">Portofolio</a>
+        <a class="mobile-link hover:text-cyanGlow" href="#kontak">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="beranda" class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 lg:px-8">
+      <div class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow">
+            <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
+            Available for impactful tech collaboration
+          </p>
+
+          <h1 class="max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl">
+            Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
+          </h1>
+
+          <h2 class="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl">
+            Software Engineer | Data Enthusiast | Tech Innovator
+          </h2>
+
+          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+            Mengubah ide kompleks menjadi sistem informasi terintegrasi dan solusi berbasis kecerdasan buatan.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <a href="#portofolio" class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow">
+              <i class="fa-solid fa-layer-group"></i>
+              Lihat Karya Saya
+            </a>
+            <a href="#" class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/70 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950">
+              <i class="fa-solid fa-download"></i>
+              Unduh CV
+            </a>
+          </div>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
+          <div class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"></div>
+          <div class="absolute -bottom-4 -left-4 h-28 w-28 rounded-full border border-blue-400/20"></div>
+
+          <div class="glass relative overflow-hidden rounded-lg p-3 shadow-soft">
+            <div class="overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900">
+              <img
+                src="assets/porto.png"
+                alt="Foto profil Gerry"
+                class="h-[460px] w-full object-cover object-[center_30%] sm:h-[520px] lg:h-[560px]"
+              />
+            </div>
+
+            <div class="absolute bottom-6 left-6 right-6 rounded-md border border-white/10 bg-ink/80 px-4 py-3 backdrop-blur-md">
+              <p class="text-sm font-bold text-white">Gerry Dimas Arya</p>
+              <p class="mt-1 text-xs font-medium text-cyanGlow">Software Engineer & Data Enthusiast</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tentang" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 max-w-3xl text-center lg:text-left">
+          <p class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm">Tentang Saya</p>
+          <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-4xl">Membangun solusi yang jelas, adaptif, dan berdampak.</h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+          <div class="glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
+            <p class="text-base leading-8 text-slate-300 sm:text-lg">
+              Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.
+            </p>
+          </div>
+
+          <div class="rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left">
+            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0">
+              <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyanGlow">Pendidikan</p>
+            <h3 class="mt-3 text-xl font-bold text-white">Sekolah Vokasi IPB University</h3>
+            <p class="mt-2 text-slate-300">Teknologi Rekayasa Perangkat Lunak (TPL)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="keahlian" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 max-w-3xl text-center lg:text-left">
+          <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow">Tech Stack</p>
+          <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Keahlian yang mendukung produk dari ide sampai rilis.</h2>
+        </div>
+
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
+            <i class="fa-solid fa-code mb-5 text-3xl text-cyanGlow"></i>
+            <h3 class="text-lg font-bold text-white">Web & Mobile</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Laravel</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Flutter</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Jetpack Compose</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
+            <i class="fa-solid fa-brain mb-5 text-3xl text-cyanGlow"></i>
+            <h3 class="text-lg font-bold text-white">Data & AI</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">k-NN</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">SVM</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Vision AI</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
+            <i class="fa-solid fa-database mb-5 text-3xl text-cyanGlow"></i>
+            <h3 class="text-lg font-bold text-white">Database</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">MongoDB</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Firebase</span>
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">SQL</span>
+            </div>
+          </div>
+
+          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
+            <i class="fa-solid fa-cube mb-5 text-3xl text-cyanGlow"></i>
+            <h3 class="text-lg font-bold text-white">UI/UX Design</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="rounded-full bg-white/8 px-3 py-1 text-sm text-slate-300">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portofolio" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left">
+          <div class="max-w-3xl">
+            <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow">Portofolio</p>
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">Proyek pilihan dengan kombinasi software, data, dan desain sistem.</h2>
+          </div>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+          <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+            <a href="https://github.com/Gerr-DS/IPB-KEHILANGANV" target="_blank" rel="noopener noreferrer" class="block h-full">
+              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950">
+                <i class="fa-solid fa-mobile-screen-button text-6xl text-cyanGlow/80"></i>
+              </div>
+              <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Kampus Kehilangan</h3>
+              <p class="mt-3 leading-7 text-slate-400">Sistem pelaporan lintas platform dengan moderasi otomatis.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flutter</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Laravel</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Vision AI</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+            <a href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="block h-full">
+              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950">
+                <i class="fa-solid fa-water text-6xl text-cyanGlow/80"></i>
+              </div>
+              <div class="p-6">
+              <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
+              <p class="mt-3 leading-7 text-slate-400">Perancangan infrastruktur manajemen banjir.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Riset</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+            <a href="https://youtu.be/8sDbLYCCZWM?si=RDrfbT5ItfLEGPcz" target="_blank" rel="noopener noreferrer" class="block h-full">
+              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950">
+                <i class="fa-solid fa-gamepad text-6xl text-cyanGlow/80"></i>
+              </div>
+              <div class="p-6">
+              <h3 class="text-xl font-bold text-white">AR Game</h3>
+              <p class="mt-3 leading-7 text-slate-400">Game AR dengan tema pancasila</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Unity</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+              </div>
+            </a>
+          </article>
+
+          <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+            <a href="https://crazy-reflection-bou.osk.dom.my.id/" target="_blank" rel="noopener noreferrer" class="block h-full">
+              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-emerald-950">
+                <i class="fa-solid fa-bullhorn text-6xl text-cyanGlow/80"></i>
+              </div>
+              <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Digital Agency UMKM</h3>
+              <p class="mt-3 leading-7 text-slate-400">Strategi pemasaran dan pembuatan website.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Digital Marketing</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">UI/UX</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontak" class="px-5 py-24 lg:px-8">
+      <div class="mx-auto max-w-4xl text-center">
+        <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow">Kontak</p>
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl">Tertarik untuk berkolaborasi? Mari terhubung.</h2>
+
+        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <a href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
+            <i class="fa-brands fa-linkedin text-xl"></i>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Gerr-DS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
+            <i class="fa-brands fa-github text-xl"></i>
+            GitHub
+          </a>
+          <a href="mailto:gerrydimasarya15@gmail.com" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
+            <i class="fa-solid fa-envelope text-xl"></i>
+            Email
+          </a>
+          <a href="https://wa.me/6281918575580" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+            WhatsApp
+          </a>
+          <a href="https://www.instagram.com/_grydz?igsh=M2lueXAybzBzYjUy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto">
+            <i class="fa-brands fa-instagram text-xl"></i>
+            Instagram
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
+    <p>&copy; 2026 Gerry Dimasarya.</p>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = menuButton.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-xmark');
+    });
+
+    mobileLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        const icon = menuButton.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-xmark');
+      });
+    });
+  </script>
+</body>
+</html>
