@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/i18n.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -124,10 +125,15 @@
         <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
       </a>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <button type="button" class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Ganti bahasa / Switch language">
+          <i class="fa-solid fa-globe text-cyanGlow"></i>
+          <span class="lang-toggle-indicator"><span class="text-cyanGlow font-bold">ID</span><span class="text-slate-500 mx-0.5">/</span><span class="text-slate-400">EN</span></span>
+        </button>
+
         <a href="index.html" class="inline-flex items-center gap-2 rounded-md border border-cyanGlow/70 px-4 py-2 text-sm font-bold text-cyanGlow transition hover:-translate-y-0.5 hover:bg-cyanGlow hover:text-slate-950">
           <i class="fa-solid fa-arrow-left"></i>
-          Kembali ke Beranda
+          <span data-i18n="nav.back_home">Kembali ke Beranda</span>
         </a>
       </div>
     </nav>
@@ -138,12 +144,12 @@
       <div class="mb-14 text-center">
         <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-cyanGlow">
           <i class="fa-solid fa-award"></i>
-          Semua Sertifikat
+          <span data-i18n="cert.page_tag">Semua Sertifikat</span>
         </p>
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl" data-i18n-html="cert.page_title">
           Koleksi Lengkap <span class="text-cyanGlow">Sertifikat & Pencapaian</span>
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg" data-i18n="cert.page_desc">
           Daftar seluruh sertifikasi kompetensi teknis, pelatihan industri, dan penghargaan kompetisi yang telah saya raih.
         </p>
       </div>
@@ -156,13 +162,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/10 text-2xl text-cyanGlow">
                 <i class="fa-solid fa-chart-line"></i>
               </div>
-              <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Data & AI</span>
+              <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow" data-i18n="cert.badge.data">Data & AI</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Data Science</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Sertifikasi kompetensi analisis data, statistik terapan, dan pemodelan data sains.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.ds.title">Data Science</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.ds.desc">Sertifikasi kompetensi analisis data, statistik terapan, dan pemodelan data sains.</p>
           </div>
           <a href="https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -173,13 +179,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-emerald-400/10 text-2xl text-emerald-400">
                 <i class="fa-solid fa-seedling"></i>
               </div>
-              <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400">Training</span>
+              <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400" data-i18n="cert.badge.training">Training</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Green Jobs Training</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Pelatihan keahlian berkelanjutan untuk implementasi solusi ramah lingkungan.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.green.title">Green Jobs Training</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.green.desc">Pelatihan keahlian berkelanjutan untuk implementasi solusi ramah lingkungan.</p>
           </div>
           <a href="https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -190,13 +196,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-amber-400/10 text-2xl text-amber-400">
                 <i class="fa-solid fa-briefcase"></i>
               </div>
-              <span class="rounded-full bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-400">Kompetisi</span>
+              <span class="rounded-full bg-amber-400/10 px-3 py-1 text-xs font-semibold text-amber-400" data-i18n="cert.badge.competition">Kompetisi</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Semifinalis Business Plan</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Pencapaian semifinalis dalam perancangan strategi bisnis dan inovasi produk.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.bizplan.title">Semifinalis Business Plan</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.bizplan.desc">Pencapaian semifinalis dalam perancangan strategi bisnis dan inovasi produk.</p>
           </div>
           <a href="https://drive.google.com/file/d/1LlFqA8i1HR11LpqRPZTJCF3ujoSkNlt6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -207,13 +213,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-yellow-400/10 text-2xl text-yellow-400">
                 <i class="fa-solid fa-trophy"></i>
               </div>
-              <span class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-400">Juara 3</span>
+              <span class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-400" data-i18n="cert.badge.3rd">Juara 3</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Digital Forensic Juara 3</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Penghargaan Juara 3 kompetisi investigasi forensik digital dan analisis keamanan siber.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.forensic.title">Digital Forensic Juara 3</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.forensic.desc">Penghargaan Juara 3 kompetisi investigasi forensik digital dan analisis keamanan siber.</p>
           </div>
           <a href="https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -224,13 +230,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-purple-400/10 text-2xl text-purple-400">
                 <i class="fa-solid fa-pen-nib"></i>
               </div>
-              <span class="rounded-full bg-purple-400/10 px-3 py-1 text-xs font-semibold text-purple-400">UI/UX</span>
+              <span class="rounded-full bg-purple-400/10 px-3 py-1 text-xs font-semibold text-purple-400" data-i18n="cert.badge.uiux">UI/UX</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Lomba UI/UX</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Partisipasi kompetisi perancangan UI/UX intuitif berbasis pemecahan masalah pengguna.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.uiux_comp.title">Lomba UI/UX</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.uiux_comp.desc">Partisipasi kompetisi perancangan UI/UX intuitif berbasis pemecahan masalah pengguna.</p>
           </div>
           <a href="https://drive.google.com/file/d/1qOc3ABcqXth8GMsV3FAd8vP9-PPfay_i/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -241,13 +247,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-blue-400/10 text-2xl text-blue-400">
                 <i class="fa-solid fa-wand-magic-sparkles"></i>
               </div>
-              <span class="rounded-full bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-400">AI Tech</span>
+              <span class="rounded-full bg-blue-400/10 px-3 py-1 text-xs font-semibold text-blue-400" data-i18n="cert.badge.ai">AI Tech</span>
             </div>
-            <h3 class="text-lg font-bold text-white">Penggunaan Generative AI</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Sertifikasi penerapan kecerdasan buatan generatif dalam efisiensi workflow & inovasi.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.genai.title">Penggunaan Generative AI</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.genai.desc">Sertifikasi penerapan kecerdasan buatan generatif dalam efisiensi workflow & inovasi.</p>
           </div>
           <a href="https://drive.google.com/file/d/15Z_iCq3Gfmg-PkCYX6jactIiUSCnkWwW/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -258,13 +264,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-pink-400/10 text-2xl text-pink-400">
                 <i class="fa-solid fa-lightbulb"></i>
               </div>
-              <span class="rounded-full bg-pink-400/10 px-3 py-1 text-xs font-semibold text-pink-400">Inovasi</span>
+              <span class="rounded-full bg-pink-400/10 px-3 py-1 text-xs font-semibold text-pink-400" data-i18n="cert.badge.innovation">Inovasi</span>
             </div>
-            <h3 class="text-lg font-bold text-white">UI/UX Innovation</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Sertifikat inovasi metodologi design thinking dan prototyping produk digital.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.uiux_innov.title">UI/UX Innovation</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.uiux_innov.desc">Sertifikat inovasi metodologi design thinking dan prototyping produk digital.</p>
           </div>
           <a href="https://drive.google.com/file/d/12hZ6Q-zl95MJrsRI9kjNGWKkIZaex8DU/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
 
@@ -275,13 +281,13 @@
               <div class="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/10 text-2xl text-cyanGlow">
                 <i class="fa-solid fa-database"></i>
               </div>
-              <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Database</span>
+              <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow" data-i18n="cert.badge.database">Database</span>
             </div>
-            <h3 class="text-lg font-bold text-white">SQL</h3>
-            <p class="mt-2 text-sm leading-6 text-slate-400">Sertifikasi penguasaan Structured Query Language untuk manajemen & analisis database.</p>
+            <h3 class="text-lg font-bold text-white" data-i18n="cert.sql.title">SQL</h3>
+            <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.sql.desc">Sertifikasi penguasaan Structured Query Language untuk manajemen & analisis database.</p>
           </div>
           <a href="https://drive.google.com/file/d/1lMWDG3B7pZ5rqANKxw4pm6Pd83jx_vNP/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-            Lihat Sertifikat <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+            <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
           </a>
         </article>
       </div>
@@ -289,14 +295,14 @@
       <div class="mt-16 text-center">
         <a href="index.html" class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/60 bg-cyanGlow/10 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950">
           <i class="fa-solid fa-arrow-left"></i>
-          Kembali ke Halaman Utama
+          <span data-i18n="nav.back_main">Kembali ke Halaman Utama</span>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
-    <p>&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
+    <p data-i18n="footer.copy">&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
   </footer>
 
   <script>

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/i18n.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -144,10 +145,15 @@
         <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
       </a>
 
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-3">
+        <button type="button" class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Ganti bahasa / Switch language">
+          <i class="fa-solid fa-globe text-cyanGlow"></i>
+          <span class="lang-toggle-indicator"><span class="text-cyanGlow font-bold">ID</span><span class="text-slate-500 mx-0.5">/</span><span class="text-slate-400">EN</span></span>
+        </button>
+
         <a href="index.html" class="inline-flex items-center gap-2 rounded-md border border-cyanGlow/70 px-4 py-2 text-sm font-bold text-cyanGlow transition hover:-translate-y-0.5 hover:bg-cyanGlow hover:text-slate-950">
           <i class="fa-solid fa-arrow-left"></i>
-          Kembali ke Beranda
+          <span data-i18n="nav.back_home">Kembali ke Beranda</span>
         </a>
       </div>
     </nav>
@@ -158,12 +164,12 @@
       <div class="mb-14 text-center">
         <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-cyanGlow">
           <i class="fa-solid fa-layer-group"></i>
-          Semua Portofolio
+          <span data-i18n="portfolio.page_tag">Semua Portofolio</span>
         </p>
-        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl" data-i18n-html="portfolio.page_title">
           Koleksi Lengkap <span class="text-cyanGlow">Karya & Proyek</span>
         </h1>
-        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg" data-i18n="portfolio.page_desc">
           Daftar lengkap seluruh proyek perangkat lunak, sistem informasi, aplikasi mobile, model 3D, dan website bisnis yang telah saya kerjakan.
         </p>
       </div>
@@ -177,14 +183,14 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">Kampus Kehilangan</h3>
-              <p class="mt-3 leading-7 text-slate-400">Sistem pelaporan lintas platform dengan moderasi otomatis.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.kampus.desc">Sistem pelaporan lintas platform dengan moderasi otomatis.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flutter</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Laravel</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Vision AI</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -198,13 +204,13 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
-              <p class="mt-3 leading-7 text-slate-400">Perancangan infrastruktur manajemen banjir.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.regen.desc">Perancangan infrastruktur manajemen banjir.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Riset</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -218,13 +224,13 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">AR Game</h3>
-              <p class="mt-3 leading-7 text-slate-400">Game AR dengan tema pancasila</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.ar.desc">Game AR dengan tema pancasila</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Unity</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -238,13 +244,13 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">Digital Agency UMKM</h3>
-              <p class="mt-3 leading-7 text-slate-400">Strategi pemasaran dan pembuatan website.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.agency.desc">Strategi pemasaran dan pembuatan website.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Digital Marketing</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">UI/UX</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -258,14 +264,14 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">FIFIFA Multimedia</h3>
-              <p class="mt-3 leading-7 text-slate-400">Website profil perusahaan dan katalog rental peralatan meeting & acara.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.fififa.desc">Website profil perusahaan dan katalog rental peralatan meeting & acara.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Next.js</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -279,14 +285,14 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">Bengkel Valentino Motor</h3>
-              <p class="mt-3 leading-7 text-slate-400">Website profil bengkel motor, katalog suku cadang, dan layanan reservasi servis.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.valentino.desc">Website profil bengkel motor, katalog suku cadang, dan layanan reservasi servis.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">JavaScript</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -300,14 +306,14 @@
             </div>
             <div class="p-6">
               <h3 class="text-xl font-bold text-white">Marino Inti Solusi</h3>
-              <p class="mt-3 leading-7 text-slate-400">Website solusi sistem keamanan perangkat keras, CCTV, dan kontrol akses gedung.</p>
+              <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.marino.desc">Website solusi sistem keamanan perangkat keras, CCTV, dan kontrol akses gedung.</p>
               <div class="mt-5 flex flex-wrap gap-2">
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flowbite</span>
                 <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
               </div>
               <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </span>
             </div>
           </a>
@@ -317,14 +323,14 @@
       <div class="mt-16 text-center">
         <a href="index.html" class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/60 bg-cyanGlow/10 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950">
           <i class="fa-solid fa-arrow-left"></i>
-          Kembali ke Halaman Utama
+          <span data-i18n="nav.back_main">Kembali ke Halaman Utama</span>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
-    <p>&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
+    <p data-i18n="footer.copy">&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
   </footer>
 
   <script>
