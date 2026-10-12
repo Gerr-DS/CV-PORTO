@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Semua Portofolio | Gerry Dimasarya</title>
+  <meta name="description" content="Koleksi lengkap seluruh portofolio dan proyek yang dikerjakan oleh Gerry Dimasarya." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            ink: '#090d16',
+            panel: '#111827',
+            cyanGlow: '#22d3ee',
+            blueGlow: '#38bdf8',
+          },
+          boxShadow: {
+            neon: '0 0 32px rgba(34, 211, 238, 0.24)',
+            soft: '0 18px 60px rgba(0, 0, 0, 0.32)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.12), transparent 28rem),
+        #090d16;
+    }
+
+    .glass {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      backdrop-filter: blur(18px);
+    }
+
+    .project-card {
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(34, 211, 238, 0.55);
+      box-shadow: 0 22px 70px rgba(8, 145, 178, 0.18);
+    }
+
+    .nav-link {
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: #22d3ee;
+      transition: width 200ms ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .page-ready header {
+      animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition:
+        opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-scale {
+      transform: translateY(24px) scale(0.96);
+    }
+
+    .reveal-scale.is-visible {
+      transform: translateY(0) scale(1);
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 1ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+      }
+
+      .reveal,
+      .reveal-scale {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter text-slate-100 antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
+      <a href="index.html" class="text-xl font-extrabold tracking-tight text-white">
+        <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
+      </a>
+
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="inline-flex items-center gap-2 rounded-md border border-cyanGlow/70 px-4 py-2 text-sm font-bold text-cyanGlow transition hover:-translate-y-0.5 hover:bg-cyanGlow hover:text-slate-950">
+          <i class="fa-solid fa-arrow-left"></i>
+          Kembali ke Beranda
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="min-h-screen px-5 pt-32 pb-24 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <div class="mb-14 text-center">
+        <p class="mb-3 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-cyanGlow">
+          <i class="fa-solid fa-layer-group"></i>
+          Semua Portofolio
+        </p>
+        <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+          Koleksi Lengkap <span class="text-cyanGlow">Karya & Proyek</span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+          Daftar lengkap seluruh proyek perangkat lunak, sistem informasi, aplikasi mobile, model 3D, dan website bisnis yang telah saya kerjakan.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- 1. Kampus Kehilangan -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://github.com/Gerr-DS/IPB-KEHILANGANV" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950">
+              <i class="fa-solid fa-mobile-screen-button text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Kampus Kehilangan</h3>
+              <p class="mt-3 leading-7 text-slate-400">Sistem pelaporan lintas platform dengan moderasi otomatis.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flutter</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Laravel</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Vision AI</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 2. RE-GEN Jakarta -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950">
+              <i class="fa-solid fa-water text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
+              <p class="mt-3 leading-7 text-slate-400">Perancangan infrastruktur manajemen banjir.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Riset</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 3. AR Game -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950">
+              <i class="fa-solid fa-gamepad text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">AR Game</h3>
+              <p class="mt-3 leading-7 text-slate-400">Game AR dengan tema pancasila</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Unity</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 4. Digital Agency UMKM -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://github.com/Gerr-DS/Catering.git" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-emerald-950">
+              <i class="fa-solid fa-bullhorn text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Digital Agency UMKM</h3>
+              <p class="mt-3 leading-7 text-slate-400">Strategi pemasaran dan pembuatan website.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Digital Marketing</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">UI/UX</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 5. FIFIFA Multimedia -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://www.fififa-multimedia.com/" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-purple-950">
+              <i class="fa-solid fa-display text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">FIFIFA Multimedia</h3>
+              <p class="mt-3 leading-7 text-slate-400">Website profil perusahaan dan katalog rental peralatan meeting & acara.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Next.js</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 6. Bengkel Valentino Motor -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://valentinomotorbogor.asia/" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-amber-950">
+              <i class="fa-solid fa-motorcycle text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Bengkel Valentino Motor</h3>
+              <p class="mt-3 leading-7 text-slate-400">Website profil bengkel motor, katalog suku cadang, dan layanan reservasi servis.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">JavaScript</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+
+        <!-- 7. Marino Inti Solusi -->
+        <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
+          <a href="https://marinointisolusi.com/" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-sky-950">
+              <i class="fa-solid fa-shield-halved text-6xl text-cyanGlow/80"></i>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-white">Marino Inti Solusi</h3>
+              <p class="mt-3 leading-7 text-slate-400">Website solusi sistem keamanan perangkat keras, CCTV, dan kontrol akses gedung.</p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Tailwind CSS</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flowbite</span>
+                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Web Development</span>
+              </div>
+              <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
+                Buka proyek <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </span>
+            </div>
+          </a>
+        </article>
+      </div>
+
+      <div class="mt-16 text-center">
+        <a href="index.html" class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/60 bg-cyanGlow/10 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950">
+          <i class="fa-solid fa-arrow-left"></i>
+          Kembali ke Halaman Utama
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
+    <p>&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
+  </footer>
+
+  <script>
+    document.body.classList.add('page-ready');
+
+    const revealTargets = document.querySelectorAll('.project-card');
+    revealTargets.forEach((element, index) => {
+      element.classList.add('reveal', 'reveal-scale');
+      element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 90}ms`);
+    });
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          } else {
+            entry.target.classList.remove('is-visible');
+          }
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -70px 0px',
+      });
+
+      revealTargets.forEach((element) => revealObserver.observe(element));
+    } else {
+      revealTargets.forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
