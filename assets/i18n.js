@@ -19,6 +19,7 @@ const translations = {
     "hero.btn_cv": "Lihat CV",
     "hero.card_name": "Gerry Dimas Arya",
     "hero.card_role": "Software Engineer & Data Enthusiast",
+    "hero.scroll_down": "Scroll",
 
     // About Section
     "about.tag": "Tentang Saya",
@@ -119,6 +120,7 @@ const translations = {
     "hero.btn_cv": "View CV",
     "hero.card_name": "Gerry Dimas Arya",
     "hero.card_role": "Software Engineer & Data Enthusiast",
+    "hero.scroll_down": "Scroll",
 
     // About Section
     "about.tag": "About Me",

@@ -108,14 +108,14 @@
         animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
+      /* Lightweight GPU-accelerated Scroll Reveal & Exit */
       .reveal {
         opacity: 0;
-        transform: translateY(34px);
+        transform: translateY(22px);
         transition:
-          opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
-          transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
-        transition-delay: var(--reveal-delay, 0ms);
-        will-change: opacity, transform;
+          opacity 450ms ease-out,
+          transform 450ms ease-out;
+        transition-delay: var(--delay, 0ms);
       }
 
       .reveal.is-visible {
@@ -123,23 +123,13 @@
         transform: translateY(0);
       }
 
-      .reveal-left {
-        transform: translateX(-34px);
-      }
-
-      .reveal-right {
-        transform: translateX(34px);
-      }
-
-      .reveal-scale {
-        transform: translateY(24px) scale(0.96);
-      }
-
-      .reveal-left.is-visible,
-      .reveal-right.is-visible,
-      .reveal-scale.is-visible {
-        transform: translateX(0) translateY(0) scale(1);
-      }
+      /* Stagger Delays: Elemen muncul bergantian satu per satu */
+      .delay-1 { --delay: 70ms; }
+      .delay-2 { --delay: 140ms; }
+      .delay-3 { --delay: 210ms; }
+      .delay-4 { --delay: 280ms; }
+      .delay-5 { --delay: 350ms; }
+      .delay-6 { --delay: 420ms; }
 
       @keyframes slideDown {
         from {
@@ -152,6 +142,38 @@
         }
       }
 
+      @keyframes scrollWheel {
+        0% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        50% {
+          transform: translateY(7px);
+          opacity: 0.3;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes bounceDown {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(5px);
+        }
+      }
+
+      .animate-scrollWheel {
+        animation: scrollWheel 1.8s ease-in-out infinite;
+      }
+
+      .animate-bounceDown {
+        animation: bounceDown 1.8s ease-in-out infinite;
+      }
+
       @media (prefers-reduced-motion: reduce) {
         *,
         *::before,
@@ -161,12 +183,10 @@
           transition-duration: 1ms !important;
         }
 
-        .reveal,
-        .reveal-left,
-        .reveal-right,
-        .reveal-scale {
-          opacity: 1;
-          transform: none;
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
         }
       }
     </style>
@@ -176,6 +196,10 @@
     <header
       class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl"
     >
+      <div
+        id="scrollProgressBar"
+        class="absolute top-0 left-0 h-[2.5px] w-0 bg-gradient-to-r from-cyanGlow via-blueGlow to-cyan-300 transition-all duration-75"
+      ></div>
       <nav
         class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"
       >
@@ -323,35 +347,35 @@
         >
           <div>
             <p
-              class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
+              class="reveal delay-1 mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
             >
               <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
               Available for impactful tech collaboration
             </p>
 
             <h1
-              class="max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+              class="reveal delay-2 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
               data-i18n-html="hero.greeting"
             >
               Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
             </h1>
 
             <h2
-              class="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
+              class="reveal delay-3 mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
               data-i18n="hero.subtitle"
             >
               Software Engineer | Data Enthusiast | Tech Innovator
             </h2>
 
             <p
-              class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
+              class="reveal delay-4 mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
               data-i18n="hero.desc"
             >
               Mengubah ide kompleks menjadi sistem informasi terintegrasi dan
               solusi berbasis kecerdasan buatan.
             </p>
 
-            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+            <div class="reveal delay-5 mt-9 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#portofolio"
                 class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
@@ -372,7 +396,7 @@
             </div>
           </div>
 
-          <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
+          <div class="reveal delay-6 relative mx-auto w-full max-w-sm lg:max-w-md">
             <div
               class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"
             ></div>
@@ -412,11 +436,28 @@
             </div>
           </div>
         </div>
+
+        <!-- Scroll Down Indicator -->
+        <div
+          id="scrollDownIndicator"
+          class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 transition-all duration-500 ease-out"
+        >
+          <a
+            href="#tentang"
+            class="group flex flex-col items-center gap-1 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400 hover:text-cyanGlow transition-colors"
+          >
+            <span class="opacity-80 transition group-hover:opacity-100" data-i18n="hero.scroll_down">Scroll</span>
+            <div class="flex h-8 w-5 items-start justify-center rounded-full border-2 border-slate-500/60 p-1 group-hover:border-cyanGlow transition-colors">
+              <span class="h-1.5 w-1 rounded-full bg-cyanGlow animate-scrollWheel"></span>
+            </div>
+            <i class="fa-solid fa-chevron-down text-[10px] text-cyanGlow animate-bounceDown"></i>
+          </a>
+        </div>
       </section>
 
       <section id="tentang" class="px-5 py-24 lg:px-8">
         <div class="mx-auto max-w-7xl">
-          <div class="mb-12 max-w-3xl text-center lg:text-left">
+          <div class="reveal mb-12 max-w-3xl text-center lg:text-left">
             <p
               class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm"
               data-i18n="about.tag"
@@ -432,7 +473,7 @@
           </div>
 
           <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-            <div class="glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
+            <div class="reveal delay-1 glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
               <p
                 class="text-base leading-8 text-slate-300 sm:text-lg"
                 data-i18n="about.bio"
@@ -447,7 +488,7 @@
             </div>
 
             <div
-              class="rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
+              class="reveal delay-2 rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
             >
               <div
                 class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0"
@@ -982,58 +1023,145 @@
       </p>
     </footer>
 
+    <!-- Floating Back to Top Button -->
+    <button
+      id="scrollTopBtn"
+      type="button"
+      aria-label="Kembali ke atas"
+      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-cyanGlow/50 bg-slate-900/90 text-cyanGlow shadow-neon backdrop-blur-md opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-cyanGlow hover:text-slate-950 hover:scale-110 active:scale-95"
+    >
+      <i class="fa-solid fa-arrow-up text-sm"></i>
+    </button>
+
     <script>
       const menuButton = document.getElementById("menuButton");
       const mobileMenu = document.getElementById("mobileMenu");
       const mobileLinks = document.querySelectorAll(".mobile-link");
-      const revealTargets = [
-        document.querySelector("#beranda > div > div:last-child"),
+
+      // Elements for scroll reveal & exit animations (muncul dan hilang)
+      const heroText = document.querySelector("#beranda > div > div:first-child");
+      const heroPhoto = document.querySelector("#beranda > div > div:last-child");
+
+      if (heroText) heroText.classList.add("reveal-left");
+      if (heroPhoto) heroPhoto.classList.add("reveal-right");
+
+      const cardTargets = document.querySelectorAll(
+        ".project-card, .certificate-card",
+      );
+      cardTargets.forEach((card) => card.classList.add("reveal-scale"));
+
+      const rawTargets = [
+        heroText,
+        heroPhoto,
         ...document.querySelectorAll("section > div > div:first-child"),
         ...document.querySelectorAll(
-          ".glass, .project-card, .certificate-card, #kontak a",
+          ".glass, .project-card, .certificate-card, #kontak a, #tentang > div > div:last-child > div, section .mt-12 a, section .mt-16 a",
         ),
       ].filter(Boolean);
+
+      const revealTargets = [...new Set(rawTargets)];
 
       document.body.classList.add("page-ready");
 
       revealTargets.forEach((element, index) => {
-        element.classList.add("reveal");
+        if (
+          !element.classList.contains("reveal-left") &&
+          !element.classList.contains("reveal-right") &&
+          !element.classList.contains("reveal-scale")
+        ) {
+          element.classList.add("reveal");
+        }
         element.style.setProperty(
           "--reveal-delay",
-          `${Math.min(index % 6, 5) * 90}ms`,
+          `${Math.min(index % 6, 5) * 80}ms`,
         );
       });
-
-      document
-        .querySelector("#beranda > div > div:first-child")
-        ?.classList.add("reveal-left");
-      document
-        .querySelector("#beranda > div > div:last-child")
-        ?.classList.add("reveal-right");
-      document
-        .querySelectorAll(".project-card, .certificate-card")
-        .forEach((card) => card.classList.add("reveal-scale"));
 
       if ("IntersectionObserver" in window) {
         const revealObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
+                // Muncul saat scroll masuk layar
                 entry.target.classList.add("is-visible");
               } else {
+                // Hilang saat scroll keluar layar
                 entry.target.classList.remove("is-visible");
               }
             });
           },
           {
-            threshold: 0.16,
-            rootMargin: "0px 0px -70px 0px",
+            threshold: 0.12,
+            rootMargin: "0px 0px -40px 0px",
           },
         );
 
         revealTargets.forEach((element) => revealObserver.observe(element));
       } else {
         revealTargets.forEach((element) => element.classList.add("is-visible"));
+      }
+
+      // Scroll Down Indicator, Progress Bar, & Scroll to Top Button
+      const scrollDownIndicator = document.getElementById("scrollDownIndicator");
+      const scrollTopBtn = document.getElementById("scrollTopBtn");
+      const scrollProgressBar = document.getElementById("scrollProgressBar");
+
+      window.addEventListener(
+        "scroll",
+        () => {
+          const scrollY = window.scrollY;
+
+          // Update Scroll Progress Bar
+          if (scrollProgressBar) {
+            const docHeight =
+              document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+            scrollProgressBar.style.width = `${progress}%`;
+          }
+
+          // Hilangkan indikator scroll saat mulai scroll ke bawah
+          if (scrollDownIndicator) {
+            if (scrollY > 80) {
+              scrollDownIndicator.classList.add(
+                "opacity-0",
+                "pointer-events-none",
+                "translate-y-3",
+              );
+            } else {
+              scrollDownIndicator.classList.remove(
+                "opacity-0",
+                "pointer-events-none",
+                "translate-y-3",
+              );
+            }
+          }
+
+          // Munculkan tombol back-to-top saat scroll ke bawah, sembunyikan saat di atas
+          if (scrollTopBtn) {
+            if (scrollY > 350) {
+              scrollTopBtn.classList.remove(
+                "opacity-0",
+                "pointer-events-none",
+                "translate-y-4",
+              );
+              scrollTopBtn.classList.add("opacity-100", "translate-y-0");
+            } else {
+              scrollTopBtn.classList.add(
+                "opacity-0",
+                "pointer-events-none",
+                "translate-y-4",
+              );
+              scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
+            }
+          }
+        },
+        { passive: true },
+      );
+
+      if (scrollTopBtn) {
+        scrollTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
       }
 
       menuButton.addEventListener("click", () => {

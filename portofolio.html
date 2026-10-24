@@ -333,6 +333,16 @@
     <p data-i18n="footer.copy">&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
   </footer>
 
+  <!-- Floating Back to Top Button -->
+  <button
+    id="scrollTopBtn"
+    type="button"
+    aria-label="Kembali ke atas"
+    class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-cyanGlow/50 bg-slate-900/90 text-cyanGlow shadow-neon backdrop-blur-md opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-cyanGlow hover:text-slate-950 hover:scale-110 active:scale-95"
+  >
+    <i class="fa-solid fa-arrow-up text-sm"></i>
+  </button>
+
   <script>
     document.body.classList.add('page-ready');
 
@@ -359,6 +369,25 @@
       revealTargets.forEach((element) => revealObserver.observe(element));
     } else {
       revealTargets.forEach((element) => element.classList.add('is-visible'));
+    }
+
+    const scrollTopBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => {
+      if (scrollTopBtn) {
+        if (window.scrollY > 350) {
+          scrollTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+          scrollTopBtn.classList.add("opacity-100", "translate-y-0");
+        } else {
+          scrollTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+          scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
+        }
+      }
+    }, { passive: true });
+
+    if (scrollTopBtn) {
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
     }
   </script>
 </body>
