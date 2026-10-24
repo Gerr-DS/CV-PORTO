@@ -1,575 +1,1056 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gerry | Portfolio & CV</title>
-  <meta name="description" content="Portfolio dan CV Gerry - Software Engineer, Data Enthusiast, dan Tech Innovator." />
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-  <link rel="shortcut icon" href="assets/favicon.svg" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gerry | Portfolio & CV</title>
+    <meta
+      name="description"
+      content="Portfolio dan CV Gerry - Software Engineer, Data Enthusiast, dan Tech Innovator."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="shortcut icon" href="assets/favicon.svg" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="assets/i18n.js"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            inter: ['Inter', 'sans-serif'],
-          },
-          colors: {
-            ink: '#090d16',
-            panel: '#111827',
-            cyanGlow: '#22d3ee',
-            blueGlow: '#38bdf8',
-          },
-          boxShadow: {
-            neon: '0 0 32px rgba(34, 211, 238, 0.24)',
-            soft: '0 18px 60px rgba(0, 0, 0, 0.32)',
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/i18n.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ["Inter", "sans-serif"],
+            },
+            colors: {
+              ink: "#090d16",
+              panel: "#111827",
+              cyanGlow: "#22d3ee",
+              blueGlow: "#38bdf8",
+            },
+            boxShadow: {
+              neon: "0 0 32px rgba(34, 211, 238, 0.24)",
+              soft: "0 18px 60px rgba(0, 0, 0, 0.32)",
+            },
           },
         },
-      },
-    };
-  </script>
+      };
+    </script>
 
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(34, 211, 238, 0.14), transparent 32rem),
-        radial-gradient(circle at 80% 10%, rgba(59, 130, 246, 0.12), transparent 28rem),
-        #090d16;
-    }
-
-    .glass {
-      background: rgba(15, 23, 42, 0.72);
-      border: 1px solid rgba(148, 163, 184, 0.16);
-      backdrop-filter: blur(18px);
-    }
-
-    .project-card,
-    .certificate-card {
-      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
-    }
-
-    .project-card:hover,
-    .certificate-card:hover {
-      transform: translateY(-8px);
-      border-color: rgba(34, 211, 238, 0.55);
-      box-shadow: 0 22px 70px rgba(8, 145, 178, 0.18);
-    }
-
-    .nav-link {
-      position: relative;
-    }
-
-    .nav-link::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: #22d3ee;
-      transition: width 200ms ease;
-    }
-
-    .nav-link:hover::after {
-      width: 100%;
-    }
-
-    .page-ready header {
-      animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(34px);
-      transition:
-        opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
-        transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
-      transition-delay: var(--reveal-delay, 0ms);
-      will-change: opacity, transform;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      transform: translateX(-34px);
-    }
-
-    .reveal-right {
-      transform: translateX(34px);
-    }
-
-    .reveal-scale {
-      transform: translateY(24px) scale(0.96);
-    }
-
-    .reveal-left.is-visible,
-    .reveal-right.is-visible,
-    .reveal-scale.is-visible {
-      transform: translateX(0) translateY(0) scale(1);
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-100%);
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background:
+          radial-gradient(
+            circle at top left,
+            rgba(34, 211, 238, 0.14),
+            transparent 32rem
+          ),
+          radial-gradient(
+            circle at 80% 10%,
+            rgba(59, 130, 246, 0.12),
+            transparent 28rem
+          ),
+          #090d16;
       }
-      to {
+
+      .glass {
+        background: rgba(15, 23, 42, 0.72);
+        border: 1px solid rgba(148, 163, 184, 0.16);
+        backdrop-filter: blur(18px);
+      }
+
+      .project-card,
+      .certificate-card {
+        transition:
+          transform 220ms ease,
+          border-color 220ms ease,
+          box-shadow 220ms ease;
+      }
+
+      .project-card:hover,
+      .certificate-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(34, 211, 238, 0.55);
+        box-shadow: 0 22px 70px rgba(8, 145, 178, 0.18);
+      }
+
+      .nav-link {
+        position: relative;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: #22d3ee;
+        transition: width 200ms ease;
+      }
+
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      .page-ready header {
+        animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(34px);
+        transition:
+          opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+          transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+        transition-delay: var(--reveal-delay, 0ms);
+        will-change: opacity, transform;
+      }
+
+      .reveal.is-visible {
         opacity: 1;
         transform: translateY(0);
       }
-    }
 
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 1ms !important;
-        scroll-behavior: auto !important;
-        transition-duration: 1ms !important;
+      .reveal-left {
+        transform: translateX(-34px);
       }
 
-      .reveal,
-      .reveal-left,
-      .reveal-right,
+      .reveal-right {
+        transform: translateX(34px);
+      }
+
       .reveal-scale {
-        opacity: 1;
-        transform: none;
+        transform: translateY(24px) scale(0.96);
       }
-    }
-  </style>
-</head>
 
-<body class="font-inter text-slate-100 antialiased">
-  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
-    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-      <a href="#beranda" class="text-xl font-extrabold tracking-tight text-white">
-        <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
-      </a>
+      .reveal-left.is-visible,
+      .reveal-right.is-visible,
+      .reveal-scale.is-visible {
+        transform: translateX(0) translateY(0) scale(1);
+      }
 
-      <!-- Desktop Navigation & Lang Toggle -->
-      <div class="hidden items-center gap-8 md:flex">
-        <div id="desktopMenu" class="flex items-center gap-8 text-sm font-medium text-slate-300">
-          <a class="nav-link hover:text-white" href="#beranda" data-i18n="nav.home">Beranda</a>
-          <a class="nav-link hover:text-white" href="#tentang" data-i18n="nav.about">Tentang</a>
-          <a class="nav-link hover:text-white" href="#keahlian" data-i18n="nav.skills">Keahlian</a>
-          <a class="nav-link hover:text-white" href="#portofolio" data-i18n="nav.portfolio">Portofolio</a>
-          <a class="nav-link hover:text-white" href="#sertifikat" data-i18n="nav.certificates">Sertifikat</a>
-          <a class="nav-link hover:text-white" href="#kontak" data-i18n="nav.contact">Kontak</a>
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-100%);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 1ms !important;
+          scroll-behavior: auto !important;
+          transition-duration: 1ms !important;
+        }
+
+        .reveal,
+        .reveal-left,
+        .reveal-right,
+        .reveal-scale {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-inter text-slate-100 antialiased">
+    <header
+      class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"
+      >
+        <a
+          href="#beranda"
+          class="text-xl font-extrabold tracking-tight text-white"
+        >
+          <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
+        </a>
+
+        <!-- Desktop Navigation & Lang Toggle -->
+        <div class="hidden items-center gap-8 md:flex">
+          <div
+            id="desktopMenu"
+            class="flex items-center gap-8 text-sm font-medium text-slate-300"
+          >
+            <a
+              class="nav-link hover:text-white"
+              href="#beranda"
+              data-i18n="nav.home"
+              >Beranda</a
+            >
+            <a
+              class="nav-link hover:text-white"
+              href="#tentang"
+              data-i18n="nav.about"
+              >Tentang</a
+            >
+            <a
+              class="nav-link hover:text-white"
+              href="#keahlian"
+              data-i18n="nav.skills"
+              >Keahlian</a
+            >
+            <a
+              class="nav-link hover:text-white"
+              href="#portofolio"
+              data-i18n="nav.portfolio"
+              >Portofolio</a
+            >
+            <a
+              class="nav-link hover:text-white"
+              href="#sertifikat"
+              data-i18n="nav.certificates"
+              >Sertifikat</a
+            >
+            <a
+              class="nav-link hover:text-white"
+              href="#kontak"
+              data-i18n="nav.contact"
+              >Kontak</a
+            >
+          </div>
+          <button
+            type="button"
+            class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
+            aria-label="Ganti bahasa / Switch language"
+          >
+            <i class="fa-solid fa-globe text-cyanGlow"></i>
+            <span class="lang-toggle-indicator"
+              ><span class="text-cyanGlow font-bold">ID</span
+              ><span class="text-slate-500 mx-0.5">/</span
+              ><span class="text-slate-400">EN</span></span
+            >
+          </button>
         </div>
-        <button type="button" class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Ganti bahasa / Switch language">
-          <i class="fa-solid fa-globe text-cyanGlow"></i>
-          <span class="lang-toggle-indicator"><span class="text-cyanGlow font-bold">ID</span><span class="text-slate-500 mx-0.5">/</span><span class="text-slate-400">EN</span></span>
-        </button>
+
+        <!-- Mobile Right controls: Lang Toggle & Hamburger -->
+        <div class="flex items-center gap-3 md:hidden">
+          <button
+            type="button"
+            class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
+            aria-label="Ganti bahasa / Switch language"
+          >
+            <i class="fa-solid fa-globe text-cyanGlow"></i>
+            <span class="lang-toggle-indicator"
+              ><span class="text-cyanGlow font-bold">ID</span
+              ><span class="text-slate-500 mx-0.5">/</span
+              ><span class="text-slate-400">EN</span></span
+            >
+          </button>
+
+          <button
+            id="menuButton"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
+            aria-label="Buka menu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div
+        id="mobileMenu"
+        class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden"
+      >
+        <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#beranda"
+            data-i18n="nav.home"
+            >Beranda</a
+          >
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#tentang"
+            data-i18n="nav.about"
+            >Tentang</a
+          >
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#keahlian"
+            data-i18n="nav.skills"
+            >Keahlian</a
+          >
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#portofolio"
+            data-i18n="nav.portfolio"
+            >Portofolio</a
+          >
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#sertifikat"
+            data-i18n="nav.certificates"
+            >Sertifikat</a
+          >
+          <a
+            class="mobile-link hover:text-cyanGlow"
+            href="#kontak"
+            data-i18n="nav.contact"
+            >Kontak</a
+          >
+        </div>
       </div>
+    </header>
 
-      <!-- Mobile Right controls: Lang Toggle & Hamburger -->
-      <div class="flex items-center gap-3 md:hidden">
-        <button type="button" class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Ganti bahasa / Switch language">
-          <i class="fa-solid fa-globe text-cyanGlow"></i>
-          <span class="lang-toggle-indicator"><span class="text-cyanGlow font-bold">ID</span><span class="text-slate-500 mx-0.5">/</span><span class="text-slate-400">EN</span></span>
-        </button>
+    <main>
+      <section
+        id="beranda"
+        class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 lg:px-8"
+      >
+        <div
+          class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]"
+        >
+          <div>
+            <p
+              class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
+            >
+              <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
+              Available for impactful tech collaboration
+            </p>
 
-        <button id="menuButton" class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Buka menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </nav>
+            <h1
+              class="max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+              data-i18n-html="hero.greeting"
+            >
+              Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
+            </h1>
 
-    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden">
-      <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
-        <a class="mobile-link hover:text-cyanGlow" href="#beranda" data-i18n="nav.home">Beranda</a>
-        <a class="mobile-link hover:text-cyanGlow" href="#tentang" data-i18n="nav.about">Tentang</a>
-        <a class="mobile-link hover:text-cyanGlow" href="#keahlian" data-i18n="nav.skills">Keahlian</a>
-        <a class="mobile-link hover:text-cyanGlow" href="#portofolio" data-i18n="nav.portfolio">Portofolio</a>
-        <a class="mobile-link hover:text-cyanGlow" href="#sertifikat" data-i18n="nav.certificates">Sertifikat</a>
-        <a class="mobile-link hover:text-cyanGlow" href="#kontak" data-i18n="nav.contact">Kontak</a>
-      </div>
-    </div>
-  </header>
+            <h2
+              class="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
+              data-i18n="hero.subtitle"
+            >
+              Software Engineer | Data Enthusiast | Tech Innovator
+            </h2>
 
-  <main>
-    <section id="beranda" class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 lg:px-8">
-      <div class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]">
-        <div>
-          <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow">
-            <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
-            Available for impactful tech collaboration
+            <p
+              class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
+              data-i18n="hero.desc"
+            >
+              Mengubah ide kompleks menjadi sistem informasi terintegrasi dan
+              solusi berbasis kecerdasan buatan.
+            </p>
+
+            <div class="mt-9 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#portofolio"
+                class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
+              >
+                <i class="fa-solid fa-layer-group"></i>
+                <span data-i18n="hero.btn_works">Lihat Karya Saya</span>
+              </a>
+
+              <a
+                href="https://drive.google.com/file/d/1nf4NhKOftHZz1iwwAsAALpuWbMROVpnw/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/70 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950"
+              >
+                <i class="fa-solid fa-download"></i>
+                <span data-i18n="hero.btn_cv">Unduh CV</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
+            <div
+              class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"
+            ></div>
+            <div
+              class="absolute -bottom-4 -left-4 h-28 w-28 rounded-full border border-blue-400/20"
+            ></div>
+
+            <div
+              class="glass relative overflow-hidden rounded-lg p-3 shadow-soft"
+            >
+              <div
+                class="overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900"
+              >
+                <img
+                  src="assets/porto.png"
+                  alt="Foto profil Gerry"
+                  class="h-[460px] w-full object-cover object-[center_30%] sm:h-[520px] lg:h-[560px]"
+                />
+              </div>
+
+              <div
+                class="absolute bottom-6 left-6 right-6 rounded-md border border-white/10 bg-ink/80 px-4 py-3 backdrop-blur-md"
+              >
+                <p
+                  class="text-sm font-bold text-white"
+                  data-i18n="hero.card_name"
+                >
+                  Gerry Dimas Arya
+                </p>
+                <p
+                  class="mt-1 text-xs font-medium text-cyanGlow"
+                  data-i18n="hero.card_role"
+                >
+                  Software Engineer & Data Enthusiast
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tentang" class="px-5 py-24 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-12 max-w-3xl text-center lg:text-left">
+            <p
+              class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm"
+              data-i18n="about.tag"
+            >
+              Tentang Saya
+            </p>
+            <h2
+              class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-4xl"
+              data-i18n="about.heading"
+            >
+              Membangun solusi yang jelas, adaptif, dan berdampak.
+            </h2>
+          </div>
+
+          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
+            <div class="glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
+              <p
+                class="text-base leading-8 text-slate-300 sm:text-lg"
+                data-i18n="about.bio"
+              >
+                Saya memiliki keunggulan dalam merancang arsitektur aplikasi
+                secara komprehensif, adaptif terhadap teknologi baru, dan solid
+                dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap
+                detail teknis yang kompleks, saya selalu memastikan efisiensi
+                kerja dengan menerapkan skala prioritas Minimum Viable Product
+                (MVP) dan manajemen waktu yang ketat.
+              </p>
+            </div>
+
+            <div
+              class="rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
+            >
+              <div
+                class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0"
+              >
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <p
+                class="text-sm font-semibold uppercase tracking-[0.18em] text-cyanGlow"
+                data-i18n="about.edu_tag"
+              >
+                Pendidikan
+              </p>
+              <h3
+                class="mt-3 text-xl font-bold text-white"
+                data-i18n="about.edu_school"
+              >
+                Sekolah Vokasi IPB University
+              </h3>
+              <p class="mt-2 text-slate-300" data-i18n="about.edu_major">
+                Teknologi Rekayasa Perangkat Lunak (TPL)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="keahlian" class="px-5 py-24 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-12 max-w-3xl text-center lg:text-left">
+            <p
+              class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
+              data-i18n="skills.tag"
+            >
+              Tech Stack
+            </p>
+            <h2
+              class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+              data-i18n="skills.heading"
+            >
+              Keahlian yang mendukung produk dari ide sampai rilis.
+            </h2>
+          </div>
+
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <div
+              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+            >
+              <i class="fa-solid fa-code mb-5 text-3xl text-cyanGlow"></i>
+              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat1">
+                Web & Mobile
+              </h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Laravel</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Flutter</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Jetpack Compose</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+            >
+              <i class="fa-solid fa-brain mb-5 text-3xl text-cyanGlow"></i>
+              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat2">
+                Data & AI
+              </h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >k-NN</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >SVM</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Vision AI</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+            >
+              <i class="fa-solid fa-database mb-5 text-3xl text-cyanGlow"></i>
+              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat3">
+                Database
+              </h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >MongoDB</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Firebase</span
+                >
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >SQL</span
+                >
+              </div>
+            </div>
+
+            <div
+              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+            >
+              <i class="fa-solid fa-cube mb-5 text-3xl text-cyanGlow"></i>
+              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat4">
+                UI/UX Design
+              </h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <span
+                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
+                  >Figma</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="portofolio" class="px-5 py-24 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+          <div
+            class="mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left"
+          >
+            <div class="max-w-3xl">
+              <p
+                class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
+                data-i18n="portfolio.tag"
+              >
+                Portofolio
+              </p>
+              <h2
+                class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+                data-i18n="portfolio.heading"
+              >
+                Proyek pilihan dengan kombinasi software, data, dan desain
+                sistem.
+              </h2>
+            </div>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- 1. Kampus Kehilangan (Tampil di HP & Laptop) -->
+            <article
+              class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel"
+            >
+              <a
+                href="https://github.com/Gerr-DS/IPB-KEHILANGANV"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full"
+              >
+                <div
+                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950"
+                >
+                  <i
+                    class="fa-solid fa-mobile-screen-button text-6xl text-cyanGlow/80"
+                  ></i>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">
+                    Kampus Kehilangan
+                  </h3>
+                  <p
+                    class="mt-3 leading-7 text-slate-400"
+                    data-i18n="proj.kampus.desc"
+                  >
+                    Sistem pelaporan lintas platform dengan moderasi otomatis.
+                  </p>
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >Flutter</span
+                    >
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >Laravel</span
+                    >
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >Vision AI</span
+                    >
+                  </div>
+                  <span
+                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
+                  >
+                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </span>
+                </div>
+              </a>
+            </article>
+
+            <!-- 2. RE-GEN Jakarta (Disembunyikan di HP, tampil di Laptop/Tablet) -->
+            <article
+              class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
+            >
+              <a
+                href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full"
+              >
+                <div
+                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950"
+                >
+                  <i class="fa-solid fa-water text-6xl text-cyanGlow/80"></i>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
+                  <p
+                    class="mt-3 leading-7 text-slate-400"
+                    data-i18n="proj.regen.desc"
+                  >
+                    Perancangan infrastruktur manajemen banjir.
+                  </p>
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >3D Modeling</span
+                    >
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >Riset</span
+                    >
+                  </div>
+                  <span
+                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
+                  >
+                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </span>
+                </div>
+              </a>
+            </article>
+
+            <!-- 3. AR Game (Disembunyikan di HP, tampil di Laptop/Tablet) -->
+            <article
+              class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
+            >
+              <a
+                href="https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block h-full"
+              >
+                <div
+                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950"
+                >
+                  <i class="fa-solid fa-gamepad text-6xl text-cyanGlow/80"></i>
+                </div>
+                <div class="p-6">
+                  <h3 class="text-xl font-bold text-white">AR Game</h3>
+                  <p
+                    class="mt-3 leading-7 text-slate-400"
+                    data-i18n="proj.ar.desc"
+                  >
+                    Game AR dengan tema pancasila
+                  </p>
+                  <div class="mt-5 flex flex-wrap gap-2">
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >Unity</span
+                    >
+                    <span
+                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                      >3D Modeling</span
+                    >
+                  </div>
+                  <span
+                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
+                  >
+                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                  </span>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a
+              href="portofolio.html"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
+            >
+              <span data-i18n="portfolio.btn_view_all">Lihat Semua</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="sertifikat" class="px-5 py-24 lg:px-8">
+        <div class="mx-auto max-w-7xl">
+          <div class="mb-12 max-w-3xl text-center lg:text-left">
+            <p
+              class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
+              data-i18n="cert.tag"
+            >
+              Sertifikat & Pencapaian
+            </p>
+            <h2
+              class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
+              data-i18n="cert.heading"
+            >
+              Kredensial profesional, pelatihan industri, dan penghargaan
+              kompetisi.
+            </h2>
+          </div>
+
+          <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+            <!-- 1. Data Science (Tampil di HP & Laptop) -->
+            <article
+              class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
+            >
+              <div>
+                <div class="mb-5 flex items-center justify-between">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/10 text-2xl text-cyanGlow"
+                  >
+                    <i class="fa-solid fa-chart-line"></i>
+                  </div>
+                  <span
+                    class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
+                    data-i18n="cert.badge.data"
+                    >Data & AI</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white"
+                  data-i18n="cert.ds.title"
+                >
+                  Data Science
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-6 text-slate-400"
+                  data-i18n="cert.ds.desc"
+                >
+                  Sertifikasi kompetensi analisis data, statistik terapan, dan
+                  pemodelan data sains.
+                </p>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
+              >
+                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </article>
+
+            <!-- 2. Green Jobs Training (Tampil di HP & Laptop) -->
+            <article
+              class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
+            >
+              <div>
+                <div class="mb-5 flex items-center justify-between">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-md bg-emerald-400/10 text-2xl text-emerald-400"
+                  >
+                    <i class="fa-solid fa-seedling"></i>
+                  </div>
+                  <span
+                    class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400"
+                    data-i18n="cert.badge.training"
+                    >Training</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white"
+                  data-i18n="cert.green.title"
+                >
+                  Green Jobs Training
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-6 text-slate-400"
+                  data-i18n="cert.green.desc"
+                >
+                  Pelatihan keahlian berkelanjutan untuk implementasi solusi
+                  ramah lingkungan.
+                </p>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
+              >
+                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </article>
+
+            <!-- 3. Digital Forensic Juara 3 (Disembunyikan di HP, tampil di Laptop) -->
+            <article
+              class="certificate-card hidden flex-col justify-between rounded-lg border border-white/10 bg-panel p-6 md:flex"
+            >
+              <div>
+                <div class="mb-5 flex items-center justify-between">
+                  <div
+                    class="flex h-12 w-12 items-center justify-center rounded-md bg-yellow-400/10 text-2xl text-yellow-400"
+                  >
+                    <i class="fa-solid fa-trophy"></i>
+                  </div>
+                  <span
+                    class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-400"
+                    data-i18n="cert.badge.3rd"
+                    >Juara 3</span
+                  >
+                </div>
+                <h3
+                  class="text-lg font-bold text-white"
+                  data-i18n="cert.forensic.title"
+                >
+                  Digital Forensic Juara 3
+                </h3>
+                <p
+                  class="mt-2 text-sm leading-6 text-slate-400"
+                  data-i18n="cert.forensic.desc"
+                >
+                  Penghargaan Juara 3 kompetisi investigasi forensik digital dan
+                  analisis keamanan siber.
+                </p>
+              </div>
+              <a
+                href="https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
+              >
+                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </article>
+          </div>
+
+          <div class="mt-12 text-center">
+            <a
+              href="sertifikat.html"
+              class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
+            >
+              <span data-i18n="cert.btn_view_all">Lihat Semua</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="kontak" class="px-5 py-24 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center">
+          <p
+            class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
+            data-i18n="contact.tag"
+          >
+            Kontak
           </p>
-
-          <h1 class="max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl" data-i18n-html="hero.greeting">
-            Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
-          </h1>
-
-          <h2 class="mt-5 text-xl font-semibold text-slate-200 sm:text-2xl" data-i18n="hero.subtitle">
-            Software Engineer | Data Enthusiast | Tech Innovator
+          <h2
+            class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl"
+            data-i18n="contact.heading"
+          >
+            Tertarik untuk berkolaborasi? Mari terhubung.
           </h2>
 
-          <p class="mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg" data-i18n="hero.desc">
-            Mengubah ide kompleks menjadi sistem informasi terintegrasi dan solusi berbasis kecerdasan buatan.
-          </p>
-
-          <div class="mt-9 flex flex-col gap-4 sm:flex-row">
-            <a href="#portofolio" class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow">
-              <i class="fa-solid fa-layer-group"></i>
-              <span data-i18n="hero.btn_works">Lihat Karya Saya</span>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <a
+              href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+            >
+              <i class="fa-brands fa-linkedin text-xl"></i>
+              LinkedIn
             </a>
-            <a href="#" class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/70 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950">
-              <i class="fa-solid fa-download"></i>
-              <span data-i18n="hero.btn_cv">Unduh CV</span>
+            <a
+              href="https://github.com/Gerr-DS"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+            >
+              <i class="fa-brands fa-github text-xl"></i>
+              GitHub
+            </a>
+            <a
+              href="mailto:gerrydimasarya15@gmail.com"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+            >
+              <i class="fa-solid fa-envelope text-xl"></i>
+              Email
+            </a>
+            <a
+              href="https://wa.me/6281918575580"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+            >
+              <i class="fa-brands fa-whatsapp text-xl"></i>
+              WhatsApp
+            </a>
+            <a
+              href="https://www.instagram.com/_grydz?igsh=M2lueXAybzBzYjUy"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto"
+            >
+              <i class="fa-brands fa-instagram text-xl"></i>
+              Instagram
             </a>
           </div>
         </div>
+      </section>
+    </main>
 
-        <div class="relative mx-auto w-full max-w-sm lg:max-w-md">
-          <div class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"></div>
-          <div class="absolute -bottom-4 -left-4 h-28 w-28 rounded-full border border-blue-400/20"></div>
+    <footer
+      class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500"
+    >
+      <p data-i18n="footer.copy">
+        &copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.
+      </p>
+    </footer>
 
-          <div class="glass relative overflow-hidden rounded-lg p-3 shadow-soft">
-            <div class="overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900">
-              <img
-                src="assets/porto.png"
-                alt="Foto profil Gerry"
-                class="h-[460px] w-full object-cover object-[center_30%] sm:h-[520px] lg:h-[560px]"
-              />
-            </div>
+    <script>
+      const menuButton = document.getElementById("menuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+      const revealTargets = [
+        document.querySelector("#beranda > div > div:last-child"),
+        ...document.querySelectorAll("section > div > div:first-child"),
+        ...document.querySelectorAll(
+          ".glass, .project-card, .certificate-card, #kontak a",
+        ),
+      ].filter(Boolean);
 
-            <div class="absolute bottom-6 left-6 right-6 rounded-md border border-white/10 bg-ink/80 px-4 py-3 backdrop-blur-md">
-              <p class="text-sm font-bold text-white" data-i18n="hero.card_name">Gerry Dimas Arya</p>
-              <p class="mt-1 text-xs font-medium text-cyanGlow" data-i18n="hero.card_role">Software Engineer & Data Enthusiast</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      document.body.classList.add("page-ready");
 
-    <section id="tentang" class="px-5 py-24 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-12 max-w-3xl text-center lg:text-left">
-          <p class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm" data-i18n="about.tag">Tentang Saya</p>
-          <h2 class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-4xl" data-i18n="about.heading">Membangun solusi yang jelas, adaptif, dan berdampak.</h2>
-        </div>
+      revealTargets.forEach((element, index) => {
+        element.classList.add("reveal");
+        element.style.setProperty(
+          "--reveal-delay",
+          `${Math.min(index % 6, 5) * 90}ms`,
+        );
+      });
 
-        <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-          <div class="glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
-            <p class="text-base leading-8 text-slate-300 sm:text-lg" data-i18n="about.bio">
-              Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.
-            </p>
-          </div>
+      document
+        .querySelector("#beranda > div > div:first-child")
+        ?.classList.add("reveal-left");
+      document
+        .querySelector("#beranda > div > div:last-child")
+        ?.classList.add("reveal-right");
+      document
+        .querySelectorAll(".project-card, .certificate-card")
+        .forEach((card) => card.classList.add("reveal-scale"));
 
-          <div class="rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left">
-            <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0">
-              <i class="fa-solid fa-graduation-cap"></i>
-            </div>
-            <p class="text-sm font-semibold uppercase tracking-[0.18em] text-cyanGlow" data-i18n="about.edu_tag">Pendidikan</p>
-            <h3 class="mt-3 text-xl font-bold text-white" data-i18n="about.edu_school">Sekolah Vokasi IPB University</h3>
-            <p class="mt-2 text-slate-300" data-i18n="about.edu_major">Teknologi Rekayasa Perangkat Lunak (TPL)</p>
-          </div>
-        </div>
-      </div>
-    </section>
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              } else {
+                entry.target.classList.remove("is-visible");
+              }
+            });
+          },
+          {
+            threshold: 0.16,
+            rootMargin: "0px 0px -70px 0px",
+          },
+        );
 
-    <section id="keahlian" class="px-5 py-24 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-12 max-w-3xl text-center lg:text-left">
-          <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow" data-i18n="skills.tag">Tech Stack</p>
-          <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl" data-i18n="skills.heading">Keahlian yang mendukung produk dari ide sampai rilis.</h2>
-        </div>
+        revealTargets.forEach((element) => revealObserver.observe(element));
+      } else {
+        revealTargets.forEach((element) => element.classList.add("is-visible"));
+      }
 
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
-            <i class="fa-solid fa-code mb-5 text-3xl text-cyanGlow"></i>
-            <h3 class="text-lg font-bold text-white" data-i18n="skills.cat1">Web & Mobile</h3>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Laravel</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Flutter</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Jetpack Compose</span>
-            </div>
-          </div>
+      menuButton.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+        const icon = menuButton.querySelector("i");
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-xmark");
+      });
 
-          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
-            <i class="fa-solid fa-brain mb-5 text-3xl text-cyanGlow"></i>
-            <h3 class="text-lg font-bold text-white" data-i18n="skills.cat2">Data & AI</h3>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">k-NN</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">SVM</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Vision AI</span>
-            </div>
-          </div>
-
-          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
-            <i class="fa-solid fa-database mb-5 text-3xl text-cyanGlow"></i>
-            <h3 class="text-lg font-bold text-white" data-i18n="skills.cat3">Database</h3>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">MongoDB</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Firebase</span>
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">SQL</span>
-            </div>
-          </div>
-
-          <div class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50">
-            <i class="fa-solid fa-cube mb-5 text-3xl text-cyanGlow"></i>
-            <h3 class="text-lg font-bold text-white" data-i18n="skills.cat4">UI/UX Design</h3>
-            <div class="mt-5 flex flex-wrap gap-2">
-              <span class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300">Figma</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="portofolio" class="px-5 py-24 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left">
-          <div class="max-w-3xl">
-            <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow" data-i18n="portfolio.tag">Portofolio</p>
-            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl" data-i18n="portfolio.heading">Proyek pilihan dengan kombinasi software, data, dan desain sistem.</h2>
-          </div>
-        </div>
-
-        <div class="grid gap-6 md:grid-cols-3">
-          <!-- 1. Kampus Kehilangan (Tampil di HP & Laptop) -->
-          <article class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel">
-            <a href="https://github.com/Gerr-DS/IPB-KEHILANGANV" target="_blank" rel="noopener noreferrer" class="block h-full">
-              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950">
-                <i class="fa-solid fa-mobile-screen-button text-6xl text-cyanGlow/80"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white">Kampus Kehilangan</h3>
-                <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.kampus.desc">Sistem pelaporan lintas platform dengan moderasi otomatis.</p>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Flutter</span>
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Laravel</span>
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Vision AI</span>
-                </div>
-                <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                  <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </span>
-              </div>
-            </a>
-          </article>
-
-          <!-- 2. RE-GEN Jakarta (Disembunyikan di HP, tampil di Laptop/Tablet) -->
-          <article class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block">
-            <a href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="block h-full">
-              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950">
-                <i class="fa-solid fa-water text-6xl text-cyanGlow/80"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
-                <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.regen.desc">Perancangan infrastruktur manajemen banjir.</p>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Riset</span>
-                </div>
-                <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                  <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </span>
-              </div>
-            </a>
-          </article>
-
-          <!-- 3. AR Game (Disembunyikan di HP, tampil di Laptop/Tablet) -->
-          <article class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block">
-            <a href="https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing" target="_blank" rel="noopener noreferrer" class="block h-full">
-              <div class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950">
-                <i class="fa-solid fa-gamepad text-6xl text-cyanGlow/80"></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold text-white">AR Game</h3>
-                <p class="mt-3 leading-7 text-slate-400" data-i18n="proj.ar.desc">Game AR dengan tema pancasila</p>
-                <div class="mt-5 flex flex-wrap gap-2">
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">Unity</span>
-                  <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow">3D Modeling</span>
-                </div>
-                <span class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow">
-                  <span data-i18n="portfolio.btn_open">Buka proyek</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                </span>
-              </div>
-            </a>
-          </article>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="portofolio.html" class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow">
-            <span data-i18n="portfolio.btn_view_all">Lihat Semua</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="sertifikat" class="px-5 py-24 lg:px-8">
-      <div class="mx-auto max-w-7xl">
-        <div class="mb-12 max-w-3xl text-center lg:text-left">
-          <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow" data-i18n="cert.tag">Sertifikat & Pencapaian</p>
-          <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl" data-i18n="cert.heading">Kredensial profesional, pelatihan industri, dan penghargaan kompetisi.</h2>
-        </div>
-
-        <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          <!-- 1. Data Science (Tampil di HP & Laptop) -->
-          <article class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6">
-            <div>
-              <div class="mb-5 flex items-center justify-between">
-                <div class="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/10 text-2xl text-cyanGlow">
-                  <i class="fa-solid fa-chart-line"></i>
-                </div>
-                <span class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow" data-i18n="cert.badge.data">Data & AI</span>
-              </div>
-              <h3 class="text-lg font-bold text-white" data-i18n="cert.ds.title">Data Science</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.ds.desc">Sertifikasi kompetensi analisis data, statistik terapan, dan pemodelan data sains.</p>
-            </div>
-            <a href="https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-              <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-            </a>
-          </article>
-
-          <!-- 2. Green Jobs Training (Tampil di HP & Laptop) -->
-          <article class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6">
-            <div>
-              <div class="mb-5 flex items-center justify-between">
-                <div class="flex h-12 w-12 items-center justify-center rounded-md bg-emerald-400/10 text-2xl text-emerald-400">
-                  <i class="fa-solid fa-seedling"></i>
-                </div>
-                <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400" data-i18n="cert.badge.training">Training</span>
-              </div>
-              <h3 class="text-lg font-bold text-white" data-i18n="cert.green.title">Green Jobs Training</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.green.desc">Pelatihan keahlian berkelanjutan untuk implementasi solusi ramah lingkungan.</p>
-            </div>
-            <a href="https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-              <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-            </a>
-          </article>
-
-          <!-- 3. Digital Forensic Juara 3 (Disembunyikan di HP, tampil di Laptop) -->
-          <article class="certificate-card hidden flex-col justify-between rounded-lg border border-white/10 bg-panel p-6 md:flex">
-            <div>
-              <div class="mb-5 flex items-center justify-between">
-                <div class="flex h-12 w-12 items-center justify-center rounded-md bg-yellow-400/10 text-2xl text-yellow-400">
-                  <i class="fa-solid fa-trophy"></i>
-                </div>
-                <span class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-400" data-i18n="cert.badge.3rd">Juara 3</span>
-              </div>
-              <h3 class="text-lg font-bold text-white" data-i18n="cert.forensic.title">Digital Forensic Juara 3</h3>
-              <p class="mt-2 text-sm leading-6 text-slate-400" data-i18n="cert.forensic.desc">Penghargaan Juara 3 kompetisi investigasi forensik digital dan analisis keamanan siber.</p>
-            </div>
-            <a href="https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow">
-              <span data-i18n="cert.btn_view">Lihat Sertifikat</span> <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-            </a>
-          </article>
-        </div>
-
-        <div class="mt-12 text-center">
-          <a href="sertifikat.html" class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow">
-            <span data-i18n="cert.btn_view_all">Lihat Semua</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="kontak" class="px-5 py-24 lg:px-8">
-      <div class="mx-auto max-w-4xl text-center">
-        <p class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow" data-i18n="contact.tag">Kontak</p>
-        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl" data-i18n="contact.heading">Tertarik untuk berkolaborasi? Mari terhubung.</h2>
-
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          <a href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
-            <i class="fa-brands fa-linkedin text-xl"></i>
-            LinkedIn
-          </a>
-          <a href="https://github.com/Gerr-DS" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
-            <i class="fa-brands fa-github text-xl"></i>
-            GitHub
-          </a>
-          <a href="mailto:gerrydimasarya15@gmail.com" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
-            <i class="fa-solid fa-envelope text-xl"></i>
-            Email
-          </a>
-          <a href="https://wa.me/6281918575580" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
-            WhatsApp
-          </a>
-          <a href="https://www.instagram.com/_grydz?igsh=M2lueXAybzBzYjUy" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto">
-            <i class="fa-brands fa-instagram text-xl"></i>
-            Instagram
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500">
-    <p data-i18n="footer.copy">&copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.</p>
-  </footer>
-
-  <script>
-    const menuButton = document.getElementById('menuButton');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-    const revealTargets = [
-      document.querySelector('#beranda > div > div:last-child'),
-      ...document.querySelectorAll('section > div > div:first-child'),
-      ...document.querySelectorAll('.glass, .project-card, .certificate-card, #kontak a'),
-    ].filter(Boolean);
-
-    document.body.classList.add('page-ready');
-
-    revealTargets.forEach((element, index) => {
-      element.classList.add('reveal');
-      element.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 90}ms`);
-    });
-
-    document.querySelector('#beranda > div > div:first-child')?.classList.add('reveal-left');
-    document.querySelector('#beranda > div > div:last-child')?.classList.add('reveal-right');
-    document.querySelectorAll('.project-card, .certificate-card').forEach((card) => card.classList.add('reveal-scale'));
-
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          } else {
-            entry.target.classList.remove('is-visible');
-          }
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+          const icon = menuButton.querySelector("i");
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-xmark");
         });
-      }, {
-        threshold: 0.16,
-        rootMargin: '0px 0px -70px 0px',
       });
-
-      revealTargets.forEach((element) => revealObserver.observe(element));
-    } else {
-      revealTargets.forEach((element) => element.classList.add('is-visible'));
-    }
-
-    menuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      const icon = menuButton.querySelector('i');
-      icon.classList.toggle('fa-bars');
-      icon.classList.toggle('fa-xmark');
-    });
-
-    mobileLinks.forEach((link) => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        const icon = menuButton.querySelector('i');
-        icon.classList.add('fa-bars');
-        icon.classList.remove('fa-xmark');
-      });
-    });
-  </script>
-</body>
+    </script>
+  </body>
 </html>
