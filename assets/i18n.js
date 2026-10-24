@@ -16,7 +16,7 @@ const translations = {
     "hero.subtitle": "Software Engineer | Data Enthusiast | Tech Innovator",
     "hero.desc": "Mengubah ide kompleks menjadi sistem informasi terintegrasi dan solusi berbasis kecerdasan buatan.",
     "hero.btn_works": "Lihat Karya Saya",
-    "hero.btn_cv": "Unduh CV",
+    "hero.btn_cv": "Lihat CV",
     "hero.card_name": "Gerry Dimas Arya",
     "hero.card_role": "Software Engineer & Data Enthusiast",
 
@@ -116,7 +116,7 @@ const translations = {
     "hero.subtitle": "Software Engineer | Data Enthusiast | Tech Innovator",
     "hero.desc": "Transforming complex challenges into integrated software architectures and AI-driven solutions.",
     "hero.btn_works": "View My Works",
-    "hero.btn_cv": "Download CV",
+    "hero.btn_cv": "View CV",
     "hero.card_name": "Gerry Dimas Arya",
     "hero.card_role": "Software Engineer & Data Enthusiast",
 
