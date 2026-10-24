@@ -108,28 +108,51 @@
         animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
       }
 
-      /* Lightweight GPU-accelerated Scroll Reveal & Exit */
-      .reveal {
+      /* Hero Entrance Keyframes (Smooth, instant, GPU-accelerated) */
+      @keyframes heroFadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .hero-item {
+        animation: heroFadeInUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+
+      .hero-delay-1 { animation-delay: 60ms; }
+      .hero-delay-2 { animation-delay: 140ms; }
+      .hero-delay-3 { animation-delay: 220ms; }
+      .hero-delay-4 { animation-delay: 300ms; }
+      .hero-delay-5 { animation-delay: 380ms; }
+      .hero-delay-6 { animation-delay: 460ms; }
+
+      /* Scroll Reveal for Sections below Hero (Lightweight, GPU-accelerated) */
+      .reveal-on-scroll {
         opacity: 0;
         transform: translateY(22px);
         transition:
-          opacity 450ms ease-out,
-          transform 450ms ease-out;
+          opacity 480ms cubic-bezier(0.16, 1, 0.3, 1),
+          transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
         transition-delay: var(--delay, 0ms);
+        will-change: opacity, transform;
       }
 
-      .reveal.is-visible {
+      .reveal-on-scroll.is-visible {
         opacity: 1;
         transform: translateY(0);
       }
 
-      /* Stagger Delays: Elemen muncul bergantian satu per satu */
-      .delay-1 { --delay: 70ms; }
-      .delay-2 { --delay: 140ms; }
-      .delay-3 { --delay: 210ms; }
-      .delay-4 { --delay: 280ms; }
-      .delay-5 { --delay: 350ms; }
-      .delay-6 { --delay: 420ms; }
+      /* Stagger Delays (Muncul bertahap satu per satu saat scroll) */
+      .stagger-1 { --delay: 70ms; }
+      .stagger-2 { --delay: 140ms; }
+      .stagger-3 { --delay: 210ms; }
+      .stagger-4 { --delay: 280ms; }
+      .stagger-5 { --delay: 350ms; }
 
       @keyframes slideDown {
         from {
@@ -183,16 +206,18 @@
           transition-duration: 1ms !important;
         }
 
-        .reveal {
+        .hero-item,
+        .reveal-on-scroll {
           opacity: 1 !important;
           transform: none !important;
+          animation: none !important;
           transition: none !important;
         }
       }
     </style>
   </head>
 
-  <body class="font-inter text-slate-100 antialiased">
+  <body class="font-inter text-slate-100 antialiased overflow-x-hidden">
     <header
       class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl"
     >
@@ -340,42 +365,42 @@
     <main>
       <section
         id="beranda"
-        class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 lg:px-8"
+        class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 pb-20 lg:pb-12 lg:px-8"
       >
         <div
           class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]"
         >
           <div>
             <p
-              class="reveal delay-1 mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
+              class="hero-item hero-delay-1 mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
             >
               <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
               Available for impactful tech collaboration
             </p>
 
             <h1
-              class="reveal delay-2 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
+              class="hero-item hero-delay-2 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
               data-i18n-html="hero.greeting"
             >
               Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
             </h1>
 
             <h2
-              class="reveal delay-3 mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
+              class="hero-item hero-delay-3 mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
               data-i18n="hero.subtitle"
             >
               Software Engineer | Data Enthusiast | Tech Innovator
             </h2>
 
             <p
-              class="reveal delay-4 mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
+              class="hero-item hero-delay-4 mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
               data-i18n="hero.desc"
             >
               Mengubah ide kompleks menjadi sistem informasi terintegrasi dan
               solusi berbasis kecerdasan buatan.
             </p>
 
-            <div class="reveal delay-5 mt-9 flex flex-col gap-4 sm:flex-row">
+            <div class="hero-item hero-delay-5 mt-9 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#portofolio"
                 class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
@@ -396,7 +421,7 @@
             </div>
           </div>
 
-          <div class="reveal delay-6 relative mx-auto w-full max-w-sm lg:max-w-md">
+          <div class="hero-item hero-delay-6 relative mx-auto w-full max-w-sm lg:max-w-md">
             <div
               class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"
             ></div>
@@ -437,10 +462,10 @@
           </div>
         </div>
 
-        <!-- Scroll Down Indicator -->
+        <!-- Scroll Down Indicator (Tampil halus di semua ukuran layar) -->
         <div
           id="scrollDownIndicator"
-          class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 transition-all duration-500 ease-out"
+          class="flex absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 transition-all duration-500 ease-out"
         >
           <a
             href="#tentang"
@@ -457,7 +482,7 @@
 
       <section id="tentang" class="px-5 py-24 lg:px-8">
         <div class="mx-auto max-w-7xl">
-          <div class="reveal mb-12 max-w-3xl text-center lg:text-left">
+          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
             <p
               class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm"
               data-i18n="about.tag"
@@ -473,7 +498,7 @@
           </div>
 
           <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-            <div class="reveal delay-1 glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
+            <div class="reveal-on-scroll stagger-1 glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
               <p
                 class="text-base leading-8 text-slate-300 sm:text-lg"
                 data-i18n="about.bio"
@@ -488,7 +513,7 @@
             </div>
 
             <div
-              class="reveal delay-2 rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
+              class="reveal-on-scroll stagger-2 rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
             >
               <div
                 class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0"
@@ -517,7 +542,7 @@
 
       <section id="keahlian" class="px-5 py-24 lg:px-8">
         <div class="mx-auto max-w-7xl">
-          <div class="mb-12 max-w-3xl text-center lg:text-left">
+          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
             <p
               class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
               data-i18n="skills.tag"
@@ -534,7 +559,7 @@
 
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             <div
-              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+              class="reveal-on-scroll stagger-1 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
             >
               <i class="fa-solid fa-code mb-5 text-3xl text-cyanGlow"></i>
               <h3 class="text-lg font-bold text-white" data-i18n="skills.cat1">
@@ -557,7 +582,7 @@
             </div>
 
             <div
-              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+              class="reveal-on-scroll stagger-2 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
             >
               <i class="fa-solid fa-brain mb-5 text-3xl text-cyanGlow"></i>
               <h3 class="text-lg font-bold text-white" data-i18n="skills.cat2">
@@ -580,7 +605,7 @@
             </div>
 
             <div
-              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+              class="reveal-on-scroll stagger-3 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
             >
               <i class="fa-solid fa-database mb-5 text-3xl text-cyanGlow"></i>
               <h3 class="text-lg font-bold text-white" data-i18n="skills.cat3">
@@ -603,7 +628,7 @@
             </div>
 
             <div
-              class="glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
+              class="reveal-on-scroll stagger-4 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
             >
               <i class="fa-solid fa-cube mb-5 text-3xl text-cyanGlow"></i>
               <h3 class="text-lg font-bold text-white" data-i18n="skills.cat4">
@@ -623,7 +648,7 @@
       <section id="portofolio" class="px-5 py-24 lg:px-8">
         <div class="mx-auto max-w-7xl">
           <div
-            class="mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left"
+            class="reveal-on-scroll mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left"
           >
             <div class="max-w-3xl">
               <p
@@ -645,7 +670,7 @@
           <div class="grid gap-6 md:grid-cols-3">
             <!-- 1. Kampus Kehilangan (Tampil di HP & Laptop) -->
             <article
-              class="project-card overflow-hidden rounded-lg border border-white/10 bg-panel"
+              class="reveal-on-scroll stagger-1 project-card overflow-hidden rounded-lg border border-white/10 bg-panel"
             >
               <a
                 href="https://github.com/Gerr-DS/IPB-KEHILANGANV"
@@ -696,7 +721,7 @@
 
             <!-- 2. RE-GEN Jakarta (Disembunyikan di HP, tampil di Laptop/Tablet) -->
             <article
-              class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
+              class="reveal-on-scroll stagger-2 project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
             >
               <a
                 href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing"
@@ -739,7 +764,7 @@
 
             <!-- 3. AR Game (Disembunyikan di HP, tampil di Laptop/Tablet) -->
             <article
-              class="project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
+              class="reveal-on-scroll stagger-3 project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
             >
               <a
                 href="https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing"
@@ -781,7 +806,7 @@
             </article>
           </div>
 
-          <div class="mt-12 text-center">
+          <div class="reveal-on-scroll stagger-4 mt-12 text-center">
             <a
               href="portofolio.html"
               class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
@@ -795,7 +820,7 @@
 
       <section id="sertifikat" class="px-5 py-24 lg:px-8">
         <div class="mx-auto max-w-7xl">
-          <div class="mb-12 max-w-3xl text-center lg:text-left">
+          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
             <p
               class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
               data-i18n="cert.tag"
@@ -814,7 +839,7 @@
           <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             <!-- 1. Data Science (Tampil di HP & Laptop) -->
             <article
-              class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
+              class="reveal-on-scroll stagger-1 certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
             >
               <div>
                 <div class="mb-5 flex items-center justify-between">
@@ -856,7 +881,7 @@
 
             <!-- 2. Green Jobs Training (Tampil di HP & Laptop) -->
             <article
-              class="certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
+              class="reveal-on-scroll stagger-2 certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
             >
               <div>
                 <div class="mb-5 flex items-center justify-between">
@@ -898,7 +923,7 @@
 
             <!-- 3. Digital Forensic Juara 3 (Disembunyikan di HP, tampil di Laptop) -->
             <article
-              class="certificate-card hidden flex-col justify-between rounded-lg border border-white/10 bg-panel p-6 md:flex"
+              class="reveal-on-scroll stagger-3 certificate-card hidden flex-col justify-between rounded-lg border border-white/10 bg-panel p-6 md:flex"
             >
               <div>
                 <div class="mb-5 flex items-center justify-between">
@@ -939,7 +964,7 @@
             </article>
           </div>
 
-          <div class="mt-12 text-center">
+          <div class="reveal-on-scroll stagger-4 mt-12 text-center">
             <a
               href="sertifikat.html"
               class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
@@ -952,7 +977,7 @@
       </section>
 
       <section id="kontak" class="px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-4xl text-center">
+        <div class="reveal-on-scroll mx-auto max-w-4xl text-center">
           <p
             class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
             data-i18n="contact.tag"
@@ -971,7 +996,7 @@
               href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+              class="reveal-on-scroll stagger-1 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
             >
               <i class="fa-brands fa-linkedin text-xl"></i>
               LinkedIn
@@ -980,14 +1005,14 @@
               href="https://github.com/Gerr-DS"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+              class="reveal-on-scroll stagger-2 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
             >
               <i class="fa-brands fa-github text-xl"></i>
               GitHub
             </a>
             <a
               href="mailto:gerrydimasarya15@gmail.com"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+              class="reveal-on-scroll stagger-3 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
             >
               <i class="fa-solid fa-envelope text-xl"></i>
               Email
@@ -996,7 +1021,7 @@
               href="https://wa.me/6281918575580"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
+              class="reveal-on-scroll stagger-4 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
             >
               <i class="fa-brands fa-whatsapp text-xl"></i>
               WhatsApp
@@ -1005,7 +1030,7 @@
               href="https://www.instagram.com/_grydz?igsh=M2lueXAybzBzYjUy"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto"
+              class="reveal-on-scroll stagger-5 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto"
             >
               <i class="fa-brands fa-instagram text-xl"></i>
               Instagram
@@ -1038,121 +1063,116 @@
       const mobileMenu = document.getElementById("mobileMenu");
       const mobileLinks = document.querySelectorAll(".mobile-link");
 
-      // Elements for scroll reveal & exit animations (muncul dan hilang)
-      const heroText = document.querySelector("#beranda > div > div:first-child");
-      const heroPhoto = document.querySelector("#beranda > div > div:last-child");
+      // Mobile Menu Toggle
+      if (menuButton && mobileMenu) {
+        menuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const icon = menuButton.querySelector("i");
+          if (icon) {
+            icon.classList.toggle("fa-bars");
+            icon.classList.toggle("fa-xmark");
+          }
+        });
 
-      if (heroText) heroText.classList.add("reveal-left");
-      if (heroPhoto) heroPhoto.classList.add("reveal-right");
+        mobileLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+            const icon = menuButton.querySelector("i");
+            if (icon) {
+              icon.classList.add("fa-bars");
+              icon.classList.remove("fa-xmark");
+            }
+          });
+        });
+      }
 
-      const cardTargets = document.querySelectorAll(
-        ".project-card, .certificate-card",
-      );
-      cardTargets.forEach((card) => card.classList.add("reveal-scale"));
-
-      const rawTargets = [
-        heroText,
-        heroPhoto,
-        ...document.querySelectorAll("section > div > div:first-child"),
-        ...document.querySelectorAll(
-          ".glass, .project-card, .certificate-card, #kontak a, #tentang > div > div:last-child > div, section .mt-12 a, section .mt-16 a",
-        ),
-      ].filter(Boolean);
-
-      const revealTargets = [...new Set(rawTargets)];
-
-      document.body.classList.add("page-ready");
-
-      revealTargets.forEach((element, index) => {
-        if (
-          !element.classList.contains("reveal-left") &&
-          !element.classList.contains("reveal-right") &&
-          !element.classList.contains("reveal-scale")
-        ) {
-          element.classList.add("reveal");
-        }
-        element.style.setProperty(
-          "--reveal-delay",
-          `${Math.min(index % 6, 5) * 80}ms`,
-        );
-      });
-
+      // Lightweight Scroll Reveal & Exit for sections below hero
       if ("IntersectionObserver" in window) {
-        const revealObserver = new IntersectionObserver(
+        const scrollObserver = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                // Muncul saat scroll masuk layar
                 entry.target.classList.add("is-visible");
               } else {
-                // Hilang saat scroll keluar layar
                 entry.target.classList.remove("is-visible");
               }
             });
           },
           {
-            threshold: 0.12,
-            rootMargin: "0px 0px -40px 0px",
+            threshold: 0.08,
+            rootMargin: "0px 0px -30px 0px",
           },
         );
 
-        revealTargets.forEach((element) => revealObserver.observe(element));
+        document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+          scrollObserver.observe(el);
+        });
       } else {
-        revealTargets.forEach((element) => element.classList.add("is-visible"));
+        document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+          el.classList.add("is-visible");
+        });
       }
 
-      // Scroll Down Indicator, Progress Bar, & Scroll to Top Button
+      // Throttled Scroll Listener (Lightweight with requestAnimationFrame)
       const scrollDownIndicator = document.getElementById("scrollDownIndicator");
       const scrollTopBtn = document.getElementById("scrollTopBtn");
       const scrollProgressBar = document.getElementById("scrollProgressBar");
 
+      let isTicking = false;
       window.addEventListener(
         "scroll",
         () => {
-          const scrollY = window.scrollY;
+          if (!isTicking) {
+            window.requestAnimationFrame(() => {
+              const scrollY = window.scrollY;
 
-          // Update Scroll Progress Bar
-          if (scrollProgressBar) {
-            const docHeight =
-              document.documentElement.scrollHeight - window.innerHeight;
-            const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
-            scrollProgressBar.style.width = `${progress}%`;
-          }
+              // Progress Bar
+              if (scrollProgressBar) {
+                const docHeight =
+                  document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+                scrollProgressBar.style.width = `${progress}%`;
+              }
 
-          // Hilangkan indikator scroll saat mulai scroll ke bawah
-          if (scrollDownIndicator) {
-            if (scrollY > 80) {
-              scrollDownIndicator.classList.add(
-                "opacity-0",
-                "pointer-events-none",
-                "translate-y-3",
-              );
-            } else {
-              scrollDownIndicator.classList.remove(
-                "opacity-0",
-                "pointer-events-none",
-                "translate-y-3",
-              );
-            }
-          }
+              // Scroll Down Indicator Fade
+              if (scrollDownIndicator) {
+                if (scrollY > 70) {
+                  scrollDownIndicator.classList.add(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-2",
+                  );
+                } else {
+                  scrollDownIndicator.classList.remove(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-2",
+                  );
+                }
+              }
 
-          // Munculkan tombol back-to-top saat scroll ke bawah, sembunyikan saat di atas
-          if (scrollTopBtn) {
-            if (scrollY > 350) {
-              scrollTopBtn.classList.remove(
-                "opacity-0",
-                "pointer-events-none",
-                "translate-y-4",
-              );
-              scrollTopBtn.classList.add("opacity-100", "translate-y-0");
-            } else {
-              scrollTopBtn.classList.add(
-                "opacity-0",
-                "pointer-events-none",
-                "translate-y-4",
-              );
-              scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
-            }
+              // Back to Top Button
+              if (scrollTopBtn) {
+                if (scrollY > 300) {
+                  scrollTopBtn.classList.remove(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-4",
+                  );
+                  scrollTopBtn.classList.add("opacity-100", "translate-y-0");
+                } else {
+                  scrollTopBtn.classList.add(
+                    "opacity-0",
+                    "pointer-events-none",
+                    "translate-y-4",
+                  );
+                  scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
+                }
+              }
+
+              isTicking = false;
+            });
+            isTicking = true;
           }
         },
         { passive: true },
@@ -1163,22 +1183,6 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
-
-      menuButton.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-        const icon = menuButton.querySelector("i");
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-xmark");
-      });
-
-      mobileLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-          mobileMenu.classList.add("hidden");
-          const icon = menuButton.querySelector("i");
-          icon.classList.add("fa-bars");
-          icon.classList.remove("fa-xmark");
-        });
-      });
     </script>
   </body>
 </html>

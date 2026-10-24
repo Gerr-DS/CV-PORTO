@@ -138,7 +138,7 @@
   </style>
 </head>
 
-<body class="font-inter text-slate-100 antialiased">
+<body class="font-inter text-slate-100 antialiased overflow-x-hidden">
   <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
       <a href="index.html" class="text-xl font-extrabold tracking-tight text-white">
@@ -362,8 +362,8 @@
           }
         });
       }, {
-        threshold: 0.16,
-        rootMargin: '0px 0px -70px 0px',
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px',
       });
 
       revealTargets.forEach((element) => revealObserver.observe(element));
@@ -372,15 +372,22 @@
     }
 
     const scrollTopBtn = document.getElementById("scrollTopBtn");
+    let isTicking = false;
     window.addEventListener("scroll", () => {
-      if (scrollTopBtn) {
-        if (window.scrollY > 350) {
-          scrollTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
-          scrollTopBtn.classList.add("opacity-100", "translate-y-0");
-        } else {
-          scrollTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
-          scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
-        }
+      if (!isTicking) {
+        window.requestAnimationFrame(() => {
+          if (scrollTopBtn) {
+            if (window.scrollY > 300) {
+              scrollTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+              scrollTopBtn.classList.add("opacity-100", "translate-y-0");
+            } else {
+              scrollTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+              scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
+            }
+          }
+          isTicking = false;
+        });
+        isTicking = true;
       }
     }, { passive: true });
 
