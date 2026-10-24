@@ -7,7 +7,7 @@ const translations = {
     "nav.portfolio": "Portofolio",
     "nav.certificates": "Sertifikat",
     "nav.contact": "Kontak",
-    "nav.back_home": "Kembali ke Beranda",
+    "nav.back_home": "Kembali",
     "nav.back_main": "Kembali ke Halaman Utama",
 
     // Hero Section
