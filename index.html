@@ -215,6 +215,17 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="assets/fiqtor-style.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("gerry-cv-theme") === "light" ? "light" : "dark";
+      } catch {
+        document.documentElement.dataset.theme = "dark";
+      }
+    </script>
+    <script src="assets/theme-effects.js" defer></script>
+    <script src="assets/pixel-touch.js" defer></script>
   </head>
 
   <body class="font-inter text-slate-100 antialiased overflow-x-hidden">
@@ -290,6 +301,16 @@
               ><span class="text-slate-400">EN</span></span
             >
           </button>
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            data-theme-toggle
+            aria-label="Aktifkan tema terang / Switch to light theme"
+            title="Aktifkan tema terang / Switch to light theme"
+            aria-pressed="false"
+          >
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          </button>
         </div>
 
         <!-- Mobile Right controls: Lang Toggle & Hamburger -->
@@ -305,6 +326,16 @@
               ><span class="text-slate-500 mx-0.5">/</span
               ><span class="text-slate-400">EN</span></span
             >
+          </button>
+          <button
+            type="button"
+            class="theme-toggle-btn"
+            data-theme-toggle
+            aria-label="Aktifkan tema terang / Switch to light theme"
+            title="Aktifkan tema terang / Switch to light theme"
+            aria-pressed="false"
+          >
+            <i class="fa-solid fa-sun" aria-hidden="true"></i>
           </button>
 
           <button
@@ -433,7 +464,7 @@
               class="glass relative overflow-hidden rounded-lg p-3 shadow-soft"
             >
               <div
-                class="overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900"
+                class="portrait-frame overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900"
               >
                 <img
                   src="assets/porto.png"
@@ -1011,7 +1042,9 @@
               GitHub
             </a>
             <a
-              href="mailto:gerrydimasarya15@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerrydimasarya15%40gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
               class="reveal-on-scroll stagger-3 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
             >
               <i class="fa-solid fa-envelope text-xl"></i>

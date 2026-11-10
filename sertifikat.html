@@ -116,6 +116,17 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/fiqtor-style.css" />
+  <script>
+    try {
+      document.documentElement.dataset.theme =
+        localStorage.getItem("gerry-cv-theme") === "light" ? "light" : "dark";
+    } catch {
+      document.documentElement.dataset.theme = "dark";
+    }
+  </script>
+  <script src="assets/theme-effects.js" defer></script>
+  <script src="assets/pixel-touch.js" defer></script>
 </head>
 
 <body class="font-inter text-slate-100 antialiased overflow-x-hidden">
@@ -126,6 +137,9 @@
       </a>
 
       <div class="flex items-center gap-3">
+        <button type="button" class="theme-toggle-btn" data-theme-toggle aria-label="Aktifkan tema terang / Switch to light theme" title="Aktifkan tema terang / Switch to light theme" aria-pressed="false">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+        </button>
         <button type="button" class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow" aria-label="Ganti bahasa / Switch language">
           <i class="fa-solid fa-globe text-cyanGlow"></i>
           <span class="lang-toggle-indicator"><span class="text-cyanGlow font-bold">ID</span><span class="text-slate-500 mx-0.5">/</span><span class="text-slate-400">EN</span></span>
