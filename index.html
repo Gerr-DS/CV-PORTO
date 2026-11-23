@@ -1,1221 +1,213 @@
 <!doctype html>
-<html lang="id" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerry | Portfolio & CV</title>
-    <meta
-      name="description"
-      content="Portfolio dan CV Gerry - Software Engineer, Data Enthusiast, dan Tech Innovator."
-    />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-    <link rel="shortcut icon" href="assets/favicon.svg" />
+<html lang="id" class="is-preload">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gerry Dimasarya — Portfolio</title>
+  <meta name="description" content="Portfolio dummy untuk Gerry Dimasarya. Dibuat sebagai contoh belajar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Onest:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <noscript><style>.preloader { display: none; }</style></noscript>
+</head>
+<body>
+  <!-- Preloader: sapaan beberapa bahasa, lalu layar terbuka ke atas -->
+  <div class="preloader" id="preloader" role="status" aria-label="Memuat">
+    <div class="preloader-box">
+      <span class="preloader-dot" aria-hidden="true"></span>
+      <span class="preloader-word" id="preloaderWord">Hello</span>
+    </div>
+  </div>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    />
+  <!-- Indikator loading untuk pengambilan data / jaringan tidak stabil -->
+  <div class="data-loading" id="dataLoading" hidden role="status" aria-live="polite">
+    <div class="bouncer" aria-hidden="true">
+      <span class="bouncer-shadow"></span>
+      <span class="bouncer-square"></span>
+    </div>
+    <p class="data-loading-text" id="dataLoadingText">Memuat…</p>
+  </div>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="assets/i18n.js"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              inter: ["Inter", "sans-serif"],
-            },
-            colors: {
-              ink: "#090d16",
-              panel: "#111827",
-              cyanGlow: "#22d3ee",
-              blueGlow: "#38bdf8",
-            },
-            boxShadow: {
-              neon: "0 0 32px rgba(34, 211, 238, 0.24)",
-              soft: "0 18px 60px rgba(0, 0, 0, 0.32)",
-            },
-          },
-        },
-      };
-    </script>
+  <a class="skip" href="#main-content">Skip to content</a>
 
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-        background:
-          radial-gradient(
-            circle at top left,
-            rgba(34, 211, 238, 0.14),
-            transparent 32rem
-          ),
-          radial-gradient(
-            circle at 80% 10%,
-            rgba(59, 130, 246, 0.12),
-            transparent 28rem
-          ),
-          #090d16;
-      }
-
-      .glass {
-        background: rgba(15, 23, 42, 0.72);
-        border: 1px solid rgba(148, 163, 184, 0.16);
-        backdrop-filter: blur(18px);
-      }
-
-      .project-card,
-      .certificate-card {
-        transition:
-          transform 220ms ease,
-          border-color 220ms ease,
-          box-shadow 220ms ease;
-      }
-
-      .project-card:hover,
-      .certificate-card:hover {
-        transform: translateY(-8px);
-        border-color: rgba(34, 211, 238, 0.55);
-        box-shadow: 0 22px 70px rgba(8, 145, 178, 0.18);
-      }
-
-      .nav-link {
-        position: relative;
-      }
-
-      .nav-link::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -8px;
-        width: 0;
-        height: 2px;
-        border-radius: 999px;
-        background: #22d3ee;
-        transition: width 200ms ease;
-      }
-
-      .nav-link:hover::after {
-        width: 100%;
-      }
-
-      .page-ready header {
-        animation: slideDown 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
-      }
-
-      /* Hero Entrance Keyframes (Smooth, instant, GPU-accelerated) */
-      @keyframes heroFadeInUp {
-        from {
-          opacity: 0;
-          transform: translateY(20px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      .hero-item {
-        animation: heroFadeInUp 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
-      }
-
-      .hero-delay-1 { animation-delay: 60ms; }
-      .hero-delay-2 { animation-delay: 140ms; }
-      .hero-delay-3 { animation-delay: 220ms; }
-      .hero-delay-4 { animation-delay: 300ms; }
-      .hero-delay-5 { animation-delay: 380ms; }
-      .hero-delay-6 { animation-delay: 460ms; }
-
-      /* Scroll Reveal for Sections below Hero (Lightweight, GPU-accelerated) */
-      .reveal-on-scroll {
-        opacity: 0;
-        transform: translateY(22px);
-        transition:
-          opacity 480ms cubic-bezier(0.16, 1, 0.3, 1),
-          transform 480ms cubic-bezier(0.16, 1, 0.3, 1);
-        transition-delay: var(--delay, 0ms);
-        will-change: opacity, transform;
-      }
-
-      .reveal-on-scroll.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* Stagger Delays (Muncul bertahap satu per satu saat scroll) */
-      .stagger-1 { --delay: 70ms; }
-      .stagger-2 { --delay: 140ms; }
-      .stagger-3 { --delay: 210ms; }
-      .stagger-4 { --delay: 280ms; }
-      .stagger-5 { --delay: 350ms; }
-
-      @keyframes slideDown {
-        from {
-          opacity: 0;
-          transform: translateY(-100%);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-
-      @keyframes scrollWheel {
-        0% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        50% {
-          transform: translateY(7px);
-          opacity: 0.3;
-        }
-        100% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-      }
-
-      @keyframes bounceDown {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(5px);
-        }
-      }
-
-      .animate-scrollWheel {
-        animation: scrollWheel 1.8s ease-in-out infinite;
-      }
-
-      .animate-bounceDown {
-        animation: bounceDown 1.8s ease-in-out infinite;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 1ms !important;
-          scroll-behavior: auto !important;
-          transition-duration: 1ms !important;
-        }
-
-        .hero-item,
-        .reveal-on-scroll {
-          opacity: 1 !important;
-          transform: none !important;
-          animation: none !important;
-          transition: none !important;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="assets/fiqtor-style.css?v=2" />
-    <script>
-      try {
-        document.documentElement.dataset.theme =
-          localStorage.getItem("gerry-cv-theme") === "light" ? "light" : "dark";
-      } catch {
-        document.documentElement.dataset.theme = "dark";
-      }
-    </script>
-    <script src="assets/theme-effects.js" defer></script>
-    <script src="assets/pixel-touch.js?v=2" defer></script>
-  </head>
-
-  <body class="font-inter text-slate-100 antialiased overflow-x-hidden">
-    <header
-      class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/80 backdrop-blur-xl"
-    >
-      <div
-        id="scrollProgressBar"
-        class="absolute top-0 left-0 h-[2.5px] w-0 bg-gradient-to-r from-cyanGlow via-blueGlow to-cyan-300 transition-all duration-75"
-      ></div>
-      <nav
-        class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"
-      >
-        <a
-          href="#beranda"
-          class="text-xl font-extrabold tracking-tight text-white"
-        >
-          <span class="text-cyanGlow">&lt;/&gt;</span> GERRY DIMASARYA
-        </a>
-
-        <!-- Desktop Navigation & Lang Toggle -->
-        <div class="hidden items-center gap-8 md:flex">
-          <div
-            id="desktopMenu"
-            class="flex items-center gap-8 text-sm font-medium text-slate-300"
-          >
-            <a
-              class="nav-link hover:text-white"
-              href="#beranda"
-              data-i18n="nav.home"
-              >Beranda</a
-            >
-            <a
-              class="nav-link hover:text-white"
-              href="#tentang"
-              data-i18n="nav.about"
-              >Tentang</a
-            >
-            <a
-              class="nav-link hover:text-white"
-              href="#keahlian"
-              data-i18n="nav.skills"
-              >Keahlian</a
-            >
-            <a
-              class="nav-link hover:text-white"
-              href="#portofolio"
-              data-i18n="nav.portfolio"
-              >Portofolio</a
-            >
-            <a
-              class="nav-link hover:text-white"
-              href="#sertifikat"
-              data-i18n="nav.certificates"
-              >Sertifikat</a
-            >
-            <a
-              class="nav-link hover:text-white"
-              href="#kontak"
-              data-i18n="nav.contact"
-              >Kontak</a
-            >
-          </div>
-          <button
-            type="button"
-            class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
-            aria-label="Ganti bahasa / Switch language"
-          >
-            <i class="fa-solid fa-globe text-cyanGlow"></i>
-            <span class="lang-toggle-indicator"
-              ><span class="text-cyanGlow font-bold">ID</span
-              ><span class="text-slate-500 mx-0.5">/</span
-              ><span class="text-slate-400">EN</span></span
-            >
-          </button>
-          <button
-            type="button"
-            class="theme-toggle-btn"
-            data-theme-toggle
-            aria-label="Aktifkan tema terang / Switch to light theme"
-            title="Aktifkan tema terang / Switch to light theme"
-            aria-pressed="false"
-          >
-            <i class="fa-solid fa-sun" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <!-- Mobile Right controls: Lang Toggle & Hamburger -->
-        <div class="flex items-center gap-3 md:hidden">
-          <button
-            type="button"
-            class="lang-toggle-btn inline-flex items-center gap-1.5 rounded-full border border-cyanGlow/40 bg-white/5 px-3 py-1.5 text-xs font-semibold text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
-            aria-label="Ganti bahasa / Switch language"
-          >
-            <i class="fa-solid fa-globe text-cyanGlow"></i>
-            <span class="lang-toggle-indicator"
-              ><span class="text-cyanGlow font-bold">ID</span
-              ><span class="text-slate-500 mx-0.5">/</span
-              ><span class="text-slate-400">EN</span></span
-            >
-          </button>
-          <button
-            type="button"
-            class="theme-toggle-btn"
-            data-theme-toggle
-            aria-label="Aktifkan tema terang / Switch to light theme"
-            title="Aktifkan tema terang / Switch to light theme"
-            aria-pressed="false"
-          >
-            <i class="fa-solid fa-sun" aria-hidden="true"></i>
-          </button>
-
-          <button
-            id="menuButton"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-slate-200 transition hover:border-cyanGlow hover:text-cyanGlow"
-            aria-label="Buka menu"
-          >
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
+  <header class="nav" id="navbar">
+    <div class="nav-inner">
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certificate">Certificate</a>
       </nav>
+    </div>
+    <a class="nav-cta" href="#contact">Contact <span aria-hidden="true">↗</span></a>
+    <!-- Ikon menu yang tampil saat bar disusutkan -->
+    <span class="nav-menu-icon" aria-hidden="true">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+    </span>
+  </header>
 
-      <div
-        id="mobileMenu"
-        class="hidden border-t border-white/10 bg-ink/95 px-5 py-4 md:hidden"
-      >
-        <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#beranda"
-            data-i18n="nav.home"
-            >Beranda</a
-          >
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#tentang"
-            data-i18n="nav.about"
-            >Tentang</a
-          >
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#keahlian"
-            data-i18n="nav.skills"
-            >Keahlian</a
-          >
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#portofolio"
-            data-i18n="nav.portfolio"
-            >Portofolio</a
-          >
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#sertifikat"
-            data-i18n="nav.certificates"
-            >Sertifikat</a
-          >
-          <a
-            class="mobile-link hover:text-cyanGlow"
-            href="#kontak"
-            data-i18n="nav.contact"
-            >Kontak</a
-          >
+  <main id="main-content">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <svg class="contours" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g fill="none" stroke="#0f766e" stroke-opacity="0.12" stroke-width="1.5">
+          <path d="M-40 180 C 220 90, 460 300, 740 210 S 1240 110, 1500 250" />
+          <path d="M-60 320 C 200 240, 480 420, 780 330 S 1220 250, 1520 380" />
+          <path d="M-40 520 C 260 430, 500 610, 820 520 S 1240 440, 1500 560" />
+          <path d="M-80 720 C 240 620, 520 800, 860 700 S 1260 620, 1540 740" />
+        </g>
+      </svg>
+
+      <div class="hero-grid">
+        <div class="hero-intro">
+          <h1 class="hero-name"><span>Gerry</span> <span>Dimasarya</span></h1>
+          <ul class="hero-meta">
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Bogor, Indonesia</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4l9.5 5L12 14 2.5 9Z"/><path d="M6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11"/></svg><span>Teknologi Rekayasa Perangkat Lunak, IPB University</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5 12 4l8.5 8.5"/><path d="M6 11v9h12v-9"/><path d="M10 20v-5h4v5"/></svg><span>Data, Web &amp; Cyber</span></li>
+          </ul>
+        </div>
+
+        <div class="hero-stage">
+          <div class="hero-portrait" id="heroPortrait">
+            <div class="layer layer-photo" role="img" aria-label="Potret dummy Gerry Dimasarya"></div>
+            <div class="layer layer-aura" aria-hidden="true"></div>
+            <canvas id="portraitCanvas"></canvas>
+          </div>
+          <p class="hero-hint">Gerakkan kursor di atas potret</p>
+        </div>
+
+        <aside class="hero-panels" aria-label="Ringkasan">
+          <div class="panel">
+            <p class="panel-label">Currently</p>
+            <p class="panel-value">Student</p>
+            <p class="panel-sub">IPB University</p>
+          </div>
+          <div class="panel stats">
+            <p class="panel-label">At a glance</p>
+            <dl>
+              <div><dt>Projects</dt><dd>7</dd></div>
+              <div><dt>Skills</dt><dd>3</dd></div>
+              <div><dt>Certificate</dt><dd>7</dd></div>
+            </dl>
+          </div>
+        </aside>
+      </div>
+
+      <div class="hero-bar">
+        <button class="hero-switch" id="switchBtn" type="button" aria-pressed="false">
+          <span class="switch-icon" aria-hidden="true">↻</span>
+          <span class="switch-text">
+            <span id="switchTitle">Show aura</span>
+            <small>Switch portrait</small>
+          </span>
+        </button>
+        <a class="hero-cta" href="#projects">View projects <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="section tone-ink" id="about">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-title">About</h2>
+        <div class="sec-meta"><span>01</span><span>Who I am</span></div>
+      </div>
+      <div class="about-grid">
+        <p class="lead" data-reveal>Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.</p>
+        <div class="facts">
+          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3.5 3 8.5 3 12 0v-5M22 9v6"/></svg>Studying</span><p>Teknologi Rekayasa Perangkat Lunak, IPB University</p></div>
+          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>Based in</span><p>Bogor, Indonesia</p></div>
+          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>Works across</span><p>Web, mobile, data, UI/UX</p></div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section
-        id="beranda"
-        class="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 pb-20 lg:pb-12 lg:px-8"
-      >
-        <div
-          class="mx-auto grid w-full max-w-7xl items-center gap-12 lg:grid-cols-[1.1fr_0.9fr]"
-        >
-          <div>
-            <p
-              class="hero-item hero-delay-1 mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyanGlow"
-            >
-              <span class="h-2 w-2 rounded-full bg-cyanGlow shadow-neon"></span>
-              Available for impactful tech collaboration
-            </p>
+    <!-- ================= SKILLS ================= -->
+    <section class="section" id="skills">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-title">Skills</h2>
+        <div class="sec-meta"><span>02</span><span>What I work with</span></div>
+      </div>
+      <div class="skills-grid">
+        <article class="skill" data-reveal>
+          <p class="skill-num">01</p>
+          <h3>Data</h3>
+          <p class="skill-desc">Basis data MySQL dan MongoDB, dengan Python dan SQL.</p>
+          <ul class="chips"><li>Python</li><li>SQL</li><li>MySQL</li><li>MongoDB</li></ul>
+        </article>
+        <article class="skill" data-reveal>
+          <p class="skill-num">02</p>
+          <h3>Build</h3>
+          <p class="skill-desc">Backend dan REST API dengan Laravel/PHP, integrasi Flutter, serta game dengan Unity/C#.</p>
+          <ul class="chips"><li>Laravel / PHP</li><li>REST API</li><li>Flutter / Dart</li><li>Unity / C#</li></ul>
+        </article>
+        <article class="skill" data-reveal>
+          <p class="skill-num">03</p>
+          <h3>Design &amp; Security</h3>
+          <p class="skill-desc">UI/UX dan aset 3D untuk game, ditambah forensik digital dan keamanan aplikasi web.</p>
+          <ul class="chips"><li>UI/UX / Figma</li><li>Blender / 3D</li><li>Digital Forensics</li><li>Web App Security</li></ul>
+        </article>
+      </div>
+    </section>
 
-            <h1
-              class="hero-item hero-delay-2 max-w-4xl text-5xl font-extrabold leading-tight tracking-tight text-white sm:text-6xl lg:text-7xl"
-              data-i18n-html="hero.greeting"
-            >
-              Halo, saya <span class="text-cyanGlow">Gerry Dimasarya</span>.
-            </h1>
+    <!-- ================= PROJECTS ================= -->
+    <section class="section" id="projects">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-title">Projects</h2>
+        <div class="sec-meta"><span>03</span><span>Selected work</span></div>
+      </div>
+      <div class="project-gallery" id="projectsGrid"></div>
+    </section>
 
-            <h2
-              class="hero-item hero-delay-3 mt-5 text-xl font-semibold text-slate-200 sm:text-2xl"
-              data-i18n="hero.subtitle"
-            >
-              Software Engineer | Data Enthusiast | Tech Innovator
-            </h2>
+    <!-- ================= CERTIFICATE ================= -->
+    <section class="section" id="certificate">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-title">Certificate</h2>
+        <div class="sec-meta"><span>04</span><span>Credentials &amp; recognition</span></div>
+      </div>
+      <div class="certificate-gallery" id="certificateGallery" data-reveal></div>
+    </section>
 
-            <p
-              class="hero-item hero-delay-4 mt-6 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg"
-              data-i18n="hero.desc"
-            >
-              Mengubah ide kompleks menjadi sistem informasi terintegrasi dan
-              solusi berbasis kecerdasan buatan.
-            </p>
+    <!-- ================= CONTACT ================= -->
+    <section class="section contact tone-ink" id="contact">
+      <div class="sec-head" data-reveal>
+        <h2 class="sec-title">Contact</h2>
+        <div class="sec-meta"><span>05</span><span>Let's work</span></div>
+      </div>
+      <p class="lead" data-reveal>Tertarik berkolaborasi? Hubungi saya melalui platform pilihan Anda.</p>
+      <div class="contact-links" data-reveal>
+        <a class="contact-link" href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328" target="_blank" rel="noopener noreferrer" aria-label="Buka profil LinkedIn Gerry Dimasarya">
+          <span class="contact-icon linkedin-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="4" fill="currentColor"/><path d="M7 9.2v8M7 6.4v.1M11 17.2v-8h3v1.2c.5-.9 1.4-1.4 2.5-1.4 2 0 2.5 1.3 2.5 3.4v4.8h-3v-4.2c0-1-.2-1.7-1.2-1.7s-1.5.8-1.5 1.8v4.1Z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="6.45" r="1.1" fill="#fff"/></svg></span>
+          <span class="contact-copy"><span class="contact-platform">LinkedIn</span><span class="contact-value">linkedin.com/in/gerry-dimasarya-4bb5b3328</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-link" href="https://github.com/Gerr-DS" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub Gerr-DS">
+          <span class="contact-icon github-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.5-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.51-.29-5.15-1.25-5.15-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44.11-2.99 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.46 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.99.72.79 1.16 1.8 1.16 3.03 0 4.32-2.65 5.26-5.17 5.54.41.36.76 1.04.76 2.1v3.1c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg></span>
+          <span class="contact-copy"><span class="contact-platform">GitHub</span><span class="contact-value">github.com/Gerr-DS</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerrydimasarya15%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Tulis email ke Gerry Dimasarya">
+          <span class="contact-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3" fill="#fff"/><path d="m4 7 8 6 8-6" fill="none" stroke="#ea4335" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 18v-8M20 18v-8" stroke="#4285f4" stroke-width="2.2" stroke-linecap="round"/><path d="m4 7 8 6 4-3" fill="none" stroke="#34a853" stroke-width="2.2" stroke-linecap="round"/></svg></span>
+          <span class="contact-copy"><span class="contact-platform">Email</span><span class="contact-value">gerrydimasarya15@gmail.com</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-link" href="https://wa.me/6281918575580" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Gerry Dimasarya melalui WhatsApp">
+          <span class="contact-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="currentColor"/><path d="m6.5 18 1-3a7 7 0 1 1 2.2 2.1Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.7c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4-.1.6.5.9 1.2 1.6 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5-.1.7-.5 1.3-1.1 1.6-.6.3-1.4.3-2.2 0-1.1-.4-2.5-1.2-3.6-2.3-1-1-1.7-2.2-1.9-3.1-.2-.7-.1-1.3.2-1.7Z" fill="#fff"/></svg></span>
+          <span class="contact-copy"><span class="contact-platform">WhatsApp</span><span class="contact-value">+62 819-1857-5580</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-link" href="https://www.instagram.com/_grydz/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram grydz">
+          <span class="contact-icon instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><defs><linearGradient id="instagramGradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffbf45"/><stop offset=".48" stop-color="#f04465"/><stop offset="1" stop-color="#8655d8"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#instagramGradient)"/><rect x="5.3" y="5.3" width="13.4" height="13.4" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1.1" fill="#fff"/></svg></span>
+          <span class="contact-copy"><span class="contact-platform">Instagram</span><span class="contact-value">@_grydz</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <footer class="foot">
+        <p>GERRY DIMASARYA</p>
+        <p>Portfolio pribadi · 2026</p>
+      </footer>
+    </section>
+  </main>
 
-            <div class="hero-item hero-delay-5 mt-9 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="#portofolio"
-                class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-6 py-3 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
-              >
-                <i class="fa-solid fa-layer-group"></i>
-                <span data-i18n="hero.btn_works">Lihat Karya Saya</span>
-              </a>
-
-              <a
-                href="https://drive.google.com/file/d/1nf4NhKOftHZz1iwwAsAALpuWbMROVpnw/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center justify-center gap-2 rounded-md border border-cyanGlow/70 px-6 py-3 font-bold text-cyanGlow transition hover:-translate-y-1 hover:bg-cyanGlow hover:text-slate-950"
-              >
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                <span data-i18n="hero.btn_cv">Lihat CV</span>
-              </a>
-            </div>
-          </div>
-
-          <div class="hero-item hero-delay-6 relative mx-auto w-full max-w-sm lg:max-w-md">
-            <div
-              class="absolute -right-4 -top-4 h-28 w-28 rounded-full border border-cyan-400/30"
-            ></div>
-            <div
-              class="absolute -bottom-4 -left-4 h-28 w-28 rounded-full border border-blue-400/20"
-            ></div>
-
-            <div
-              class="glass relative overflow-hidden rounded-lg p-3 shadow-soft"
-            >
-              <div
-                class="portrait-frame overflow-hidden rounded-md border border-cyan-400/30 bg-slate-900"
-              >
-                <img
-                  src="assets/porto.png"
-                  alt="Foto profil Gerry"
-                  class="h-[460px] w-full object-cover object-[center_30%] sm:h-[520px] lg:h-[560px]"
-                />
-              </div>
-
-              <div
-                class="absolute bottom-6 left-6 right-6 rounded-md border border-white/10 bg-ink/80 px-4 py-3 backdrop-blur-md"
-              >
-                <p
-                  class="text-sm font-bold text-white"
-                  data-i18n="hero.card_name"
-                >
-                  Gerry Dimas Arya
-                </p>
-                <p
-                  class="mt-1 text-xs font-medium text-cyanGlow"
-                  data-i18n="hero.card_role"
-                >
-                  Software Engineer & Data Enthusiast
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Scroll Down Indicator (Tampil halus di semua ukuran layar) -->
-        <div
-          id="scrollDownIndicator"
-          class="flex absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex-col items-center gap-1.5 transition-all duration-500 ease-out"
-        >
-          <a
-            href="#tentang"
-            class="group flex flex-col items-center gap-1 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-400 hover:text-cyanGlow transition-colors"
-          >
-            <span class="opacity-80 transition group-hover:opacity-100" data-i18n="hero.scroll_down">Scroll</span>
-            <div class="flex h-8 w-5 items-start justify-center rounded-full border-2 border-slate-500/60 p-1 group-hover:border-cyanGlow transition-colors">
-              <span class="h-1.5 w-1 rounded-full bg-cyanGlow animate-scrollWheel"></span>
-            </div>
-            <i class="fa-solid fa-chevron-down text-[10px] text-cyanGlow animate-bounceDown"></i>
-          </a>
-        </div>
-      </section>
-
-      <section id="tentang" class="px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
-            <p
-              class="mb-3 text-base font-bold uppercase tracking-[0.24em] text-cyanGlow lg:text-sm"
-              data-i18n="about.tag"
-            >
-              Tentang Saya
-            </p>
-            <h2
-              class="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-4xl"
-              data-i18n="about.heading"
-            >
-              Membangun solusi yang jelas, adaptif, dan berdampak.
-            </h2>
-          </div>
-
-          <div class="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-            <div class="reveal-on-scroll stagger-1 glass rounded-lg p-6 text-center sm:p-8 lg:text-left">
-              <p
-                class="text-base leading-8 text-slate-300 sm:text-lg"
-                data-i18n="about.bio"
-              >
-                Saya memiliki keunggulan dalam merancang arsitektur aplikasi
-                secara komprehensif, adaptif terhadap teknologi baru, dan solid
-                dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap
-                detail teknis yang kompleks, saya selalu memastikan efisiensi
-                kerja dengan menerapkan skala prioritas Minimum Viable Product
-                (MVP) dan manajemen waktu yang ketat.
-              </p>
-            </div>
-
-            <div
-              class="reveal-on-scroll stagger-2 rounded-lg border border-cyan-400/25 bg-cyan-400/10 p-6 text-center lg:text-left"
-            >
-              <div
-                class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-md bg-cyanGlow text-xl text-slate-950 lg:mx-0"
-              >
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-              <p
-                class="text-sm font-semibold uppercase tracking-[0.18em] text-cyanGlow"
-                data-i18n="about.edu_tag"
-              >
-                Pendidikan
-              </p>
-              <h3
-                class="mt-3 text-xl font-bold text-white"
-                data-i18n="about.edu_school"
-              >
-                Sekolah Vokasi IPB University
-              </h3>
-              <p class="mt-2 text-slate-300" data-i18n="about.edu_major">
-                Teknologi Rekayasa Perangkat Lunak (TPL)
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="keahlian" class="px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
-            <p
-              class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
-              data-i18n="skills.tag"
-            >
-              Tech Stack
-            </p>
-            <h2
-              class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
-              data-i18n="skills.heading"
-            >
-              Keahlian yang mendukung produk dari ide sampai rilis.
-            </h2>
-          </div>
-
-          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            <div
-              class="reveal-on-scroll stagger-1 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
-            >
-              <i class="fa-solid fa-code mb-5 text-3xl text-cyanGlow"></i>
-              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat1">
-                Web & Mobile
-              </h3>
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Laravel</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Flutter</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Jetpack Compose</span
-                >
-              </div>
-            </div>
-
-            <div
-              class="reveal-on-scroll stagger-2 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
-            >
-              <i class="fa-solid fa-brain mb-5 text-3xl text-cyanGlow"></i>
-              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat2">
-                Data & AI
-              </h3>
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >k-NN</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >SVM</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Vision AI</span
-                >
-              </div>
-            </div>
-
-            <div
-              class="reveal-on-scroll stagger-3 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
-            >
-              <i class="fa-solid fa-database mb-5 text-3xl text-cyanGlow"></i>
-              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat3">
-                Database
-              </h3>
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >MongoDB</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Firebase</span
-                >
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >SQL</span
-                >
-              </div>
-            </div>
-
-            <div
-              class="reveal-on-scroll stagger-4 glass rounded-lg p-6 transition hover:-translate-y-2 hover:border-cyan-400/50"
-            >
-              <i class="fa-solid fa-cube mb-5 text-3xl text-cyanGlow"></i>
-              <h3 class="text-lg font-bold text-white" data-i18n="skills.cat4">
-                UI/UX Design
-              </h3>
-              <div class="mt-5 flex flex-wrap gap-2">
-                <span
-                  class="rounded-full bg-white/[0.08] px-3 py-1 text-sm text-slate-300"
-                  >Figma</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="portofolio" class="px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div
-            class="reveal-on-scroll mb-12 flex flex-col justify-between gap-5 text-center md:flex-row md:items-end lg:text-left"
-          >
-            <div class="max-w-3xl">
-              <p
-                class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
-                data-i18n="portfolio.tag"
-              >
-                Portofolio
-              </p>
-              <h2
-                class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
-                data-i18n="portfolio.heading"
-              >
-                Proyek pilihan dengan kombinasi software, data, dan desain
-                sistem.
-              </h2>
-            </div>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-3">
-            <!-- 1. Kampus Kehilangan (Tampil di HP & Laptop) -->
-            <article
-              class="reveal-on-scroll stagger-1 project-card overflow-hidden rounded-lg border border-white/10 bg-panel"
-            >
-              <a
-                href="https://github.com/Gerr-DS/IPB-KEHILANGANV"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block h-full"
-              >
-                <div
-                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-cyan-950"
-                >
-                  <i
-                    class="fa-solid fa-mobile-screen-button text-6xl text-cyanGlow/80"
-                  ></i>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">
-                    Kampus Kehilangan
-                  </h3>
-                  <p
-                    class="mt-3 leading-7 text-slate-400"
-                    data-i18n="proj.kampus.desc"
-                  >
-                    Sistem pelaporan lintas platform dengan moderasi otomatis.
-                  </p>
-                  <div class="mt-5 flex flex-wrap gap-2">
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >Flutter</span
-                    >
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >Laravel</span
-                    >
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >Vision AI</span
-                    >
-                  </div>
-                  <span
-                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
-                  >
-                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </a>
-            </article>
-
-            <!-- 2. RE-GEN Jakarta (Disembunyikan di HP, tampil di Laptop/Tablet) -->
-            <article
-              class="reveal-on-scroll stagger-2 project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
-            >
-              <a
-                href="https://drive.google.com/file/d/1spVDy9b0I0kaUB5QPgWAgBM9ScgVsB8f/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block h-full"
-              >
-                <div
-                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-blue-950"
-                >
-                  <i class="fa-solid fa-water text-6xl text-cyanGlow/80"></i>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">RE-GEN Jakarta</h3>
-                  <p
-                    class="mt-3 leading-7 text-slate-400"
-                    data-i18n="proj.regen.desc"
-                  >
-                    Perancangan infrastruktur manajemen banjir.
-                  </p>
-                  <div class="mt-5 flex flex-wrap gap-2">
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >3D Modeling</span
-                    >
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >Riset</span
-                    >
-                  </div>
-                  <span
-                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
-                  >
-                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </a>
-            </article>
-
-            <!-- 3. AR Game (Disembunyikan di HP, tampil di Laptop/Tablet) -->
-            <article
-              class="reveal-on-scroll stagger-3 project-card hidden overflow-hidden rounded-lg border border-white/10 bg-panel md:block"
-            >
-              <a
-                href="https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="block h-full"
-              >
-                <div
-                  class="flex h-52 items-center justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-indigo-950"
-                >
-                  <i class="fa-solid fa-gamepad text-6xl text-cyanGlow/80"></i>
-                </div>
-                <div class="p-6">
-                  <h3 class="text-xl font-bold text-white">AR Game</h3>
-                  <p
-                    class="mt-3 leading-7 text-slate-400"
-                    data-i18n="proj.ar.desc"
-                  >
-                    Game AR dengan tema pancasila
-                  </p>
-                  <div class="mt-5 flex flex-wrap gap-2">
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >Unity</span
-                    >
-                    <span
-                      class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                      >3D Modeling</span
-                    >
-                  </div>
-                  <span
-                    class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow"
-                  >
-                    <span data-i18n="portfolio.btn_open">Buka proyek</span>
-                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                  </span>
-                </div>
-              </a>
-            </article>
-          </div>
-
-          <div class="reveal-on-scroll stagger-4 mt-12 text-center">
-            <a
-              href="portofolio.html"
-              class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
-            >
-              <span data-i18n="portfolio.btn_view_all">Lihat Semua</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="sertifikat" class="px-5 py-24 lg:px-8">
-        <div class="mx-auto max-w-7xl">
-          <div class="reveal-on-scroll mb-12 max-w-3xl text-center lg:text-left">
-            <p
-              class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
-              data-i18n="cert.tag"
-            >
-              Sertifikat & Pencapaian
-            </p>
-            <h2
-              class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl"
-              data-i18n="cert.heading"
-            >
-              Kredensial profesional, pelatihan industri, dan penghargaan
-              kompetisi.
-            </h2>
-          </div>
-
-          <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-            <!-- 1. Data Science (Tampil di HP & Laptop) -->
-            <article
-              class="reveal-on-scroll stagger-1 certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
-            >
-              <div>
-                <div class="mb-5 flex items-center justify-between">
-                  <div
-                    class="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-400/10 text-2xl text-cyanGlow"
-                  >
-                    <i class="fa-solid fa-chart-line"></i>
-                  </div>
-                  <span
-                    class="rounded-full bg-cyan-400/10 px-3 py-1 text-xs font-semibold text-cyanGlow"
-                    data-i18n="cert.badge.data"
-                    >Data & AI</span
-                  >
-                </div>
-                <h3
-                  class="text-lg font-bold text-white"
-                  data-i18n="cert.ds.title"
-                >
-                  Data Science
-                </h3>
-                <p
-                  class="mt-2 text-sm leading-6 text-slate-400"
-                  data-i18n="cert.ds.desc"
-                >
-                  Sertifikasi kompetensi analisis data, statistik terapan, dan
-                  pemodelan data sains.
-                </p>
-              </div>
-              <a
-                href="https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
-              >
-                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
-            </article>
-
-            <!-- 2. Green Jobs Training (Tampil di HP & Laptop) -->
-            <article
-              class="reveal-on-scroll stagger-2 certificate-card flex flex-col justify-between rounded-lg border border-white/10 bg-panel p-6"
-            >
-              <div>
-                <div class="mb-5 flex items-center justify-between">
-                  <div
-                    class="flex h-12 w-12 items-center justify-center rounded-md bg-emerald-400/10 text-2xl text-emerald-400"
-                  >
-                    <i class="fa-solid fa-seedling"></i>
-                  </div>
-                  <span
-                    class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-400"
-                    data-i18n="cert.badge.training"
-                    >Training</span
-                  >
-                </div>
-                <h3
-                  class="text-lg font-bold text-white"
-                  data-i18n="cert.green.title"
-                >
-                  Green Jobs Training
-                </h3>
-                <p
-                  class="mt-2 text-sm leading-6 text-slate-400"
-                  data-i18n="cert.green.desc"
-                >
-                  Pelatihan keahlian berkelanjutan untuk implementasi solusi
-                  ramah lingkungan.
-                </p>
-              </div>
-              <a
-                href="https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
-              >
-                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
-            </article>
-
-            <!-- 3. Digital Forensic Juara 3 (Disembunyikan di HP, tampil di Laptop) -->
-            <article
-              class="reveal-on-scroll stagger-3 certificate-card hidden flex-col justify-between rounded-lg border border-white/10 bg-panel p-6 md:flex"
-            >
-              <div>
-                <div class="mb-5 flex items-center justify-between">
-                  <div
-                    class="flex h-12 w-12 items-center justify-center rounded-md bg-yellow-400/10 text-2xl text-yellow-400"
-                  >
-                    <i class="fa-solid fa-trophy"></i>
-                  </div>
-                  <span
-                    class="rounded-full bg-yellow-400/10 px-3 py-1 text-xs font-semibold text-yellow-400"
-                    data-i18n="cert.badge.3rd"
-                    >Juara 3</span
-                  >
-                </div>
-                <h3
-                  class="text-lg font-bold text-white"
-                  data-i18n="cert.forensic.title"
-                >
-                  Digital Forensic Juara 3
-                </h3>
-                <p
-                  class="mt-2 text-sm leading-6 text-slate-400"
-                  data-i18n="cert.forensic.desc"
-                >
-                  Penghargaan Juara 3 kompetisi investigasi forensik digital dan
-                  analisis keamanan siber.
-                </p>
-              </div>
-              <a
-                href="https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="mt-6 inline-flex items-center gap-2 text-sm font-bold text-cyanGlow hover:text-blueGlow"
-              >
-                <span data-i18n="cert.btn_view">Lihat Sertifikat</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-              </a>
-            </article>
-          </div>
-
-          <div class="reveal-on-scroll stagger-4 mt-12 text-center">
-            <a
-              href="sertifikat.html"
-              class="inline-flex items-center justify-center gap-2 rounded-md bg-cyanGlow px-8 py-3.5 font-bold text-slate-950 shadow-neon transition hover:-translate-y-1 hover:bg-blueGlow"
-            >
-              <span data-i18n="cert.btn_view_all">Lihat Semua</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section id="kontak" class="px-5 py-24 lg:px-8">
-        <div class="reveal-on-scroll mx-auto max-w-4xl text-center">
-          <p
-            class="mb-3 text-sm font-bold uppercase tracking-[0.24em] text-cyanGlow"
-            data-i18n="contact.tag"
-          >
-            Kontak
-          </p>
-          <h2
-            class="text-3xl font-extrabold tracking-tight text-white sm:text-5xl"
-            data-i18n="contact.heading"
-          >
-            Tertarik untuk berkolaborasi? Mari terhubung.
-          </h2>
-
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-            <a
-              href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="reveal-on-scroll stagger-1 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
-            >
-              <i class="fa-brands fa-linkedin text-xl"></i>
-              LinkedIn
-            </a>
-            <a
-              href="https://github.com/Gerr-DS"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="reveal-on-scroll stagger-2 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
-            >
-              <i class="fa-brands fa-github text-xl"></i>
-              GitHub
-            </a>
-            <a
-              href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerrydimasarya15%40gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="reveal-on-scroll stagger-3 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
-            >
-              <i class="fa-solid fa-envelope text-xl"></i>
-              Email
-            </a>
-            <a
-              href="https://wa.me/6281918575580"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="reveal-on-scroll stagger-4 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow"
-            >
-              <i class="fa-brands fa-whatsapp text-xl"></i>
-              WhatsApp
-            </a>
-            <a
-              href="https://www.instagram.com/_grydz?igsh=M2lueXAybzBzYjUy"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="reveal-on-scroll stagger-5 inline-flex items-center justify-center gap-3 rounded-md border border-white/10 bg-white/5 px-5 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyanGlow hover:text-cyanGlow sm:col-span-2 sm:mx-auto sm:w-1/2 lg:col-span-1 lg:mx-0 lg:w-auto"
-            >
-              <i class="fa-brands fa-instagram text-xl"></i>
-              Instagram
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer
-      class="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-500"
-    >
-      <p data-i18n="footer.copy">
-        &copy; 2026 Gerry Dimasarya. Seluruh hak cipta dilindungi.
-      </p>
-    </footer>
-
-    <!-- Floating Back to Top Button -->
-    <button
-      id="scrollTopBtn"
-      type="button"
-      aria-label="Kembali ke atas"
-      class="fixed bottom-6 right-6 z-40 flex h-11 w-11 items-center justify-center rounded-full border border-cyanGlow/50 bg-slate-900/90 text-cyanGlow shadow-neon backdrop-blur-md opacity-0 pointer-events-none translate-y-4 transition-all duration-300 hover:bg-cyanGlow hover:text-slate-950 hover:scale-110 active:scale-95"
-    >
-      <i class="fa-solid fa-arrow-up text-sm"></i>
-    </button>
-
-    <script>
-      const menuButton = document.getElementById("menuButton");
-      const mobileMenu = document.getElementById("mobileMenu");
-      const mobileLinks = document.querySelectorAll(".mobile-link");
-
-      // Mobile Menu Toggle
-      if (menuButton && mobileMenu) {
-        menuButton.addEventListener("click", () => {
-          mobileMenu.classList.toggle("hidden");
-          const icon = menuButton.querySelector("i");
-          if (icon) {
-            icon.classList.toggle("fa-bars");
-            icon.classList.toggle("fa-xmark");
-          }
-        });
-
-        mobileLinks.forEach((link) => {
-          link.addEventListener("click", () => {
-            mobileMenu.classList.add("hidden");
-            const icon = menuButton.querySelector("i");
-            if (icon) {
-              icon.classList.add("fa-bars");
-              icon.classList.remove("fa-xmark");
-            }
-          });
-        });
-      }
-
-      // Lightweight Scroll Reveal & Exit for sections below hero
-      if ("IntersectionObserver" in window) {
-        const scrollObserver = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("is-visible");
-              } else {
-                entry.target.classList.remove("is-visible");
-              }
-            });
-          },
-          {
-            threshold: 0.08,
-            rootMargin: "0px 0px -30px 0px",
-          },
-        );
-
-        document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
-          scrollObserver.observe(el);
-        });
-      } else {
-        document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
-          el.classList.add("is-visible");
-        });
-      }
-
-      // Throttled Scroll Listener (Lightweight with requestAnimationFrame)
-      const scrollDownIndicator = document.getElementById("scrollDownIndicator");
-      const scrollTopBtn = document.getElementById("scrollTopBtn");
-      const scrollProgressBar = document.getElementById("scrollProgressBar");
-
-      let isTicking = false;
-      window.addEventListener(
-        "scroll",
-        () => {
-          if (!isTicking) {
-            window.requestAnimationFrame(() => {
-              const scrollY = window.scrollY;
-
-              // Progress Bar
-              if (scrollProgressBar) {
-                const docHeight =
-                  document.documentElement.scrollHeight - window.innerHeight;
-                const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
-                scrollProgressBar.style.width = `${progress}%`;
-              }
-
-              // Scroll Down Indicator Fade
-              if (scrollDownIndicator) {
-                if (scrollY > 70) {
-                  scrollDownIndicator.classList.add(
-                    "opacity-0",
-                    "pointer-events-none",
-                    "translate-y-2",
-                  );
-                } else {
-                  scrollDownIndicator.classList.remove(
-                    "opacity-0",
-                    "pointer-events-none",
-                    "translate-y-2",
-                  );
-                }
-              }
-
-              // Back to Top Button
-              if (scrollTopBtn) {
-                if (scrollY > 300) {
-                  scrollTopBtn.classList.remove(
-                    "opacity-0",
-                    "pointer-events-none",
-                    "translate-y-4",
-                  );
-                  scrollTopBtn.classList.add("opacity-100", "translate-y-0");
-                } else {
-                  scrollTopBtn.classList.add(
-                    "opacity-0",
-                    "pointer-events-none",
-                    "translate-y-4",
-                  );
-                  scrollTopBtn.classList.remove("opacity-100", "translate-y-0");
-                }
-              }
-
-              isTicking = false;
-            });
-            isTicking = true;
-          }
-        },
-        { passive: true },
-      );
-
-      if (scrollTopBtn) {
-        scrollTopBtn.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-    </script>
-  </body>
+  <script src="script.js"></script>
+</body>
 </html>
