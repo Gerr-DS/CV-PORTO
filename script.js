@@ -385,28 +385,51 @@ grid.innerHTML = `
 const wheel = grid.querySelector("[data-project-wheel]");
 const rotor = grid.querySelector("[data-wheel-rotor]");
 const gondolas = [...grid.querySelectorAll("[data-gondola]")];
+const slot = 360 / PROJECTS.length;
+
 let activeProject = 0;
+let currentAngle = 0;
+let targetAngle = 0;
+let isSpinningToTarget = false;
+let spinStartTime = 0;
+let spinStartAngle = 0;
+const SPIN_DURATION = 950;
+const AUTO_SPIN_SPEED = 9.0;
+const IDLE_DELAY = 2800;
+
+let isHovered = false;
+let isDragging = false;
 let dragStart = null;
 let suppressThumbClickUntil = 0;
+let lastInteractionTime = Date.now();
+let lastFrameTime = performance.now();
+let currentVelocity = 0;
 
-function showProject(index, announce = false) {
+function easeOutQuart(x) {
+  return 1 - Math.pow(1 - x, 4);
+}
+
+function renderWheelPositions(sway = 0) {
+  rotor.style.transform = `rotate(${currentAngle}deg)`;
+  gondolas.forEach((gondola, i) => {
+    const angle_i = currentAngle + i * slot;
+    const button = gondola.querySelector("button");
+    gondola.style.transform = `translate(-50%, -50%) rotate(${angle_i}deg) translateY(calc(0px - var(--wheel-orbit)))`;
+    button.style.transform = `rotate(${-angle_i + sway}deg) scale(${i === activeProject ? 1.08 : 0.92})`;
+  });
+}
+
+function updateProjectDetails(index, announce = false) {
   activeProject = (index + PROJECTS.length) % PROJECTS.length;
   const project = PROJECTS[activeProject];
-  const slot = 360 / PROJECTS.length;
-  const rotation = -activeProject * slot;
-  rotor.style.transform = `rotate(${rotation}deg)`;
   const projectTitle = tText(project.title);
 
   gondolas.forEach((gondola, i) => {
-    const p = PROJECTS[i];
-    const pTitle = tText(p.title);
-    const angle = (i - activeProject) * slot;
+    const isActive = i === activeProject;
+    gondola.classList.toggle("is-active", isActive);
     const button = gondola.querySelector("button");
-    gondola.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(calc(0px - var(--wheel-orbit)))`;
-    button.style.transform = `rotate(${-angle}deg) scale(${i === activeProject ? 1.08 : 0.92})`;
-    button.setAttribute("aria-pressed", String(i === activeProject));
-    button.setAttribute("aria-label", `${t("wheel.view_item")} ${pTitle}, ${i + 1} ${t("wheel.of")} ${PROJECTS.length}`);
-    gondola.classList.toggle("is-active", i === activeProject);
+    button.setAttribute("aria-pressed", String(isActive));
+    button.setAttribute("aria-label", `${t("wheel.view_item")} ${tText(PROJECTS[i].title)}, ${i + 1} ${t("wheel.of")} ${PROJECTS.length}`);
   });
 
   const wheelMeta = grid.querySelector("[data-project-wheel-meta]");
@@ -417,8 +440,10 @@ function showProject(index, announce = false) {
 
   grid.querySelector("[data-wheel-count]").textContent = `${String(activeProject + 1).padStart(2, "0")} / ${String(PROJECTS.length).padStart(2, "0")}`;
   const detailImage = grid.querySelector("[data-project-image]");
-  detailImage.src = project.cover;
-  detailImage.alt = tText(project.alt);
+  if (detailImage.getAttribute("src") !== project.cover) {
+    detailImage.src = project.cover;
+    detailImage.alt = tText(project.alt);
+  }
   grid.querySelector("[data-project-tag]").textContent = tText(project.tag);
   grid.querySelector("[data-project-number]").textContent = `PROJECT ${String(activeProject + 1).padStart(2, "0")}`;
   grid.querySelector("[data-project-title]").textContent = projectTitle;
@@ -434,33 +459,148 @@ function showProject(index, announce = false) {
   link.href = project.link;
   link.innerHTML = `${escapeHTML(t("wheel.view_project"))} <span aria-hidden="true">↗</span>`;
 
-  if (announce) grid.querySelector("[data-project-status]").textContent = `${projectTitle}, ${activeProject + 1} ${t("wheel.of")} ${PROJECTS.length}`;
+  if (announce) {
+    grid.querySelector("[data-project-status]").textContent = `${projectTitle}, ${activeProject + 1} ${t("wheel.of")} ${PROJECTS.length}`;
+  }
 }
+
+function showProject(index, announce = false, direction = 0) {
+  const targetIdx = (index + PROJECTS.length) % PROJECTS.length;
+  lastInteractionTime = Date.now();
+
+  const baseTarget = -targetIdx * slot;
+  let diff = ((baseTarget - currentAngle) % 360 + 540) % 360 - 180;
+
+  if (direction > 0 && diff > -5) {
+    diff -= 360;
+  } else if (direction < 0 && diff < 5) {
+    diff += 360;
+  }
+
+  spinStartAngle = currentAngle;
+  targetAngle = currentAngle + diff;
+  spinStartTime = performance.now();
+  isSpinningToTarget = true;
+
+  updateProjectDetails(targetIdx, announce);
+}
+
+function animateWheel(now) {
+  const dt = Math.min((now - lastFrameTime) / 1000, 0.1);
+  lastFrameTime = now;
+  const prevAngle = currentAngle;
+
+  if (isSpinningToTarget) {
+    const elapsed = now - spinStartTime;
+    const progress = Math.min(elapsed / SPIN_DURATION, 1);
+    const ease = easeOutQuart(progress);
+    currentAngle = spinStartAngle + (targetAngle - spinStartAngle) * ease;
+    currentVelocity = (currentAngle - prevAngle) / (dt || 0.016);
+
+    if (progress >= 1) {
+      currentAngle = targetAngle;
+      isSpinningToTarget = false;
+      currentVelocity = 0;
+      lastInteractionTime = Date.now();
+    }
+  } else if (!isDragging && !isHovered && !reduced && (Date.now() - lastInteractionTime > IDLE_DELAY)) {
+    currentAngle -= AUTO_SPIN_SPEED * dt;
+    currentVelocity = -AUTO_SPIN_SPEED;
+
+    let closestIdx = 0;
+    let minDiff = Infinity;
+    for (let i = 0; i < PROJECTS.length; i++) {
+      const gAngle = ((currentAngle + i * slot) % 360 + 540) % 360 - 180;
+      if (Math.abs(gAngle) < minDiff) {
+        minDiff = Math.abs(gAngle);
+        closestIdx = i;
+      }
+    }
+    if (closestIdx !== activeProject && minDiff < 12) {
+      updateProjectDetails(closestIdx, false);
+    }
+  } else {
+    currentVelocity = 0;
+  }
+
+  const sway = Math.max(-5.5, Math.min(5.5, currentVelocity * 0.035));
+  renderWheelPositions(sway);
+
+  requestAnimationFrame(animateWheel);
+}
+requestAnimationFrame(animateWheel);
 
 gondolas.forEach((gondola, i) => gondola.querySelector("button").addEventListener("click", () => {
   if (Date.now() < suppressThumbClickUntil) return;
   showProject(i, true);
 }));
-grid.querySelector("[data-project-previous]").addEventListener("click", () => showProject(activeProject - 1, true));
-grid.querySelector("[data-project-next]").addEventListener("click", () => showProject(activeProject + 1, true));
+
+grid.querySelector("[data-project-previous]").addEventListener("click", () => showProject(activeProject - 1, true, -1));
+grid.querySelector("[data-project-next]").addEventListener("click", () => showProject(activeProject + 1, true, 1));
+
 wheel.addEventListener("keydown", (event) => {
-  if (event.key === "ArrowLeft" || event.key === "ArrowUp") { event.preventDefault(); showProject(activeProject - 1, true); }
-  if (event.key === "ArrowRight" || event.key === "ArrowDown") { event.preventDefault(); showProject(activeProject + 1, true); }
+  if (event.key === "ArrowLeft" || event.key === "ArrowUp") { event.preventDefault(); showProject(activeProject - 1, true, -1); }
+  if (event.key === "ArrowRight" || event.key === "ArrowDown") { event.preventDefault(); showProject(activeProject + 1, true, 1); }
 });
+
+wheel.addEventListener("mouseenter", () => { isHovered = true; });
+wheel.addEventListener("mouseleave", () => { isHovered = false; lastInteractionTime = Date.now(); });
+
+const detailContainer = grid.querySelector(".project-detail");
+if (detailContainer) {
+  detailContainer.addEventListener("mouseenter", () => { isHovered = true; });
+  detailContainer.addEventListener("mouseleave", () => { isHovered = false; lastInteractionTime = Date.now(); });
+}
+
 wheel.addEventListener("pointerdown", (event) => {
-  if (event.isPrimary) dragStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
-});
-wheel.addEventListener("pointerup", (event) => {
-  if (!dragStart || event.pointerId !== dragStart.id) return;
-  const delta = event.clientX - dragStart.x;
-  dragStart = null;
-  if (Math.abs(delta) > 36) {
-    suppressThumbClickUntil = Date.now() + 350;
-    showProject(activeProject + (delta < 0 ? 1 : -1), true);
+  if (event.isPrimary) {
+    dragStart = { id: event.pointerId, x: event.clientX, y: event.clientY, angle: currentAngle };
+    isDragging = true;
+    isSpinningToTarget = false;
+    lastInteractionTime = Date.now();
   }
 });
-wheel.addEventListener("pointercancel", () => { dragStart = null; });
-showProject(0);
+
+wheel.addEventListener("pointermove", (event) => {
+  if (!isDragging || !dragStart || event.pointerId !== dragStart.id) return;
+  const deltaX = event.clientX - dragStart.x;
+  currentAngle = dragStart.angle + deltaX * 0.28;
+  renderWheelPositions();
+});
+
+wheel.addEventListener("pointerup", (event) => {
+  if (!dragStart || event.pointerId !== dragStart.id) return;
+  const deltaX = event.clientX - dragStart.x;
+  dragStart = null;
+  isDragging = false;
+  lastInteractionTime = Date.now();
+
+  if (Math.abs(deltaX) > 28) {
+    suppressThumbClickUntil = Date.now() + 350;
+    showProject(activeProject + (deltaX < 0 ? 1 : -1), true, deltaX < 0 ? 1 : -1);
+  } else {
+    // Snap ke proyek terdekat setelah drag kecil
+    let closestIdx = 0;
+    let minDiff = Infinity;
+    for (let i = 0; i < PROJECTS.length; i++) {
+      const gAngle = ((currentAngle + i * slot) % 360 + 540) % 360 - 180;
+      if (Math.abs(gAngle) < minDiff) {
+        minDiff = Math.abs(gAngle);
+        closestIdx = i;
+      }
+    }
+    showProject(closestIdx, false);
+  }
+});
+
+wheel.addEventListener("pointercancel", () => {
+  dragStart = null;
+  isDragging = false;
+  lastInteractionTime = Date.now();
+});
+
+updateProjectDetails(0);
+renderWheelPositions();
 
 // ---------- Galeri Certificate: bingkai cetak pada rel (Dwibahasa) ----------
 const CERTIFICATES = [
@@ -1156,7 +1296,9 @@ function setLanguage(lang) {
   });
 
   // Update dynamic components
-  if (typeof showProject === "function") {
+  if (typeof updateProjectDetails === "function") {
+    updateProjectDetails(activeProject, false);
+  } else if (typeof showProject === "function") {
     showProject(activeProject, false);
   }
   if (typeof updateCertificateTexts === "function") {
