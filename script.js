@@ -349,17 +349,78 @@ if ("connection" in navigator && navigator.connection && navigator.connection.ad
 
 const grid = document.getElementById("projectsGrid");
 const escapeHTML = (value) => String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "\"": "&quot;", "'": "&#39;" })[char]);
-const wheelLights = Array.from({ length: 28 }, (_, i) => {
-  const angle = (i / 28) * Math.PI * 2;
-  return `<i class="project-wheel-light" aria-hidden="true" style="left:${50 + Math.cos(angle) * 38}%;top:${50 + Math.sin(angle) * 38}%"></i>`;
+
+// Palet warna lampu & kabin pasar malam (Carnival colors)
+const CARNIVAL_COLORS = [
+  "#00f5d4", // 01: Cyan neon
+  "#38bdf8", // 02: Sky blue
+  "#4ade80", // 03: Emerald neon
+  "#fbbf24", // 04: Golden amber
+  "#f43f5e", // 05: Hot pink / magenta
+  "#ef4444", // 06: Crimson flame
+  "#c084fc"  // 07: Electric violet
+];
+
+const BULB_PALETTE = ["#fbbf24", "#f43f5e", "#00f5d4", "#c084fc", "#38bdf8", "#4ade80", "#fb923c"];
+
+// 35 Lampu lingkaran luar pasar malam (Outer rim cabochon bulbs)
+const outerLights = Array.from({ length: 35 }, (_, i) => {
+  const angle = (i / 35) * Math.PI * 2;
+  const color = BULB_PALETTE[i % BULB_PALETTE.length];
+  return `<i class="project-wheel-light is-outer" aria-hidden="true" style="--light-color:${color};--light-delay:${(i % 7) * 0.14}s;left:${50 + Math.cos(angle) * 44}%;top:${50 + Math.sin(angle) * 44}%"></i>`;
 }).join("");
+
+// 21 Lampu lingkaran dalam (Inner rim neon bulbs)
+const innerLights = Array.from({ length: 21 }, (_, i) => {
+  const angle = (i / 21) * Math.PI * 2;
+  const color = BULB_PALETTE[(i + 3) % BULB_PALETTE.length];
+  return `<i class="project-wheel-light is-inner" aria-hidden="true" style="--light-color:${color};--light-delay:${(i % 5) * 0.18}s;left:${50 + Math.cos(angle) * 29}%;top:${50 + Math.sin(angle) * 29}%"></i>`;
+}).join("");
+
+// 14 Jeruji dengan lampu radial pasar malam
+const spokes = Array.from({ length: 14 }, (_, i) => {
+  const angle = (i / 14) * 360;
+  const color = BULB_PALETTE[i % BULB_PALETTE.length];
+  return `<span class="project-wheel-spoke" style="transform:rotate(${angle}deg);--spoke-color:${color}"><b class="spoke-bulb b1"></b><b class="spoke-bulb b2"></b></span>`;
+}).join("");
+
+// 12 Lampu cincin di sekeliling poros tengah (Hub lights ring)
+const hubLights = Array.from({ length: 12 }, (_, i) => {
+  const color = BULB_PALETTE[i % BULB_PALETTE.length];
+  return `<i style="--hub-c:${color};transform:rotate(${i * 30}deg) translateY(-32px)"></i>`;
+}).join("");
+
+// Gondola warna-warni pasar malam dengan atap kanopi & badge menyala
+const gondolasHTML = PROJECTS.map((p, i) => {
+  const color = CARNIVAL_COLORS[i % CARNIVAL_COLORS.length];
+  return `
+    <div class="project-gondola" data-gondola="${i}" style="--gondola-color:${color}">
+      <button class="project-thumb" type="button" data-project-index="${i}" aria-label="${escapeHTML(t("wheel.view_item"))} ${escapeHTML(tText(p.title))}, ${i + 1} ${escapeHTML(t("wheel.of"))} ${PROJECTS.length}" aria-pressed="false">
+        <span class="gondola-roof" aria-hidden="true"><i class="gondola-bulb"></i></span>
+        <div class="gondola-frame">
+          <img src="${escapeHTML(p.cover)}" alt="" draggable="false">
+        </div>
+        <span class="gondola-badge">✦ ${String(i + 1).padStart(2, "0")} ✦</span>
+      </button>
+    </div>`;
+}).join("");
+
 grid.innerHTML = `
   <div class="project-wheel-column">
     <div class="project-wheel-meta"><span data-project-wheel-meta>${escapeHTML(t("wheel.meta"))}</span><span data-wheel-count>01 / ${String(PROJECTS.length).padStart(2, "0")}</span></div>
     <div class="project-wheel" data-project-wheel role="group" tabindex="0" aria-label="${escapeHTML(t("wheel.aria"))}">
-      <div class="project-wheel-rotor" data-wheel-rotor aria-hidden="true"><span class="project-wheel-inner"></span><span class="project-wheel-spokes"><i></i><i></i><i></i><i></i></span>${wheelLights}</div>
-      <div class="project-wheel-items">${PROJECTS.map((p, i) => `<div class="project-gondola" data-gondola="${i}"><button class="project-thumb" type="button" data-project-index="${i}" aria-label="${escapeHTML(t("wheel.view_item"))} ${escapeHTML(tText(p.title))}, ${i + 1} ${escapeHTML(t("wheel.of"))} ${PROJECTS.length}" aria-pressed="false"><img src="${escapeHTML(p.cover)}" alt="" draggable="false"><span>${String(i + 1).padStart(2, "0")}</span></button></div>`).join("")}</div>
-      <div class="project-wheel-hub" aria-hidden="true"><strong>${String(PROJECTS.length).padStart(2, "0")}</strong><span>PROJECTS</span></div>
+      <div class="project-wheel-rotor" data-wheel-rotor aria-hidden="true">
+        <span class="project-wheel-inner"></span>
+        <span class="project-wheel-spokes">${spokes}</span>
+        ${outerLights}
+        ${innerLights}
+      </div>
+      <div class="project-wheel-items">${gondolasHTML}</div>
+      <div class="project-wheel-hub" aria-hidden="true">
+        <div class="hub-lights-ring">${hubLights}</div>
+        <strong>${String(PROJECTS.length).padStart(2, "0")}</strong>
+        <span>PROJECTS</span>
+      </div>
       <div class="project-wheel-stand" aria-hidden="true"></div>
     </div>
     <p class="project-wheel-hint" data-project-wheel-hint>${escapeHTML(t("wheel.hint"))}</p>
