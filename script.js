@@ -1324,6 +1324,121 @@ observeReveal(document);
   });
 })();
 
+// ---------- Efek Dinamis Saat Scroll (Progress Bar, Parallax, Putaran Bianglala, Nav Spy, Back to Top) ----------
+(function () {
+  const progressBar = document.getElementById("scrollProgressBar");
+  const backToTopBtn = document.getElementById("backToTopBtn");
+  const backToTopProgress = document.getElementById("backToTopProgress");
+  const heroSec = document.getElementById("top");
+  const heroContours = heroSec ? heroSec.querySelector(".contours") : null;
+  const heroStage = heroSec ? heroSec.querySelector(".hero-stage") : null;
+  const skySec = document.querySelector(".projects-sky");
+  const sunRays = skySec ? skySec.querySelector(".sun-rays") : null;
+  const cloud1 = skySec ? skySec.querySelector(".sky-cloud-1") : null;
+  const cloud2 = skySec ? skySec.querySelector(".sky-cloud-2") : null;
+  const cloud3 = skySec ? skySec.querySelector(".sky-cloud-3") : null;
+  const birds = skySec ? skySec.querySelector(".sky-birds") : null;
+
+  const navLinks = [...document.querySelectorAll(".nav-links a, .nav-cta")];
+  const sectionIds = ["about", "skills", "projects", "certificate", "contact"];
+  const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+
+  let lastY = window.scrollY;
+  let ticking = false;
+
+  function updateScrollEffects() {
+    const y = window.scrollY;
+    const deltaY = y - lastY;
+    lastY = y;
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const scrollRatio = Math.min(Math.max(y / maxScroll, 0), 1);
+
+    // 1. Progress Bar di paling atas layar
+    if (progressBar) {
+      progressBar.style.width = (scrollRatio * 100).toFixed(2) + "%";
+    }
+
+    // 2. Putaran Bianglala Dinamis saat di-scroll (hanya saat Proyek dekat layar)
+    if (grid && !isDragging && !isSpinningToTarget) {
+      const gRect = grid.getBoundingClientRect();
+      if (gRect.top < window.innerHeight + 150 && gRect.bottom > -150) {
+        currentAngle -= deltaY * 0.22;
+        renderWheelPositions();
+        lastInteractionTime = Date.now();
+      }
+    }
+
+    // 3. Parallax Dekorasi Langit (Matahari, Awan, Burung)
+    if (skySec) {
+      const sRect = skySec.getBoundingClientRect();
+      if (sRect.top < window.innerHeight && sRect.bottom > 0) {
+        const p = (window.innerHeight - sRect.top) / (window.innerHeight + sRect.height);
+        if (sunRays) sunRays.style.transform = `rotate(${p * 110}deg)`;
+        if (cloud1) cloud1.style.transform = `translateX(${p * 48 - 24}px)`;
+        if (cloud2) cloud2.style.transform = `translateX(${-(p * 56 - 28)}px)`;
+        if (cloud3) cloud3.style.transform = `translateX(${p * 36 - 18}px)`;
+        if (birds) birds.style.transform = `translate(${-(p * 70 - 35)}px, ${p * 18 - 9}px)`;
+      }
+    }
+
+    // 4. Parallax Halus pada Hero
+    if (y < window.innerHeight * 1.1) {
+      if (heroContours) heroContours.style.transform = `translateY(${(y * 0.16).toFixed(1)}px)`;
+      if (heroStage) heroStage.style.transform = `translateY(${(y * 0.08).toFixed(1)}px)`;
+    }
+
+    // 5. Active Nav Spy (highlight tautan navbar saat scroll)
+    const viewCenter = y + window.innerHeight * 0.35;
+    let currentActiveId = "";
+    for (let i = sections.length - 1; i >= 0; i--) {
+      const sec = sections[i];
+      if (sec.offsetTop <= viewCenter) {
+        currentActiveId = sec.id;
+        break;
+      }
+    }
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const isCur = currentActiveId && href === `#${currentActiveId}`;
+      link.classList.toggle("is-active", Boolean(isCur));
+    });
+
+    // 6. Tombol Melayang Kembali ke Atas (Back to Top)
+    if (backToTopBtn) {
+      const showBtn = y > 380;
+      backToTopBtn.classList.toggle("is-visible", showBtn);
+      if (showBtn && backToTopProgress) {
+        const circumference = 113.1; // 2 * PI * 18
+        const offset = circumference - scrollRatio * circumference;
+        backToTopProgress.style.strokeDashoffset = offset.toFixed(1);
+      }
+    }
+
+    ticking = false;
+  }
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+      }
+    },
+    { passive: true }
+  );
+
+  // Inisialisasi posisi awal saat dimuat
+  requestAnimationFrame(updateScrollEffects);
+
+  // Tombol Kembali ke Atas saat diklik
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+})();
+
 // ---------- Pengaturan Bahasa (ID / EN) ----------
 function setLanguage(lang) {
   if (!TRANSLATIONS[lang]) lang = "id";

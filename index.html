@@ -17,6 +17,9 @@
   <noscript><style>.preloader { display: none; }</style></noscript>
 </head>
 <body>
+  <!-- Indikator progress scroll di paling atas layar -->
+  <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
+
   <!-- Preloader: sapaan beberapa bahasa, lalu layar terbuka ke atas -->
   <div class="preloader" id="preloader" role="status" aria-label="Memuat">
     <div class="preloader-box">
@@ -279,6 +282,15 @@
       </footer>
     </section>
   </main>
+
+  <!-- Tombol Melayang Kembali ke Atas (Back to Top) dengan cincin progress -->
+  <button class="back-to-top" id="backToTopBtn" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg class="progress-ring" viewBox="0 0 44 44" width="44" height="44" aria-hidden="true">
+      <circle class="ring-bg" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
+      <circle class="ring-indicator" id="backToTopProgress" cx="22" cy="22" r="18" fill="none" stroke-width="2.5" />
+    </svg>
+    <span class="back-to-top-arrow" aria-hidden="true">↑</span>
+  </button>
 
   <script src="script.js"></script>
 </body>
