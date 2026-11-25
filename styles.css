@@ -21,16 +21,31 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+  width: 100%;
+}
+@supports not (overflow-x: clip) {
+  html { overflow-x: hidden; }
+}
 
 body {
   margin: 0;
+  width: 100%;
+  position: relative;
+  overflow-x: clip;
+  min-width: 300px;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--body);
   font-size: 17px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+@supports not (overflow-x: clip) {
+  body { overflow-x: hidden; }
 }
 
 a { color: inherit; text-decoration: none; }
@@ -1232,30 +1247,18 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* ---------- Responsive ---------- */
-/* Navbar yang sama untuk semua ukuran: di layar kecil tautan diperkecil. */
-@media (max-width: 600px) {
-  .nav { gap: 6px; }
-  .nav-links { gap: 1px; padding: 0 2px; }
-  .nav-links a { font-size: 11px; padding: 7px 8px; }
-  .nav-actions { gap: 4px; }
-  .lang-switch { padding: 2px 4px; }
-  .lang-btn { min-width: 24px; padding: 3px 5px; font-size: 10px; }
-  .lang-sep { font-size: 9px; }
-  .nav-cta { font-size: 11px; padding: 7px 10px; }
-}
-@media (max-width: 380px) {
-  .nav-links a { font-size: 10px; padding: 6px 6px; }
-  .lang-btn { min-width: 20px; padding: 2px 4px; font-size: 9px; }
-  .lang-sep { display: none; }
-  .nav-cta { font-size: 10px; padding: 6px 8px; }
-}
+/* ---------- Responsive Design (All Viewports & Orientations) ---------- */
+
+/* Laptop & Tablet Landscape (1100px kebawah) */
 @media (max-width: 1100px) {
   .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr); }
   .hero-panels { grid-column: 1 / -1; grid-row: 2; width: min(100%, 320px); justify-self: start; transform: translateY(6px); }
   .hero { min-height: 860px; }
   .hero-intro { transform: translate(-1.8vw, -16%); }
+  .skills-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
 }
-/* Layar sempit: susunan diubah total menjadi tumpukan vertikal. */
+
+/* Tablet Portrait & Foldable (860px kebawah): susunan vertikal terstruktur */
 @media (max-width: 860px) {
   .hero {
     display: flex;
@@ -1272,6 +1275,8 @@ img, svg { display: block; max-width: 100%; }
     padding: 0 var(--gutter);
     font-size: clamp(34px, 10.5vw, 56px);
     line-height: 0.98;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   .hero-name span { display: inline; }
   .hero-stage {
@@ -1295,7 +1300,6 @@ img, svg { display: block; max-width: 100%; }
     transform: none;
   }
   .hero-portrait .layer { background-size: cover; background-position: center 18%; }
-  /* Petunjuk tampil di layar sentuh; teksnya diganti lewat JS. */
   .hero-hint { display: block; position: static; transform: none; margin: 10px auto 0; }
   .hero-panels {
     order: 3;
@@ -1307,8 +1311,6 @@ img, svg { display: block; max-width: 100%; }
     grid-template-columns: repeat(2, 1fr);
   }
   .hero-panels .panel { padding: 14px 16px; }
-  /* Baris info ditumpuk vertikal, satu kolom penuh: ikon rata kiri dan teks
-     tidak lagi terpotong/patah oleh kolom sempit. */
   .hero-meta {
     order: 4;
     width: 100%;
@@ -1329,35 +1331,105 @@ img, svg { display: block; max-width: 100%; }
     bottom: auto;
     width: auto;
     margin: 0;
-    padding: 28px var(--gutter) 0;
+    padding: 24px var(--gutter) 0;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: start;
     gap: 20px;
   }
   .hero-switch { justify-self: start; }
-  .about-grid, .skills-grid, .project-gallery { grid-template-columns: 1fr; }
+  .about-grid, .project-gallery { grid-template-columns: 1fr; }
 }
-/* ---------- Ukuran per perangkat ---------- */
-/* Tablet (601–860px): potret dikecilkan agar tidak memenuhi layar */
+
+/* Tablet (601–860px): potret proporsional & skills 2 kolom rapi */
 @media (max-width: 860px) and (min-width: 601px) {
   .hero-stage { max-width: min(74vw, 600px); }
+  .skills-grid { grid-template-columns: repeat(2, 1fr); }
 }
-/* HP (≤600px): panel ringkasan ditumpuk vertikal, bukan berdampingan */
+
+/* Smartphone Standar (≤600px): panel ditumpuk 1 kolom & navbar fleksibel */
 @media (max-width: 600px) {
+  .nav {
+    max-width: min(calc(100% - 16px), 440px);
+    gap: 5px;
+    padding: 4px 6px;
+  }
+  .nav-inner { min-width: 0; }
+  .nav-links {
+    gap: 1px;
+    padding: 0 2px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-links a { font-size: 11px; padding: 6px 8px; }
+  .nav-actions { gap: 4px; }
+  .lang-switch { padding: 2px 4px; gap: 2px; }
+  .lang-btn { min-width: 22px; padding: 3px 5px; font-size: 10px; }
+  .lang-sep { font-size: 9px; }
+  .nav-cta { font-size: 11px; padding: 6px 10px; }
+
   .hero-stage { max-width: min(86vw, 720px); }
   .hero-panels { grid-template-columns: 1fr; }
   .hero-panels .panel.stats { grid-column: auto; }
+  .skills-grid { grid-template-columns: 1fr; }
   .stats dd { font-size: 28px; }
   .hero-name { font-size: clamp(30px, 9.4vw, 44px); }
 }
 
+/* Layar Ringkas (≤520px) */
 @media (max-width: 520px) {
-  body { font-size: 16px; }
-  .sec-head { flex-wrap: wrap; }
+  body { font-size: 15.5px; }
+  .sec-head { flex-wrap: wrap; gap: 10px; }
   .sec-meta { text-align: left; padding-bottom: 0; }
-  .sec-title { font-size: clamp(44px, 12vw, 64px); }
-  .foot { flex-direction: column; }
+  .sec-title { font-size: clamp(36px, 11vw, 56px); }
+  .foot { flex-direction: column; gap: 8px; }
+  .contact-links .contact-link {
+    min-height: 64px;
+    padding: 12px 14px;
+    gap: 12px;
+    font-size: 14px;
+  }
+  .contact-icon { width: 40px; height: 40px; padding: 8px; border-radius: 10px; }
+  .contact-platform { font-size: 14px; }
+  .contact-value { font-size: 12px; }
+}
+
+/* Smartphone Layar Kecil (≤380px, mis. iPhone SE, Galaxy Fold cover, layar sempit) */
+@media (max-width: 380px) {
+  :root { --gutter: 14px; }
+  .nav {
+    max-width: calc(100% - 10px);
+    gap: 3px;
+    padding: 3px 4px;
+  }
+  .nav-links a { font-size: 9.5px; padding: 5px 5px; }
+  .lang-btn { min-width: 19px; padding: 2px 3px; font-size: 8.5px; }
+  .lang-sep { display: none; }
+  .nav-cta { font-size: 9.5px; padding: 5px 7px; }
+  .hero-name { font-size: clamp(26px, 8.5vw, 32px); }
+  .sec-title { font-size: clamp(30px, 9.5vw, 38px); }
+  .hero-panels .panel { padding: 11px 13px; }
+  .stats dd { font-size: 24px; }
+  .hero-cta { padding: 10px 12px; font-size: 11.5px; }
+  .project-wheel { width: min(100%, 290px); --wheel-orbit: clamp(68px, 22vw, 86px); }
+  .project-gondola { width: clamp(54px, 17vw, 66px); }
+  .project-open-link { padding: 8px 10px; font-size: 10px; }
+  .certificate-frames { min-width: 760px; }
+  .back-to-top { bottom: 14px; right: 14px; width: 38px; height: 38px; }
+  .back-to-top svg { width: 38px; height: 38px; }
+}
+
+/* Orientasi Lanskap HP (layar pendek vertikal) */
+@media (max-height: 540px) and (orientation: landscape) {
+  .hero {
+    min-height: 480px;
+    height: auto;
+    padding: 66px 0 20px;
+  }
+  .nav { top: 6px; padding: 3px 6px; }
+  .hero-portrait { aspect-ratio: 16 / 9; max-height: 220px; }
 }
 
 /* ---------- Preloader ---------- */
