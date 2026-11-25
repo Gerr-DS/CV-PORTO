@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="id" class="is-preload">
+<html lang="en" class="is-preload">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gerry Dimasarya — Portfolio</title>
-  <meta name="description" content="Portfolio dummy untuk Gerry Dimasarya. Dibuat sebagai contoh belajar." />
+  <meta name="description" content="Portfolio of Gerry Dimasarya. Software Engineering student at IPB University." />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="shortcut icon" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,7 @@
     href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,500..800&family=Onest:wght@400;500&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="styles.css?v=2.5" />
+  <link rel="stylesheet" href="styles.css?v=2.6" />
   <noscript><style>.preloader { display: none; }</style></noscript>
 </head>
 <body>
@@ -21,7 +21,7 @@
   <div class="scroll-progress-bar" id="scrollProgressBar" aria-hidden="true"></div>
 
   <!-- Preloader: sapaan beberapa bahasa, lalu layar terbuka ke atas -->
-  <div class="preloader" id="preloader" role="status" aria-label="Memuat">
+  <div class="preloader" id="preloader" role="status" aria-label="Loading">
     <div class="preloader-box">
       <span class="preloader-dot" aria-hidden="true"></span>
       <span class="preloader-word" id="preloaderWord">Hello</span>
@@ -34,27 +34,27 @@
       <span class="bouncer-shadow"></span>
       <span class="bouncer-square"></span>
     </div>
-    <p class="data-loading-text" id="dataLoadingText">Memuat…</p>
+    <p class="data-loading-text" id="dataLoadingText">Loading…</p>
   </div>
 
-  <a class="skip" href="#main-content" data-i18n="skip">Lewati ke konten</a>
+  <a class="skip" href="#main-content" data-i18n="skip">Skip to content</a>
 
   <header class="nav" id="navbar">
     <div class="nav-inner">
       <nav class="nav-links" aria-label="Primary">
-        <a href="#about" data-i18n="nav.about">Tentang</a>
-        <a href="#skills" data-i18n="nav.skills">Keahlian</a>
-        <a href="#projects" data-i18n="nav.projects">Proyek</a>
-        <a href="#certificate" data-i18n="nav.certificate">Sertifikat</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#certificate" data-i18n="nav.certificate">Certificate</a>
       </nav>
     </div>
     <div class="nav-actions">
-      <div class="lang-switch" id="langSwitch" role="group" aria-label="Pengaturan bahasa / Language selector">
-        <button type="button" class="lang-btn is-active" data-lang="id" aria-label="Bahasa Indonesia" aria-pressed="true">ID</button>
+      <div class="lang-switch" id="langSwitch" role="group" aria-label="Language selector / Pengaturan bahasa">
+        <button type="button" class="lang-btn" data-lang="id" aria-label="Bahasa Indonesia" aria-pressed="false">ID</button>
         <span class="lang-sep" aria-hidden="true">/</span>
-        <button type="button" class="lang-btn" data-lang="en" aria-label="English" aria-pressed="false">EN</button>
+        <button type="button" class="lang-btn is-active" data-lang="en" aria-label="English" aria-pressed="true">EN</button>
       </div>
-      <a class="nav-cta" href="#contact"><span data-i18n="nav.contact">Kontak</span> <span aria-hidden="true">↗</span></a>
+      <a class="nav-cta" href="#contact"><span data-i18n="nav.contact">Contact</span> <span aria-hidden="true">↗</span></a>
     </div>
     <!-- Ikon menu yang tampil saat bar disusutkan -->
     <span class="nav-menu-icon" aria-hidden="true">
@@ -79,36 +79,36 @@
           <h1 class="hero-name" data-reveal style="--i: 0;"><span>Gerry</span> <span>Dimasarya</span></h1>
           <ul class="hero-meta" data-reveal style="--i: 1;">
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="hero.location">Bogor, Indonesia</span></li>
-            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4l9.5 5L12 14 2.5 9Z"/><path d="M6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11"/></svg><span data-i18n="hero.major">Teknologi Rekayasa Perangkat Lunak, IPB University</span></li>
+            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4l9.5 5L12 14 2.5 9Z"/><path d="M6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11"/></svg><span data-i18n="hero.major">Software Engineering Technology, IPB University</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5 12 4l8.5 8.5"/><path d="M6 11v9h12v-9"/><path d="M10 20v-5h4v5"/></svg><span data-i18n="hero.field">Data, Web &amp; Cyber</span></li>
           </ul>
         </div>
 
         <div class="hero-stage" data-reveal style="--i: 1;">
           <div class="hero-portrait" id="heroPortrait">
-            <div class="layer layer-photo" role="img" aria-label="Potret dummy Gerry Dimasarya" data-i18n-attr="aria-label:hero.portrait_alt"></div>
+            <div class="layer layer-photo" role="img" aria-label="Portrait of Gerry Dimasarya" data-i18n-attr="aria-label:hero.portrait_alt"></div>
             <div class="layer layer-aura" aria-hidden="true"></div>
             <canvas id="portraitCanvas"></canvas>
           </div>
-          <p class="hero-hint" id="heroHint" data-i18n="hero.hint_mouse">Gerakkan kursor di atas potret</p>
+          <p class="hero-hint" id="heroHint" data-i18n="hero.hint_mouse">Move cursor over portrait</p>
         </div>
 
-        <aside class="hero-panels" data-reveal style="--i: 2;" aria-label="Ringkasan" data-i18n-attr="aria-label:hero.panels_aria">
+        <aside class="hero-panels" data-reveal style="--i: 2;" aria-label="Summary" data-i18n-attr="aria-label:hero.panels_aria">
           <div class="panel">
-            <p class="panel-label" data-i18n="hero.currently">Saat ini</p>
-            <p class="panel-value" data-i18n="hero.student">Mahasiswa</p>
+            <p class="panel-label" data-i18n="hero.currently">Currently</p>
+            <p class="panel-value" data-i18n="hero.student">Student</p>
             <p class="panel-sub">IPB University</p>
           </div>
           <div class="hero-panel-group">
             <div class="panel stats">
-              <p class="panel-label" data-i18n="hero.at_glance">Sekilas</p>
+              <p class="panel-label" data-i18n="hero.at_glance">At a glance</p>
               <dl>
-                <div><dt data-i18n="hero.stat_projects">Proyek</dt><dd>7</dd></div>
-                <div><dt data-i18n="hero.stat_skills">Keahlian</dt><dd>3</dd></div>
-                <div><dt data-i18n="hero.stat_cert">Sertifikat</dt><dd>7</dd></div>
+                <div><dt data-i18n="hero.stat_projects">Projects</dt><dd>7</dd></div>
+                <div><dt data-i18n="hero.stat_skills">Skills</dt><dd>3</dd></div>
+                <div><dt data-i18n="hero.stat_cert">Certificate</dt><dd>7</dd></div>
               </dl>
             </div>
-            <a class="hero-cta" id="heroCvLink" href="https://drive.google.com/file/d/1Zn5VZEZ1mlzLSJ4uscJslg3bxF_FZVQk/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span data-i18n="hero.view_cv">Lihat CV</span> <span aria-hidden="true">↗</span></a>
+            <a class="hero-cta" id="heroCvLink" href="https://drive.google.com/file/d/1tJTwiZFh4bpLMKk-rZNEKOCXDLAj1Wkn/view?usp=sharing" target="_blank" rel="noopener noreferrer"><span data-i18n="hero.view_cv">View CV</span> <span aria-hidden="true">↗</span></a>
           </div>
         </aside>
       </div>
@@ -117,8 +117,8 @@
         <button class="hero-switch" id="switchBtn" type="button" aria-pressed="false">
           <span class="switch-icon" aria-hidden="true">↻</span>
           <span class="switch-text">
-            <span id="switchTitle" data-i18n="hero.switch_aura">Tampilkan aura</span>
-            <small data-i18n="hero.switch_sub">Ganti potret</small>
+            <span id="switchTitle" data-i18n="hero.switch_aura">Show aura</span>
+            <small data-i18n="hero.switch_sub">Switch portrait</small>
           </span>
         </button>
       </div>
@@ -294,6 +294,6 @@
     <span class="back-to-top-arrow" aria-hidden="true">↑</span>
   </button>
 
-  <script src="script.js?v=2.5"></script>
+  <script src="script.js?v=2.6"></script>
 </body>
 </html>

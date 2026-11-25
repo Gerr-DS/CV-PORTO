@@ -188,13 +188,13 @@ const TRANSLATIONS = {
   }
 };
 
-let currentLang = localStorage.getItem("portfolio_lang") || "id";
+let currentLang = localStorage.getItem("portfolio_user_lang") || "en";
 function t(key) {
-  return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || (TRANSLATIONS.id && TRANSLATIONS.id[key]) || key;
+  return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || (TRANSLATIONS.en && TRANSLATIONS.en[key]) || (TRANSLATIONS.id && TRANSLATIONS.id[key]) || key;
 }
 function tText(val) {
   if (!val) return "";
-  if (typeof val === "object") return val[currentLang] || val.id || Object.values(val)[0] || "";
+  if (typeof val === "object") return val[currentLang] || val.en || val.id || Object.values(val)[0] || "";
   return String(val);
 }
 
@@ -1475,9 +1475,9 @@ observeReveal(document);
 
 // ---------- Pengaturan Bahasa (ID / EN) ----------
 function setLanguage(lang) {
-  if (!TRANSLATIONS[lang]) lang = "id";
+  if (!TRANSLATIONS[lang]) lang = "en";
   currentLang = lang;
-  localStorage.setItem("portfolio_lang", lang);
+  localStorage.setItem("portfolio_user_lang", lang);
   document.documentElement.lang = lang;
 
   // Update text content for elements with data-i18n
