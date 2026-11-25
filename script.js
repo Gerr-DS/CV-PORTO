@@ -1537,6 +1537,10 @@ observeReveal(document);
   const cloud3 = skySec ? skySec.querySelector(".sky-cloud-3") : null;
   const birds = skySec ? skySec.querySelector(".sky-birds") : null;
 
+  const certSec = document.getElementById("certificate");
+  const certStage = certSec ? certSec.querySelector(".certificate-stage") : null;
+  let quakeTimeout = null;
+
   const navLinks = [...document.querySelectorAll(".nav-links a, .nav-cta")];
   const sectionIds = ["about", "skills", "projects", "certificate", "contact"];
   const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
@@ -1585,7 +1589,19 @@ observeReveal(document);
       if (heroStage) heroStage.style.transform = `translateY(${(y * 0.08).toFixed(1)}px)`;
     }
 
-    // 5. Active Nav Spy (highlight tautan navbar saat scroll)
+    // 5. Efek Gempa pada Bingkai Sertifikat saat di-scroll
+    if (certStage && !document.querySelector(".certificate-gallery.has-selection")) {
+      const cRect = certSec.getBoundingClientRect();
+      if (cRect.top < window.innerHeight + 120 && cRect.bottom > -120 && Math.abs(deltaY) > 0.4) {
+        certStage.classList.add("is-quake");
+        clearTimeout(quakeTimeout);
+        quakeTimeout = setTimeout(() => {
+          certStage.classList.remove("is-quake");
+        }, 260);
+      }
+    }
+
+    // 6. Active Nav Spy (highlight tautan navbar saat scroll)
     const viewCenter = y + window.innerHeight * 0.35;
     let currentActiveId = "";
     for (let i = sections.length - 1; i >= 0; i--) {
@@ -1601,7 +1617,7 @@ observeReveal(document);
       link.classList.toggle("is-active", Boolean(isCur));
     });
 
-    // 6. Tombol Melayang Kembali ke Atas (Back to Top)
+    // 7. Tombol Melayang Kembali ke Atas (Back to Top)
     if (backToTopBtn) {
       const showBtn = y > 380;
       backToTopBtn.classList.toggle("is-visible", showBtn);
@@ -1625,6 +1641,23 @@ observeReveal(document);
     },
     { passive: true }
   );
+
+  // Goyangan gempa juga aktif saat pengguna menggeser galeri sertifikat secara horizontal
+  if (certStage) {
+    certStage.addEventListener(
+      "scroll",
+      () => {
+        if (!document.querySelector(".certificate-gallery.has-selection")) {
+          certStage.classList.add("is-quake");
+          clearTimeout(quakeTimeout);
+          quakeTimeout = setTimeout(() => {
+            certStage.classList.remove("is-quake");
+          }, 260);
+        }
+      },
+      { passive: true }
+    );
+  }
 
   // Inisialisasi posisi awal saat dimuat
   requestAnimationFrame(updateScrollEffects);
