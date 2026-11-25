@@ -1,13 +1,207 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740">
-  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#122846"/><stop offset="1" stop-color="#159c9d"/></linearGradient><linearGradient id="hero" x2="1" y2="1"><stop stop-color="#c6f1e6"/><stop offset="1" stop-color="#8dd9ca"/></linearGradient><filter id="s" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#071c30" flood-opacity=".32"/></filter></defs>
-  <rect width="1200" height="740" fill="url(#bg)"/><circle cx="1110" cy="88" r="200" fill="#bff55a" fill-opacity=".18"/><circle cx="76" cy="680" r="210" fill="#66d5ca" fill-opacity=".15"/>
-  <g filter="url(#s)"><rect x="330" y="45" width="540" height="650" rx="52" fill="#10243a"/><rect x="344" y="59" width="512" height="622" rx="40" fill="#f7fbfa"/><rect x="344" y="59" width="512" height="35" rx="40" fill="#e8f0ee"/><rect x="344" y="77" width="512" height="17" fill="#e8f0ee"/><circle cx="376" cy="77" r="4" fill="#f08a78"/><circle cx="392" cy="77" r="4" fill="#f4c85d"/><circle cx="408" cy="77" r="4" fill="#54c6a0"/><rect x="524" y="72" width="150" height="10" rx="5" fill="#cbd9d6"/>
-  <circle cx="393" cy="123" r="16" fill="#0a7c7e"/><path d="M385 123h16m-8-8v16" stroke="#fff" stroke-width="3" stroke-linecap="round"/><text x="419" y="129" font-family="Arial,sans-serif" font-size="17" font-weight="700" fill="#142d3d">IPB Kehilangan</text><circle cx="807" cy="123" r="17" fill="#e6f0ed"/><path d="M800 123h14m-7-7v14" stroke="#48716e" stroke-width="2.5" stroke-linecap="round"/>
-  <text x="374" y="181" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#173644">Temukan yang hilang.</text><text x="374" y="207" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#087f7c">Bantu yang mencari.</text><text x="374" y="230" font-family="Arial,sans-serif" font-size="12" fill="#637b7c">Komunitas kampus saling menjaga barang berharga.</text>
-  <rect x="374" y="252" width="432" height="43" rx="14" fill="#fff" stroke="#dbe8e4"/><circle cx="396" cy="273" r="7" fill="none" stroke="#789393" stroke-width="2"/><path d="m401 278 5 5" stroke="#789393" stroke-width="2"/><text x="417" y="277" font-family="Arial,sans-serif" font-size="12" fill="#94a6a5">Cari barang atau lokasi...</text><rect x="374" y="310" width="432" height="188" rx="18" fill="url(#hero)"/>
-  <path d="M374 397 438 357l56 28 62-54 58 32 68-41 66 37 58-24v163H374Z" fill="#8acdb6"/><path d="M398 470c45-48 57-42 92-85s54-12 83-42 52 6 88-31 72-8 115-37" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-dasharray="2 15"/><path d="M398 470c45-48 57-42 92-85s54-12 83-42 52 6 88-31 72-8 115-37" fill="none" stroke="#159a89" stroke-width="3" stroke-linecap="round"/><g fill="#fff" stroke="#087f7c" stroke-width="3"><circle cx="490" cy="385" r="8"/><circle cx="573" cy="343" r="8"/><circle cx="661" cy="314" r="8"/><circle cx="776" cy="277" r="8"/></g><rect x="393" y="325" width="130" height="26" rx="13" fill="#fff" fill-opacity=".91"/><text x="408" y="342" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#286266">PETA KAMPUS IPB</text>
-  <text x="374" y="529" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#193a46">Baru ditemukan</text><text x="806" y="529" text-anchor="end" font-family="Arial,sans-serif" font-size="10" fill="#13827e">Lihat semua →</text>
-  <rect x="374" y="544" width="207" height="76" rx="14" fill="#fff" stroke="#e2ece8"/><rect x="386" y="556" width="52" height="52" rx="11" fill="#ffd76e"/><path d="M401 573h22v20h-22zM405 570h14" fill="none" stroke="#885e20" stroke-width="2"/><text x="449" y="574" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#253e48">Dompet hitam</text><text x="449" y="591" font-family="Arial,sans-serif" font-size="9" fill="#78908f">Perpustakaan · 12 menit lalu</text><rect x="449" y="599" width="69" height="13" rx="6" fill="#e6f5f0"/><text x="458" y="608" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#178879">DITEMUKAN</text>
-  <rect x="595" y="544" width="211" height="76" rx="14" fill="#fff" stroke="#e2ece8"/><rect x="607" y="556" width="52" height="52" rx="11" fill="#d6e5ff"/><rect x="623" y="568" width="23" height="29" rx="4" fill="#5785cf"/><circle cx="634.5" cy="592" r="1.5" fill="#fff"/><text x="670" y="574" font-family="Arial,sans-serif" font-size="11" font-weight="700" fill="#253e48">Kalkulator</text><text x="670" y="591" font-family="Arial,sans-serif" font-size="9" fill="#78908f">GKU 1 · 35 menit lalu</text><rect x="670" y="599" width="74" height="13" rx="6" fill="#fff3dc"/><text x="679" y="608" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#b57c20">DICARI</text>
-  <path d="M344 639h512" stroke="#e6eeeb"/><text x="401" y="663" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#14857f">⌂  Beranda</text><text x="518" y="663" font-family="Arial,sans-serif" font-size="10" fill="#8da09d">⌕  Jelajahi</text><text x="632" y="663" font-family="Arial,sans-serif" font-size="10" fill="#8da09d">＋  Laporkan</text><text x="758" y="663" font-family="Arial,sans-serif" font-size="10" fill="#8da09d">◉  Profil</text></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" width="1200" height="740">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#051329" flood-opacity="0.35"/>
+    </filter>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#0f2647" flood-opacity="0.08"/>
+    </filter>
+    <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d3b66" />
+      <stop offset="100%" stop-color="#001e3d" />
+    </linearGradient>
+    <linearGradient id="primary-btn" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="alert-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef3c7" />
+      <stop offset="100%" stop-color="#fffbeb" />
+    </linearGradient>
+  </defs>
+
+  <!-- Browser Window Chrome Background -->
+  <rect width="1200" height="740" rx="16" fill="#0b1727" />
+
+  <!-- Window Header / Title Bar -->
+  <path d="M 0,16 Q 0,0 16,0 L 1184,0 Q 1200,0 1200,16 L 1200,42 L 0,42 Z" fill="#1e293b" />
+  <circle cx="24" cy="21" r="6" fill="#ef4444" />
+  <circle cx="44" cy="21" r="6" fill="#f59e0b" />
+  <circle cx="64" cy="21" r="6" fill="#10b981" />
+
+  <!-- Browser URL Tab & Address Bar -->
+  <path d="M 96,8 L 290,8 Q 296,8 300,14 L 312,42 L 84,42 L 92,14 Q 94,8 96,8 Z" fill="#0f172a" />
+  <circle cx="106" cy="24" r="5" fill="#3b82f6" />
+  <text x="120" y="27" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600">IPB Kehilangan | Portal Kampus</text>
+
+  <!-- Address bar -->
+  <rect x="330" y="9" width="560" height="25" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+  <text x="345" y="26" fill="#10b981" font-family="monospace" font-size="11">🔒</text>
+  <text x="365" y="26" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">https://kehilangan.apps.ipb.ac.id<tspan fill="#38bdf8">/beranda</tspan></text>
+
+  <!-- Window controls right -->
+  <circle cx="1120" cy="21" r="8" fill="#334155" />
+  <circle cx="1150" cy="21" r="11" fill="#2563eb" />
+  <text x="1146" y="25" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">G</text>
+
+  <!-- Web Content Viewport Area -->
+  <rect x="0" y="42" width="1200" height="698" fill="#f8fafc" />
+
+  <!-- Web App Navbar (IPB Blue Theme) -->
+  <rect x="0" y="42" width="1200" height="64" fill="url(#header-grad)" />
+  <!-- IPB Logo emblem placeholder -->
+  <circle cx="60" cy="74" r="18" fill="#1d4ed8" stroke="#60a5fa" stroke-width="2"/>
+  <path d="M 50,78 L 60,63 L 70,78 Z" fill="#facc15" />
+  <circle cx="60" cy="74" r="5" fill="#1e3a8a" />
+  <text x="90" y="72" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="17" font-weight="800" letter-spacing="0.5">IPB KEHILANGAN</text>
+  <text x="90" y="87" fill="#93c5fd" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="500">Layanan Informasi Temuan &amp; Kehilangan Barang Kampus</text>
+
+  <!-- Navbar Nav items -->
+  <rect x="440" y="58" width="80" height="32" rx="6" fill="#1e40af" />
+  <text x="458" y="79" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="600">Beranda</text>
+  <text x="548" y="79" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="500">Daftar Barang</text>
+  <text x="668" y="79" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="500">Klaim Temuan</text>
+  <text x="788" y="79" fill="#cbd5e1" font-family="sans-serif" font-size="13" font-weight="500">Statistik</text>
+
+  <!-- CTA Lapor Kehilangan -->
+  <rect x="990" y="56" width="170" height="36" rx="8" fill="#ef4444" />
+  <text x="1010" y="79" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">+ Lapor Kehilangan</text>
+
+  <!-- Hero / Search Section Banner -->
+  <rect x="40" y="126" width="1120" height="136" rx="12" fill="#e0f2fe" stroke="#bae6fd" stroke-width="1.5" />
+  <text x="70" y="162" fill="#0369a1" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="800">Cari Barang Hilang atau Laporkan Barang Temuan Anda</text>
+  <text x="70" y="184" fill="#0284c7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13">Terhubung dengan sivitas akademika IPB Dramaga, Baranangsiang, dan Kampus Sukabumi.</text>
+
+  <!-- Search Input Bar with Filter -->
+  <g transform="translate(70, 198)">
+    <rect width="640" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)" />
+    <text x="20" y="28" fill="#64748b" font-family="sans-serif" font-size="13">🔍  Cari nama barang (KTM, Kunci Motor, Tumbler, Flashdisk...)</text>
+    
+    <!-- Lokasi Dropdown -->
+    <rect x="720" y="0" width="220" height="46" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" filter="url(#card-shadow)" />
+    <text x="740" y="28" fill="#334155" font-family="sans-serif" font-size="13">📍 Seluruh Kampus IPB</text>
+    <text x="915" y="28" fill="#94a3b8" font-family="sans-serif" font-size="11">▼</text>
+
+    <!-- Search Button -->
+    <rect x="955" y="0" width="135" height="46" rx="8" fill="url(#primary-btn)" />
+    <text x="1000" y="28" fill="#ffffff" font-family="sans-serif" font-size="14" font-weight="700">Cari</text>
+  </g>
+
+  <!-- Filter Category Badges -->
+  <g transform="translate(40, 276)">
+    <rect x="0" y="0" width="130" height="32" rx="16" fill="#1e3a8a" />
+    <text x="24" y="21" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Semua (184)</text>
+
+    <rect x="140" y="0" width="150" height="32" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <text x="160" y="21" fill="#475569" font-family="sans-serif" font-size="12" font-weight="600">Ditemukan (112)</text>
+
+    <rect x="300" y="0" width="140" height="32" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <text x="320" y="21" fill="#475569" font-family="sans-serif" font-size="12" font-weight="600">Kehilangan (72)</text>
+
+    <rect x="450" y="0" width="130" height="32" rx="16" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <text x="470" y="21" fill="#475569" font-family="sans-serif" font-size="12" font-weight="600">Terselesaikan</text>
+
+    <text x="1000" y="21" fill="#64748b" font-family="sans-serif" font-size="12">Menampilkan <tspan fill="#0f172a" font-weight="700">1 - 4</tspan> dari 184 laporan</text>
+  </g>
+
+  <!-- Items Feed Grid (4 Realistic Cards) -->
+
+  <!-- Card 1: KTM IPB -->
+  <g transform="translate(40, 324)">
+    <rect width="265" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)" />
+    <!-- Image placeholder area with realistic graphic -->
+    <rect x="0" y="0" width="265" height="150" rx="10" fill="#1e293b" />
+    <path d="M 0,10 Q 0,0 10,0 L 255,0 Q 265,0 265,10 L 265,150 L 0,150 Z" fill="#0f172a" />
+    <!-- ID Card Realistic illustration inside -->
+    <rect x="42" y="25" width="180" height="105" rx="6" fill="#1e40af" stroke="#60a5fa" stroke-width="1.5"/>
+    <rect x="52" y="38" width="35" height="42" rx="3" fill="#cbd5e1" />
+    <rect x="95" y="42" width="110" height="6" rx="2" fill="#ffffff" />
+    <rect x="95" y="54" width="85" height="5" rx="2" fill="#93c5fd" />
+    <rect x="95" y="65" width="70" height="5" rx="2" fill="#93c5fd" />
+    <rect x="52" y="90" width="153" height="4" rx="2" fill="#facc15" />
+    <!-- Badge Status -->
+    <rect x="15" y="15" width="92" height="22" rx="4" fill="#059669" />
+    <text x="24" y="30" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="800">DITEMUKAN</text>
+
+    <!-- Card Content -->
+    <text x="16" y="176" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">KTM IPB a.n Gerry</text>
+    <text x="16" y="196" fill="#64748b" font-family="sans-serif" font-size="11">📍 Koridor FEMA, Dramaga</text>
+    <text x="16" y="214" fill="#64748b" font-family="sans-serif" font-size="11">🕒 24 Nov 2024 • 14:20 WIB</text>
+
+    <text x="16" y="240" fill="#475569" font-family="sans-serif" font-size="11">Ditemukan dompet kartu berisi KTM Departemen Ilmu Komputer &amp; Flazz BCA.</text>
+
+    <line x1="16" y1="326" x2="249" y2="326" stroke="#f1f5f9" stroke-width="1" />
+    <rect x="16" y="338" width="233" height="30" rx="6" fill="#2563eb" />
+    <text x="96" y="358" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Klaim Barang</text>
+  </g>
+
+  <!-- Card 2: Kunci Motor Honda -->
+  <g transform="translate(325, 324)">
+    <rect width="265" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)" />
+    <path d="M 0,10 Q 0,0 10,0 L 255,0 Q 265,0 265,10 L 265,150 L 0,150 Z" fill="#334155" />
+    <!-- Key graphic -->
+    <circle cx="120" cy="70" r="22" fill="#475569" stroke="#94a3b8" stroke-width="2"/>
+    <circle cx="120" cy="70" r="10" fill="#1e293b" />
+    <rect x="135" y="65" width="45" height="10" rx="2" fill="#94a3b8" />
+    <rect x="160" y="75" width="8" height="8" rx="1" fill="#94a3b8" />
+    <rect x="172" y="75" width="8" height="6" rx="1" fill="#94a3b8" />
+    <rect x="75" y="78" width="35" height="16" rx="3" fill="#dc2626" />
+    <text x="80" y="90" fill="#ffffff" font-family="sans-serif" font-size="8" font-weight="bold">HONDA</text>
+    <!-- Badge -->
+    <rect x="15" y="15" width="92" height="22" rx="4" fill="#059669" />
+    <text x="24" y="30" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="800">DITEMUKAN</text>
+
+    <text x="16" y="176" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Kunci Motor Vario + Remote</text>
+    <text x="16" y="196" fill="#64748b" font-family="sans-serif" font-size="11">📍 Parkiran Perpustakaan Pusat</text>
+    <text x="16" y="214" fill="#64748b" font-family="sans-serif" font-size="11">🕒 25 Nov 2024 • 09:15 WIB</text>
+    <text x="16" y="240" fill="#475569" font-family="sans-serif" font-size="11">Gantungan tali warna merah hitam. Diserahkan ke pos satpam gerbang perpustakaan.</text>
+
+    <line x1="16" y1="326" x2="249" y2="326" stroke="#f1f5f9" stroke-width="1" />
+    <rect x="16" y="338" width="233" height="30" rx="6" fill="#2563eb" />
+    <text x="96" y="358" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Klaim Barang</text>
+  </g>
+
+  <!-- Card 3: Laptop Asus ROG (Hilang / DICARI) -->
+  <g transform="translate(610, 324)">
+    <rect width="265" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)" />
+    <path d="M 0,10 Q 0,0 10,0 L 255,0 Q 265,0 265,10 L 265,150 L 0,150 Z" fill="#18181b" />
+    <!-- Laptop graphic -->
+    <rect x="65" y="40" width="135" height="80" rx="5" fill="#27272a" stroke="#ef4444" stroke-width="1"/>
+    <text x="110" y="85" fill="#ef4444" font-family="sans-serif" font-size="16" font-weight="900">ROG</text>
+    <polygon points="50,122 215,122 225,128 40,128" fill="#3f3f46" />
+    <!-- Badge DICARI -->
+    <rect x="15" y="15" width="75" height="22" rx="4" fill="#dc2626" />
+    <text x="25" y="30" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="800">DICARI</text>
+
+    <text x="16" y="176" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Tas Laptop ASUS Hitam</text>
+    <text x="16" y="196" fill="#64748b" font-family="sans-serif" font-size="11">📍 Ruang Lab Komputer FMIPA</text>
+    <text x="16" y="214" fill="#64748b" font-family="sans-serif" font-size="11">🕒 23 Nov 2024 • 17:30 WIB</text>
+    <text x="16" y="240" fill="#475569" font-family="sans-serif" font-size="11">Tertinggal di meja baris 3 lab komputer. Ada stiker Github dan Docker di bodi cover.</text>
+
+    <line x1="16" y1="326" x2="249" y2="326" stroke="#f1f5f9" stroke-width="1" />
+    <rect x="16" y="338" width="233" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5" />
+    <text x="82" y="358" fill="#0f172a" font-family="sans-serif" font-size="12" font-weight="700">Kontak Pelapor</text>
+  </g>
+
+  <!-- Card 4: Tumbler Corkcicle -->
+  <g transform="translate(895, 324)">
+    <rect width="265" height="380" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#card-shadow)" />
+    <path d="M 0,10 Q 0,0 10,0 L 255,0 Q 265,0 265,10 L 265,150 L 0,150 Z" fill="#042f2e" />
+    <!-- Tumbler illustration -->
+    <rect x="115" y="35" width="35" height="90" rx="8" fill="#0d9488" stroke="#5eead4" stroke-width="1.5"/>
+    <rect x="122" y="26" width="21" height="10" rx="2" fill="#ccfbf1" />
+    <line x1="115" y1="58" x2="150" y2="58" stroke="#134e4a" stroke-width="2" />
+    <!-- Badge -->
+    <rect x="15" y="15" width="92" height="22" rx="4" fill="#059669" />
+    <text x="24" y="30" fill="#ffffff" font-family="sans-serif" font-size="10" font-weight="800">DITEMUKAN</text>
+
+    <text x="16" y="176" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="700">Tumbler Corkcicle Sage</text>
+    <text x="16" y="196" fill="#64748b" font-family="sans-serif" font-size="11">📍 Gazebo Rektorat IPB</text>
+    <text x="16" y="214" fill="#64748b" font-family="sans-serif" font-size="11">🕒 25 Nov 2024 • 11:00 WIB</text>
+    <text x="16" y="240" fill="#475569" font-family="sans-serif" font-size="11">Warna sage green 16oz dengan goresan kecil di bagian bawah penutup tumbler.</text>
+
+    <line x1="16" y1="326" x2="249" y2="326" stroke="#f1f5f9" stroke-width="1" />
+    <rect x="16" y="338" width="233" height="30" rx="6" fill="#2563eb" />
+    <text x="96" y="358" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Klaim Barang</text>
+  </g>
 </svg>

@@ -1,1 +1,234 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#182b43"/><stop offset="1" stop-color="#477382"/></linearGradient><linearGradient id="hero" x2="1" y2="1"><stop stop-color="#e7a34e"/><stop offset="1" stop-color="#d74f39"/></linearGradient><filter id="s" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="20" stdDeviation="24" flood-color="#111c2b" flood-opacity=".36"/></filter></defs><rect width="1200" height="740" fill="url(#bg)"/><circle cx="1100" cy="78" r="190" fill="#f6bd68" fill-opacity=".17"/><g filter="url(#s)"><rect x="70" y="86" width="1060" height="568" rx="20" fill="#fff"/><rect x="70" y="86" width="1060" height="42" rx="20" fill="#e8edf0"/><rect x="70" y="108" width="1060" height="20" fill="#e8edf0"/><circle cx="96" cy="107" r="5" fill="#ec8073"/><circle cx="114" cy="107" r="5" fill="#eebd5b"/><circle cx="132" cy="107" r="5" fill="#55bd91"/><rect x="425" y="98" width="350" height="16" rx="8" fill="#cfd9df"/><rect x="70" y="128" width="1060" height="65" fill="#101d2d"/><circle cx="115" cy="160" r="17" fill="#e8753d"/><path d="M104 165h22l-4-11h-14zM109 151h11" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><text x="145" y="156" font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="#fff">VALENTINO</text><text x="145" y="173" font-family="Arial,sans-serif" font-size="8" font-weight="700" letter-spacing="2" fill="#e9a965">MOTOR</text><text x="625" y="166" font-family="Arial,sans-serif" font-size="10" fill="#dce3e7">Beranda</text><text x="692" y="166" font-family="Arial,sans-serif" font-size="10" fill="#aebdc7">Layanan</text><text x="754" y="166" font-family="Arial,sans-serif" font-size="10" fill="#aebdc7">Produk</text><text x="817" y="166" font-family="Arial,sans-serif" font-size="10" fill="#aebdc7">Tentang</text><rect x="923" y="144" width="175" height="33" rx="16" fill="#e8753d"/><text x="1010" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff">Booking servis  ↗</text><rect x="70" y="193" width="1060" height="461" fill="#f3f5f5"/><rect x="70" y="193" width="1060" height="346" fill="url(#hero)"/><path d="M70 455 227 348l131 59 151-139 143 94 149-108 144 92 134-60 91 42v211H70Z" fill="#bb512f" fill-opacity=".66"/><path d="M70 481 235 403l144 48 134-98 150 78 143-99 164 83 159-66v190H70Z" fill="#192c3d"/><text x="126" y="267" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#fff1d8">BENGKEL VALENTINO MOTOR</text><text x="126" y="310" font-family="Arial,sans-serif" font-size="32" font-weight="900" fill="#fff">Performa motor,</text><text x="126" y="348" font-family="Arial,sans-serif" font-size="32" font-weight="900" fill="#fff">prioritas kami.</text><text x="126" y="378" font-family="Arial,sans-serif" font-size="11" fill="#fff4e9">Servis terpercaya untuk perjalanan yang lebih nyaman.</text><rect x="126" y="400" width="153" height="37" rx="18" fill="#fff"/><text x="203" y="423" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#a8472e">Lihat layanan →</text><g transform="translate(650 275)"><circle cx="190" cy="145" r="75" fill="none" stroke="#162534" stroke-width="12"/><circle cx="190" cy="145" r="12" fill="#e8b15e"/><path d="m190 145 47-57 61 10 43 61h-54l-47-14-50 0-29 38h-38l39-47m78-48h40l41 26" fill="none" stroke="#f6c26b" stroke-width="13" stroke-linecap="round" stroke-linejoin="round"/><circle cx="238" cy="88" r="8" fill="#e86e44"/><path d="m230 87-22-30m22 30 23 11" stroke="#e86e44" stroke-width="10" stroke-linecap="round"/></g><rect x="70" y="539" width="1060" height="115" fill="#fff"/><text x="126" y="575" font-family="Arial,sans-serif" font-size="13" font-weight="800" fill="#253b4c">Layanan bengkel</text><g><rect x="126" y="591" width="213" height="45" rx="10" fill="#f7f4ef"/><circle cx="151" cy="613" r="13" fill="#f6e4d5"/><path d="m145 613 5 5 8-10" fill="none" stroke="#d56b42" stroke-width="2.5"/><text x="175" y="617" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#364957">Servis berkala</text><rect x="355" y="591" width="213" height="45" rx="10" fill="#f7f4ef"/><circle cx="380" cy="613" r="13" fill="#f6e4d5"/><path d="m374 613 5 5 8-10" fill="none" stroke="#d56b42" stroke-width="2.5"/><text x="404" y="617" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#364957">Suku cadang</text><rect x="584" y="591" width="213" height="45" rx="10" fill="#f7f4ef"/><circle cx="609" cy="613" r="13" fill="#f6e4d5"/><path d="m603 613 5 5 8-10" fill="none" stroke="#d56b42" stroke-width="2.5"/><text x="633" y="617" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#364957">Konsultasi teknisi</text></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" width="1200" height="740">
+  <defs>
+    <filter id="shadow-vm" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.1"/>
+    </filter>
+    <linearGradient id="hero-vm" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181b" />
+      <stop offset="50%" stop-color="#27272a" />
+      <stop offset="100%" stop-color="#09090b" />
+    </linearGradient>
+    <linearGradient id="red-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#dc2626" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Browser Window Frame -->
+  <rect width="1200" height="740" rx="14" fill="#0f172a" />
+
+  <!-- Window Header / Title Bar -->
+  <path d="M 0,14 Q 0,0 14,0 L 1186,0 Q 1200,0 1200,14 L 1200,40 L 0,40 Z" fill="#1e293b" />
+  <circle cx="22" cy="20" r="5.5" fill="#ef4444" />
+  <circle cx="40" cy="20" r="5.5" fill="#f59e0b" />
+  <circle cx="58" cy="20" r="5.5" fill="#10b981" />
+
+  <!-- Tab -->
+  <path d="M 85,8 L 315,8 Q 320,8 324,14 L 334,40 L 76,40 L 83,14 Q 85,8 85,8 Z" fill="#0f172a" />
+  <circle cx="98" cy="24" r="5" fill="#dc2626" />
+  <text x="114" y="27" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="600">Valentino Motor Bogor | Bengkel Resmi</text>
+
+  <!-- URL Bar -->
+  <rect x="350" y="8" width="580" height="24" rx="6" fill="#0b1320" stroke="#334155" stroke-width="1" />
+  <text x="365" y="24" fill="#10b981" font-family="monospace" font-size="11">🔒</text>
+  <text x="385" y="24" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12">https://valentinomotorbogor.asia<tspan fill="#f87171">/booking-servis</tspan></text>
+
+  <!-- Window Right -->
+  <circle cx="1140" cy="20" r="10" fill="#dc2626" />
+  <text x="1136" y="24" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">V</text>
+
+  <!-- ==================== WEB PAGE VIEWPORT ==================== -->
+  <rect x="0" y="40" width="1200" height="700" fill="#f8fafc" />
+
+  <!-- Top Info Bar -->
+  <rect x="0" y="40" width="1200" height="30" fill="#18181b" />
+  <text x="50" y="60" fill="#cbd5e1" font-family="sans-serif" font-size="11">📍 Jl. Brigjen Saptadji Hadiprawira No. 77, Cilendek Barat, Bogor Barat</text>
+  <text x="640" y="60" fill="#facc15" font-family="sans-serif" font-size="11">⏰ Buka Setiap Hari: 08.00 - 17.00 WIB</text>
+  <text x="960" y="60" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="bold">📞 Hotline: 0812-9842-xxxx</text>
+
+  <!-- Main Navbar -->
+  <rect x="0" y="70" width="1200" height="66" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" />
+  
+  <!-- Logo -->
+  <g transform="translate(50, 80)">
+    <rect width="46" height="46" rx="8" fill="url(#red-accent)" />
+    <!-- Motor / Wrench Icon -->
+    <text x="8" y="32" fill="#ffffff" font-family="sans-serif" font-size="24">🏍️</text>
+    <text x="58" y="24" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="17" font-weight="900" letter-spacing="0.5">VALENTINO <tspan fill="#dc2626">MOTOR</tspan></text>
+    <text x="58" y="39" fill="#64748b" font-family="sans-serif" font-size="10" font-weight="600" letter-spacing="1">BENGKEL INJEKSI &amp; SPAREPART BOGOR</text>
+  </g>
+
+  <!-- Nav links -->
+  <g transform="translate(560, 108)">
+    <text x="0" y="0" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="700">Beranda</text>
+    <line x1="0" y1="6" x2="52" y2="6" stroke="#dc2626" stroke-width="2" />
+    
+    <text x="85" y="0" fill="#334155" font-family="sans-serif" font-size="13" font-weight="500">Layanan Servis</text>
+    <text x="210" y="0" fill="#334155" font-family="sans-serif" font-size="13" font-weight="500">Katalog Sparepart</text>
+    <text x="350" y="0" fill="#334155" font-family="sans-serif" font-size="13" font-weight="500">Estimasi Biaya</text>
+    <text x="465" y="0" fill="#334155" font-family="sans-serif" font-size="13" font-weight="500">Lokasi Bengkel</text>
+  </g>
+
+  <!-- CTA Booking Online Button -->
+  <g transform="translate(1010, 85)">
+    <rect width="145" height="38" rx="8" fill="url(#red-accent)" />
+    <text x="18" y="24" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="12" font-weight="700">📅 Booking Servis</text>
+  </g>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <g id="hero">
+    <rect x="0" y="136" width="1200" height="270" fill="url(#hero-vm)" />
+    <!-- Chequered flag racing motif top right -->
+    <g opacity="0.08" transform="translate(900, 140)">
+      <rect x="0" y="0" width="40" height="40" fill="#ffffff" />
+      <rect x="40" y="40" width="40" height="40" fill="#ffffff" />
+      <rect x="80" y="0" width="40" height="40" fill="#ffffff" />
+      <rect x="120" y="40" width="40" height="40" fill="#ffffff" />
+      <rect x="160" y="0" width="40" height="40" fill="#ffffff" />
+      <rect x="200" y="40" width="40" height="40" fill="#ffffff" />
+      <rect x="0" y="80" width="40" height="40" fill="#ffffff" />
+      <rect x="80" y="80" width="40" height="40" fill="#ffffff" />
+      <rect x="160" y="80" width="40" height="40" fill="#ffffff" />
+    </g>
+
+    <!-- Left Content -->
+    <g transform="translate(60, 170)">
+      <!-- Rating pill -->
+      <rect width="260" height="26" rx="13" fill="#3f3f46" stroke="#52525b" stroke-width="1"/>
+      <text x="12" y="17" fill="#facc15" font-family="sans-serif" font-size="11" font-weight="bold">★ ★ ★ ★ ★  4.9 / 5.0 (520+ Review Google)</text>
+
+      <!-- Main Headline -->
+      <text x="0" y="58" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.5">Bengkel Motor Terpercaya di Bogor</text>
+      <text x="0" y="92" fill="#f87171" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="900" letter-spacing="-0.5">Servis Injeksi Modern &amp; Sparepart Asli</text>
+
+      <!-- Description -->
+      <text x="0" y="124" fill="#d4d4d8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13">Perawatan motor matic, bebek, &amp; sport. Diagnosa scanner ECU akurat, tune-up bersih,</text>
+      <text x="0" y="142" fill="#d4d4d8" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13">servis CVT halus, ganti oli original, teknisi bersertifikat, dan garansi pengerjaan.</text>
+
+      <!-- Hero Action Buttons -->
+      <g transform="translate(0, 165)">
+        <rect width="180" height="42" rx="8" fill="url(#red-accent)" />
+        <text x="22" y="26" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="700">Daftar Servis Online ➔</text>
+
+        <rect x="195" y="0" width="165" height="42" rx="8" fill="#27272a" stroke="#52525b" stroke-width="1.5"/>
+        <text x="215" y="26" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="600">Konsultasi Keluhan</text>
+      </g>
+    </g>
+
+    <!-- Right Quick Booking Widget Form -->
+    <g transform="translate(790, 155)">
+      <rect width="360" height="235" rx="12" fill="#ffffff" stroke="#e2e8f0" stroke-width="1" filter="url(#shadow-vm)"/>
+      <rect width="360" height="40" rx="12" fill="#dc2626" />
+      <path d="M 0,12 Q 0,0 12,0 L 348,0 Q 360,0 360,12 L 360,40 L 0,40 Z" fill="#dc2626" />
+      <text x="20" y="25" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="13" font-weight="800">⚡ QUICK BOOKING SERVIS TANPA ANTRI</text>
+
+      <!-- Input 1: Jenis Motor -->
+      <g transform="translate(20, 52)">
+        <text x="0" y="10" fill="#475569" font-family="sans-serif" font-size="10" font-weight="700">MERK &amp; TIPE MOTOR</text>
+        <rect x="0" y="15" width="320" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="12" y="35" fill="#0f172a" font-family="sans-serif" font-size="12">Honda Vario 160 / Yamaha NMAX</text>
+        <text x="295" y="35" fill="#94a3b8" font-family="sans-serif" font-size="10">▼</text>
+      </g>
+
+      <!-- Input 2: Paket Servis -->
+      <g transform="translate(20, 105)">
+        <text x="0" y="10" fill="#475569" font-family="sans-serif" font-size="10" font-weight="700">PILIHAN LAYANAN</text>
+        <rect x="0" y="15" width="320" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="12" y="35" fill="#0f172a" font-family="sans-serif" font-size="12">Paket Servis Lengkap + Servis CVT</text>
+        <text x="295" y="35" fill="#94a3b8" font-family="sans-serif" font-size="10">▼</text>
+      </g>
+
+      <!-- Input 3: Tanggal -->
+      <g transform="translate(20, 158)">
+        <rect width="155" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="10" y="21" fill="#475569" font-family="sans-serif" font-size="11">📅 Besok, 26 Nov</text>
+
+        <rect x="165" y="0" width="155" height="32" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+        <text x="175" y="21" fill="#475569" font-family="sans-serif" font-size="11">⏰ Pukul 09:30 WIB</text>
+      </g>
+
+      <!-- Submit button -->
+      <rect x="20" y="196" width="320" height="30" rx="6" fill="#16a34a" />
+      <text x="95" y="215" fill="#ffffff" font-family="sans-serif" font-size="11" font-weight="700">✓ Konfirmasi Jadwal Sekarang</text>
+    </g>
+  </g>
+
+  <!-- ==================== LAYANAN UTAMA SECTION ==================== -->
+  <g transform="translate(60, 425)">
+    <text x="0" y="20" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="800">Paket Layanan Servis Unggulan</text>
+    <text x="0" y="38" fill="#64748b" font-family="sans-serif" font-size="12">Diagnosa presisi menggunakan scanner injeksi komputer dan tools mekanik standar pabrikan.</text>
+
+    <!-- 4 Services Cards -->
+    <!-- Card 1: Servis Injeksi -->
+    <g transform="translate(0, 55)">
+      <rect width="255" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-vm)"/>
+      <rect width="255" height="110" rx="10" fill="#18181b" />
+      <!-- ECU Diagnostic Illustration -->
+      <rect x="75" y="20" width="105" height="65" rx="5" fill="#09090b" stroke="#dc2626" stroke-width="1.5"/>
+      <rect x="85" y="30" width="85" height="40" rx="3" fill="#1e293b" />
+      <text x="92" y="45" fill="#4ade80" font-family="monospace" font-size="9">DIAGNOSTIC: OK</text>
+      <text x="92" y="58" fill="#38bdf8" font-family="monospace" font-size="9">RPM: 1450 [IDLE]</text>
+      <circle cx="160" cy="72" r="3" fill="#dc2626" />
+
+      <text x="14" y="135" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700">Servis Injeksi &amp; Reset ECU</text>
+      <text x="14" y="152" fill="#64748b" font-family="sans-serif" font-size="11">Scanning data sensor, kalibrasi TPS, dan reset riwayat error kode DTC.</text>
+      <text x="14" y="180" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="800">Rp 45.000</text>
+      
+      <rect x="14" y="195" width="227" height="28" rx="5" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="75" y="213" fill="#dc2626" font-family="sans-serif" font-size="11" font-weight="700">Pilih Layanan</text>
+    </g>
+
+    <!-- Card 2: Servis CVT Matic -->
+    <g transform="translate(275, 55)">
+      <rect width="255" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-vm)"/>
+      <rect width="255" height="110" rx="10" fill="#27272a" />
+      <!-- CVT Belt Graphic -->
+      <circle cx="95" cy="55" r="24" fill="#3f3f46" stroke="#a1a1aa" stroke-width="2"/>
+      <circle cx="165" cy="55" r="30" fill="#3f3f46" stroke="#a1a1aa" stroke-width="2"/>
+      <path d="M 95,31 L 165,25 M 95,79 L 165,85" stroke="#f59e0b" stroke-width="5" />
+      <circle cx="95" cy="55" r="8" fill="#18181b" />
+      <circle cx="165" cy="55" r="10" fill="#18181b" />
+
+      <text x="14" y="135" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700">Servis CVT &amp; Pulley Matic</text>
+      <text x="14" y="152" fill="#64748b" font-family="sans-serif" font-size="11">Pembersihan mangkok ganda, roller, sliding sheave, pelumasan grease high-temp.</text>
+      <text x="14" y="180" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="800">Rp 50.000</text>
+      
+      <rect x="14" y="195" width="227" height="28" rx="5" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="75" y="213" fill="#dc2626" font-family="sans-serif" font-size="11" font-weight="700">Pilih Layanan</text>
+    </g>
+
+    <!-- Card 3: Tune Up & Throttle Body -->
+    <g transform="translate(550, 55)">
+      <rect width="255" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-vm)"/>
+      <rect width="255" height="110" rx="10" fill="#18181b" />
+      <!-- Wrench & Engine Gear -->
+      <circle cx="130" cy="55" r="28" fill="#dc2626" opacity="0.8"/>
+      <text x="112" y="65" fill="#ffffff" font-family="sans-serif" font-size="28">🔧</text>
+
+      <text x="14" y="135" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700">Tune-Up &amp; Infus Injektor</text>
+      <text x="14" y="152" fill="#64748b" font-family="sans-serif" font-size="11">Pembersihan kerak ruang bakar, injector cleaner pressurized, dan cek celah klep.</text>
+      <text x="14" y="180" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="800">Rp 65.000</text>
+      
+      <rect x="14" y="195" width="227" height="28" rx="5" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="75" y="213" fill="#dc2626" font-family="sans-serif" font-size="11" font-weight="700">Pilih Layanan</text>
+    </g>
+
+    <!-- Card 4: Oli & Sparepart Original -->
+    <g transform="translate(825, 55)">
+      <rect width="255" height="235" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow-vm)"/>
+      <rect width="255" height="110" rx="10" fill="#27272a" />
+      <!-- Oil Bottle Graphic -->
+      <rect x="110" y="30" width="40" height="60" rx="6" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+      <rect x="120" y="20" width="20" height="10" rx="2" fill="#ef4444" />
+      <text x="116" y="55" fill="#000000" font-family="sans-serif" font-size="8" font-weight="900">MOTUL</text>
+      <text x="118" y="68" fill="#000000" font-family="sans-serif" font-size="7">10W-40</text>
+
+      <text x="14" y="135" fill="#0f172a" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="14" font-weight="700">Ganti Oli Mesin &amp; Gardan</text>
+      <text x="14" y="152" fill="#64748b" font-family="sans-serif" font-size="11">Motul, Shell Advance, Yamalube, AHM Oil 100% Original bergaransi resmi.</text>
+      <text x="14" y="180" fill="#dc2626" font-family="sans-serif" font-size="13" font-weight="800">Mulai Rp 48.000</text>
+      
+      <rect x="14" y="195" width="227" height="28" rx="5" fill="#fef2f2" stroke="#fecaca" stroke-width="1"/>
+      <text x="75" y="213" fill="#dc2626" font-family="sans-serif" font-size="11" font-weight="700">Pilih Layanan</text>
+    </g>
+  </g>
+</svg>

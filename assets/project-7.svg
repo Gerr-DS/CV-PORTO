@@ -1,1 +1,220 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740"><defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111a38"/><stop offset="1" stop-color="#123e59"/></linearGradient><linearGradient id="map" x2="1" y2="1"><stop stop-color="#d8f1e6"/><stop offset="1" stop-color="#7ec4b0"/></linearGradient><filter id="s" x="-.2" y="-.2" width="1.4" height="1.5"><feDropShadow dx="0" dy="20" stdDeviation="22" flood-color="#071427" flood-opacity=".4"/></filter></defs><rect width="1200" height="740" fill="url(#bg)"/><circle cx="1050" cy="78" r="185" fill="#54ddc0" fill-opacity=".12"/><g filter="url(#s)"><rect x="85" y="74" width="1030" height="592" rx="20" fill="#f5f8fb"/><rect x="85" y="74" width="1030" height="48" rx="20" fill="#101c35"/><rect x="85" y="102" width="1030" height="20" fill="#101c35"/><rect x="108" y="86" width="26" height="26" rx="7" fill="#24baa8"/><path d="m114 99 6-7 7 3-3 8-7 4Z" fill="none" stroke="#fff" stroke-width="1.5"/><text x="145" y="103" font-family="Arial,sans-serif" font-size="14" font-weight="900" letter-spacing="1" fill="#f4fbfc">GEOSENTRY</text><rect x="398" y="87" width="325" height="23" rx="11" fill="#202e49"/><circle cx="415" cy="98" r="4" fill="#54ddc0"/><text x="428" y="102" font-family="Arial,sans-serif" font-size="9" fill="#bbc7d8">Cari berita, lokasi, atau kata kunci...</text><circle cx="1040" cy="98" r="13" fill="#263653"/><text x="1040" y="102" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" fill="#d9e4ef">GD</text><rect x="85" y="122" width="213" height="544" fill="#17243e"/><text x="111" y="156" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#7e91aa">WORKSPACE</text><rect x="103" y="174" width="177" height="38" rx="9" fill="#263958"/><rect x="116" y="185" width="15" height="15" rx="4" fill="#26bba8"/><text x="141" y="198" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="#fff">Overview</text><text x="120" y="243" font-family="Arial,sans-serif" font-size="10" fill="#c4d0df">⌖   Live map</text><text x="120" y="281" font-family="Arial,sans-serif" font-size="10" fill="#c4d0df">▤   Monitoring feed</text><text x="120" y="319" font-family="Arial,sans-serif" font-size="10" fill="#c4d0df">◈   Source explorer</text><text x="111" y="371" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#7e91aa">FILTERS</text><rect x="110" y="389" width="161" height="32" rx="7" fill="#202f4b"/><text x="123" y="410" font-family="Arial,sans-serif" font-size="9" fill="#d7e2ed">All locations          ▾</text><rect x="110" y="431" width="161" height="32" rx="7" fill="#202f4b"/><text x="123" y="452" font-family="Arial,sans-serif" font-size="9" fill="#d7e2ed">Last 24 hours          ▾</text><text x="111" y="502" font-family="Arial,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#7e91aa">CLASSIFICATION</text><circle cx="119" cy="526" r="5" fill="#ef626f"/><text x="134" y="530" font-family="Arial,sans-serif" font-size="9" fill="#d7e2ed">High priority</text><circle cx="119" cy="552" r="5" fill="#f2b753"/><text x="134" y="556" font-family="Arial,sans-serif" font-size="9" fill="#d7e2ed">Needs review</text><circle cx="119" cy="578" r="5" fill="#37bfaa"/><text x="134" y="582" font-family="Arial,sans-serif" font-size="9" fill="#d7e2ed">Informational</text><text x="327" y="161" font-family="Arial,sans-serif" font-size="20" font-weight="800" fill="#152b42">Situational overview</text><text x="327" y="182" font-family="Arial,sans-serif" font-size="9" fill="#74879a">Public signals across monitored locations</text><rect x="327" y="200" width="224" height="70" rx="11" fill="#fff" stroke="#e3e9ed"/><text x="345" y="222" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#718297">PUBLIC POSTS TRACKED</text><text x="345" y="253" font-family="Arial,sans-serif" font-size="24" font-weight="800" fill="#172b43">1,284</text><text x="426" y="251" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#1a9a85">↑ 18.6%</text><rect x="565" y="200" width="224" height="70" rx="11" fill="#fff" stroke="#e3e9ed"/><text x="583" y="222" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#718297">SOURCES DISCOVERED</text><text x="583" y="253" font-family="Arial,sans-serif" font-size="24" font-weight="800" fill="#172b43">312</text><text x="636" y="251" font-family="Arial,sans-serif" font-size="8" fill="#718297">across 8 feeds</text><rect x="803" y="200" width="282" height="70" rx="11" fill="#fff" stroke="#e3e9ed"/><text x="821" y="222" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#718297">AI CLASSIFIED SIGNALS</text><text x="821" y="253" font-family="Arial,sans-serif" font-size="24" font-weight="800" fill="#172b43">96.4%</text><rect x="327" y="288" width="500" height="345" rx="12" fill="url(#map)" stroke="#d9e5e4"/><path d="M327 350 398 329l60 30 72-56 79 25 71-40 76 27 71-18v336H327Z" fill="#b7e2ce"/><path d="M327 477 393 450l44 22 73-39 57 34 81-54 63 21 75-47 41 18" fill="none" stroke="#fff" stroke-width="18" stroke-linecap="round"/><path d="M342 335 420 376l71-13 46 53 62 5 45 55 60-8 60 58 42-2" fill="none" stroke="#effcf5" stroke-width="9" stroke-linecap="round"/><path d="M327 404h500M327 544h500M447 288v345M694 288v345" stroke="#6fb9a2" stroke-opacity=".35" stroke-width="2" stroke-dasharray="4 7"/><g><circle cx="460" cy="417" r="14" fill="#ef626f" fill-opacity=".24"/><circle cx="460" cy="417" r="6" fill="#e34d60" stroke="#fff" stroke-width="2"/><circle cx="601" cy="488" r="18" fill="#f2b753" fill-opacity=".27"/><circle cx="601" cy="488" r="7" fill="#eaa93e" stroke="#fff" stroke-width="2"/><circle cx="728" cy="382" r="15" fill="#34bca6" fill-opacity=".28"/><circle cx="728" cy="382" r="6" fill="#21a590" stroke="#fff" stroke-width="2"/><circle cx="526" cy="567" r="13" fill="#ef626f" fill-opacity=".24"/><circle cx="526" cy="567" r="5" fill="#e34d60" stroke="#fff" stroke-width="2"/></g><rect x="346" y="303" width="130" height="24" rx="12" fill="#fff" fill-opacity=".92"/><circle cx="361" cy="315" r="4" fill="#24a998"/><text x="372" y="319" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#36566a">MONITORING MAP</text><rect x="848" y="288" width="237" height="345" rx="12" fill="#fff" stroke="#e3e9ed"/><text x="867" y="315" font-family="Arial,sans-serif" font-size="12" font-weight="800" fill="#172e45">Live signals</text><text x="1065" y="315" text-anchor="end" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="#148f82">View feed →</text><g><rect x="864" y="333" width="205" height="79" rx="9" fill="#f7f9fa"/><circle cx="880" cy="352" r="4" fill="#e75b6c"/><text x="891" y="355" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#d54d60">HIGH PRIORITY</text><text x="877" y="375" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#263d51">Flooding reported near</text><text x="877" y="389" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#263d51">Ciliwung riverbank</text><text x="877" y="403" font-family="Arial,sans-serif" font-size="7" fill="#82919e">Public social feed · 4 min ago</text><rect x="864" y="420" width="205" height="79" rx="9" fill="#f7f9fa"/><circle cx="880" cy="439" r="4" fill="#eeb14b"/><text x="891" y="442" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#b47c26">NEEDS REVIEW</text><text x="877" y="462" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#263d51">Road closure update in</text><text x="877" y="476" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#263d51">Bogor city center</text><text x="877" y="490" font-family="Arial,sans-serif" font-size="7" fill="#82919e">News source · 12 min ago</text><rect x="864" y="507" width="205" height="79" rx="9" fill="#f7f9fa"/><circle cx="880" cy="526" r="4" fill="#29aa95"/><text x="891" y="529" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#248c79">INFORMATIONAL</text><text x="877" y="549" font-family="Arial,sans-serif" font-size="9" font-weight="700" fill="#263d51">Community event update</text><text x="877" y="563" font-family="Arial,sans-serif" font-size="7" fill="#82919e">Public source · 25 min ago</text><rect x="327" y="641" width="758" height="12" rx="6" fill="#26b9a5"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 740" width="1200" height="740">
+  <defs>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="115%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+    <linearGradient id="mapBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1329"/>
+      <stop offset="100%" stop-color="#111d38"/>
+    </linearGradient>
+  </defs>
+
+  <!-- ================= BROWSER WINDOW ================= -->
+  <!-- Browser Header Background -->
+  <rect x="0" y="0" width="1200" height="740" fill="#0f172a"/>
+  <rect x="0" y="0" width="1200" height="74" fill="#1e293b"/>
+  
+  <!-- Window Controls (macOS Dots) -->
+  <circle cx="24" cy="22" r="6" fill="#ef4444"/>
+  <circle cx="44" cy="22" r="6" fill="#eab308"/>
+  <circle cx="64" cy="22" r="6" fill="#22c55e"/>
+
+  <!-- Browser Tab -->
+  <path d="M 96,36 L 108,12 L 280,12 L 292,36 Z" fill="#0f172a"/>
+  <circle cx="120" cy="24" r="5" fill="#38bdf8"/>
+  <text x="132" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" fill="#f8fafc">GeoSentry — WebGIS Intel</text>
+  <text x="270" y="27" font-family="sans-serif" font-size="12" fill="#94a3b8">×</text>
+
+  <!-- Browser URL Bar -->
+  <rect x="310" y="10" width="580" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <path d="M 324,24 L 324,20 C 324,17.5 326.5,15.5 329,15.5 C 331.5,15.5 334,17.5 334,20 L 334,24 Z M 322,24 L 336,24 L 336,31 L 322,31 Z" fill="#22c55e" stroke="#22c55e" stroke-width="1"/>
+  <text x="344" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" fill="#cbd5e1"><tspan fill="#22c55e">https://</tspan>geosentry.id/dashboard/situational-map</text>
+
+  <!-- ================= WEBPAGE CONTENT ================= -->
+  <!-- App Navbar -->
+  <rect x="0" y="74" width="1200" height="52" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+  <g transform="translate(24, 88)">
+    <rect x="0" y="0" width="26" height="26" rx="6" fill="#0284c7"/>
+    <circle cx="13" cy="13" r="8" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="3 2"/>
+    <circle cx="13" cy="13" r="3" fill="#38bdf8"/>
+    <text x="34" y="18" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="800" letter-spacing="0.5" fill="#ffffff">GeoSentry</text>
+    <rect x="122" y="2" width="62" height="18" rx="4" fill="#0369a1" fill-opacity="0.4" stroke="#0ea5e9" stroke-width="0.8"/>
+    <text x="131" y="15" font-family="sans-serif" font-size="10" font-weight="700" fill="#38bdf8">WEBGIS AI</text>
+  </g>
+
+  <!-- Navigation Links -->
+  <text x="230" y="105" font-family="sans-serif" font-size="13" font-weight="600" fill="#38bdf8">Overview</text>
+  <line x1="230" y1="125" x2="286" y2="125" stroke="#38bdf8" stroke-width="2"/>
+  <text x="312" y="105" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Live Map</text>
+  <text x="396" y="105" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Monitoring Feeds</text>
+  <text x="526" y="105" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Verifikasi Fakta</text>
+  <text x="646" y="105" font-family="sans-serif" font-size="13" font-weight="500" fill="#94a3b8">Provinsi</text>
+
+  <!-- Right Navbar Controls -->
+  <rect x="940" y="86" width="130" height="28" rx="6" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <circle cx="954" cy="100" r="4" fill="#22c55e"/>
+  <text x="965" y="104" font-family="sans-serif" font-size="11" font-weight="600" fill="#e2e8f0">Sync: Real-Time</text>
+  <circle cx="1100" cy="100" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+  <text x="1100" y="104" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#f8fafc">GD</text>
+
+  <!-- Sub-header / Filters -->
+  <rect x="0" y="126" width="1200" height="42" fill="#0f172a" stroke="#1e293b" stroke-width="1"/>
+  <text x="24" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#64748b">FILTER WILAYAH:</text>
+  <rect x="135" y="134" width="160" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="146" y="151" font-family="sans-serif" font-size="12" fill="#f1f5f9">Seluruh Indonesia ▾</text>
+
+  <text x="315" y="152" font-family="sans-serif" font-size="12" font-weight="600" fill="#64748b">WAKTU:</text>
+  <rect x="375" y="134" width="130" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="386" y="151" font-family="sans-serif" font-size="12" fill="#f1f5f9">24 Jam Terakhir ▾</text>
+
+  <rect x="525" y="134" width="80" height="26" rx="5" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="536" y="151" font-family="sans-serif" font-size="12" fill="#38bdf8">Semua</text>
+  <rect x="612" y="134" width="84" height="26" rx="5" fill="#1e293b"/>
+  <circle cx="624" cy="147" r="4" fill="#3b82f6"/>
+  <text x="634" y="151" font-family="sans-serif" font-size="12" fill="#94a3b8">Fakta (320)</text>
+  <rect x="702" y="134" width="84" height="26" rx="5" fill="#1e293b"/>
+  <circle cx="714" cy="147" r="4" fill="#ef4444"/>
+  <text x="724" y="151" font-family="sans-serif" font-size="12" fill="#94a3b8">Hoaks (98)</text>
+
+  <rect x="1035" y="134" width="140" height="26" rx="5" fill="#0284c7"/>
+  <text x="1050" y="151" font-family="sans-serif" font-size="11" font-weight="700" fill="#ffffff">+ Analisis Teks AI</text>
+
+  <!-- Main Body Grid: Map (Left) & Live Threat Feeds (Right) -->
+  <!-- Left Side: Interactive WebGIS Map (Width: 770) -->
+  <g transform="translate(24, 182)">
+    <rect x="0" y="0" width="770" height="536" rx="10" fill="url(#mapBg)" stroke="#1e293b" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <!-- Coordinate Grid lines -->
+    <path d="M 0,120 L 770,120 M 0,260 L 770,260 M 0,400 L 770,400 M 180,0 L 180,536 M 380,0 L 380,536 M 580,0 L 580,536" stroke="#1e293b" stroke-width="1" stroke-dasharray="3 4"/>
+    
+    <!-- Realistic Indonesia Archipelago Map Silhouettes -->
+    <!-- Sumatra -->
+    <path d="M 60,110 L 95,90 L 140,150 L 195,240 L 225,305 L 195,325 L 160,265 L 115,195 L 75,135 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <!-- Kalimantan -->
+    <path d="M 270,140 L 340,110 L 400,145 L 405,215 L 345,255 L 295,240 L 265,190 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <!-- Jawa -->
+    <path d="M 195,345 L 285,340 L 380,355 L 435,360 L 435,385 L 345,375 L 245,370 L 190,360 Z" fill="#24344d" stroke="#38bdf8" stroke-width="1.8"/>
+    <!-- Sulawesi -->
+    <path d="M 445,150 L 475,140 L 490,190 L 525,200 L 510,230 L 475,225 L 465,275 L 440,265 L 450,210 L 430,175 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+    <!-- Papua -->
+    <path d="M 590,195 L 670,190 L 740,225 L 740,320 L 685,315 L 655,270 L 615,250 L 585,220 Z" fill="#1e293b" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Map UI Controls -->
+    <rect x="16" y="16" width="32" height="66" rx="5" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+    <text x="32" y="38" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#f8fafc">+</text>
+    <line x1="20" y1="49" x2="44" y2="49" stroke="#334155"/>
+    <text x="32" y="68" text-anchor="middle" font-family="sans-serif" font-size="18" font-weight="700" fill="#f8fafc">−</text>
+
+    <!-- Radar / Threat Pins with Radar Pulse Rings -->
+    <!-- Pin 1: Jawa Barat / Jakarta (Active Focused Point) -->
+    <circle cx="230" cy="355" r="32" fill="#ef4444" fill-opacity="0.12"/>
+    <circle cx="230" cy="355" r="18" fill="#ef4444" fill-opacity="0.25"/>
+    <circle cx="230" cy="355" r="8" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Pin 2: Surabaya / Jatim (Fakta) -->
+    <circle cx="370" cy="360" r="22" fill="#3b82f6" fill-opacity="0.18"/>
+    <circle cx="370" cy="360" r="7" fill="#3b82f6" stroke="#ffffff" stroke-width="1.8"/>
+
+    <!-- Pin 3: Medan / Sumut (Hoaks) -->
+    <circle cx="100" cy="115" r="16" fill="#ef4444" fill-opacity="0.2"/>
+    <circle cx="100" cy="115" r="6" fill="#ef4444" stroke="#ffffff" stroke-width="1.8"/>
+
+    <!-- Pin 4: Makassar (Prediksi) -->
+    <circle cx="470" cy="245" r="16" fill="#f59e0b" fill-opacity="0.2"/>
+    <circle cx="470" cy="245" r="6" fill="#f59e0b" stroke="#ffffff" stroke-width="1.8"/>
+
+    <!-- Real WebGIS Popup Window on Pin 1 -->
+    <g transform="translate(245, 230)">
+      <rect x="0" y="0" width="280" height="135" rx="8" fill="#0f172a" fill-opacity="0.95" stroke="#ef4444" stroke-width="1.5" filter="url(#cardShadow)"/>
+      <rect x="12" y="10" width="60" height="18" rx="4" fill="#ef4444"/>
+      <text x="42" y="23" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#ffffff">HOAKS</text>
+      <text x="80" y="23" font-family="sans-serif" font-size="11" font-weight="600" fill="#94a3b8">Jawa Barat · 15m lalu</text>
+      <text x="12" y="48" font-family="sans-serif" font-size="12" font-weight="700" fill="#ffffff">Klaim Gempa Susulan Magnitudo 7.2</text>
+      <text x="12" y="66" font-family="sans-serif" font-size="11" fill="#cbd5e1">Beredar pesan suara mengatasnamakan BMKG.</text>
+      <line x1="12" y1="78" x2="268" y2="78" stroke="#1e293b"/>
+      <text x="12" y="96" font-family="sans-serif" font-size="10" fill="#94a3b8">Verifikasi: <tspan fill="#38bdf8">TurnBackHoax &amp; BMKG Resmi</tspan></text>
+      <text x="12" y="114" font-family="sans-serif" font-size="10" fill="#94a3b8">Confidence AI: <tspan fill="#ef4444" font-weight="700">97.8% (SGDClassifier)</tspan></text>
+      <rect x="200" y="102" width="68" height="22" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <text x="234" y="117" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="600" fill="#38bdf8">Detail ↗</text>
+    </g>
+
+    <!-- Map Legend (Bottom Left) -->
+    <g transform="translate(16, 460)">
+      <rect x="0" y="0" width="190" height="60" rx="6" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1"/>
+      <circle cx="16" cy="18" r="5" fill="#3b82f6"/>
+      <text x="28" y="22" font-family="sans-serif" font-size="11" fill="#f8fafc">Fakta Terverifikasi</text>
+      <circle cx="16" cy="38" r="5" fill="#ef4444"/>
+      <text x="28" y="42" font-family="sans-serif" font-size="11" fill="#f8fafc">Hoaks / Disinformasi</text>
+      <circle cx="115" cy="38" r="5" fill="#f59e0b"/>
+      <text x="126" y="42" font-family="sans-serif" font-size="11" fill="#f8fafc">Review</text>
+    </g>
+  </g>
+
+  <!-- Right Side: Real-Time Feeds & Analytics (Width: 358) -->
+  <g transform="translate(818, 182)">
+    <rect x="0" y="0" width="358" height="536" rx="10" fill="#0f172a" stroke="#1e293b" stroke-width="1" filter="url(#cardShadow)"/>
+    
+    <!-- Feed Header -->
+    <text x="18" y="28" font-family="sans-serif" font-size="14" font-weight="700" fill="#ffffff">Live Monitoring Feeds</text>
+    <rect x="250" y="14" width="90" height="20" rx="10" fill="#1e293b"/>
+    <circle cx="262" cy="24" r="3.5" fill="#22c55e"/>
+    <text x="272" y="28" font-family="sans-serif" font-size="10" font-weight="600" fill="#94a3b8">6 Sumber</text>
+
+    <!-- Feed Card 1 (Hoaks) -->
+    <g transform="translate(14, 46)">
+      <rect x="0" y="0" width="330" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="10" width="54" height="18" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+      <text x="39" y="23" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#f87171">HOAKS</text>
+      <text x="74" y="23" font-family="sans-serif" font-size="11" fill="#94a3b8">TurnBackHoax · 4m lalu</text>
+      <text x="12" y="46" font-family="sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Beredar Tautan Subsidi Pulsa Kemendikbud</text>
+      <text x="12" y="64" font-family="sans-serif" font-size="11" fill="#94a3b8">Pesan phishing mengarahkan pencurian data pribadi.</text>
+      <rect x="12" y="78" width="145" height="20" rx="4" fill="#0f172a"/>
+      <text x="20" y="92" font-family="sans-serif" font-size="10" fill="#38bdf8">NLP Score: 98.2% Hoaks</text>
+      <text x="270" y="92" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Buka ↗</text>
+    </g>
+
+    <!-- Feed Card 2 (Fakta) -->
+    <g transform="translate(14, 168)">
+      <rect x="0" y="0" width="330" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="10" width="54" height="18" rx="4" fill="#3b82f6" fill-opacity="0.2"/>
+      <text x="39" y="23" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#60a5fa">FAKTA</text>
+      <text x="74" y="23" font-family="sans-serif" font-size="11" fill="#94a3b8">Antara News · 18m lalu</text>
+      <text x="12" y="46" font-family="sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Kemenkes Pastikan Vaksin Polio Gratis di Puskesmas</text>
+      <text x="12" y="64" font-family="sans-serif" font-size="11" fill="#94a3b8">Verifikasi sumber siaran pers resmi Kementerian Kesehatan.</text>
+      <rect x="12" y="78" width="145" height="20" rx="4" fill="#0f172a"/>
+      <text x="20" y="92" font-family="sans-serif" font-size="10" fill="#4ade80">Terverifikasi Resmi</text>
+      <text x="270" y="92" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Buka ↗</text>
+    </g>
+
+    <!-- Feed Card 3 (Review / Alert) -->
+    <g transform="translate(14, 290)">
+      <rect x="0" y="0" width="330" height="110" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+      <rect x="12" y="10" width="68" height="18" rx="4" fill="#f59e0b" fill-opacity="0.2"/>
+      <text x="46" y="23" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#fbbf24">REVIEW</text>
+      <text x="88" y="23" font-family="sans-serif" font-size="11" fill="#94a3b8">Social Media Feed · 35m lalu</text>
+      <text x="12" y="46" font-family="sans-serif" font-size="12" font-weight="700" fill="#f8fafc">Isu Penutupan Akses Tol Jagorawi Arah Jakarta</text>
+      <text x="12" y="64" font-family="sans-serif" font-size="11" fill="#94a3b8">Klaim sedang diverifikasi terhadap CCTV Jasa Marga.</text>
+      <rect x="12" y="78" width="145" height="20" rx="4" fill="#0f172a"/>
+      <text x="20" y="92" font-family="sans-serif" font-size="10" fill="#fbbf24">Status: Pending Check</text>
+      <text x="270" y="92" font-family="sans-serif" font-size="11" font-weight="600" fill="#38bdf8">Buka ↗</text>
+    </g>
+
+    <!-- Bottom Metrics -->
+    <g transform="translate(14, 415)">
+      <rect x="0" y="0" width="330" height="105" rx="8" fill="#0b1120" stroke="#1e293b" stroke-width="1"/>
+      <text x="14" y="24" font-family="sans-serif" font-size="11" font-weight="700" fill="#94a3b8">STATISTIK PIPELINE DATA (POSTGRESQL / POSTGIS)</text>
+      
+      <text x="14" y="52" font-family="sans-serif" font-size="20" font-weight="800" fill="#f8fafc">1.428</text>
+      <text x="14" y="68" font-family="sans-serif" font-size="10" fill="#64748b">Total Berita 24 Jam</text>
+      
+      <text x="130" y="52" font-family="sans-serif" font-size="20" font-weight="800" fill="#38bdf8">96.4%</text>
+      <text x="130" y="68" font-family="sans-serif" font-size="10" fill="#64748b">Akurasi Model NLP</text>
+
+      <text x="240" y="52" font-family="sans-serif" font-size="20" font-weight="800" fill="#4ade80">38</text>
+      <text x="240" y="68" font-family="sans-serif" font-size="10" fill="#64748b">Provinsi Terpantau</text>
+
+      <rect x="14" y="82" width="302" height="6" rx="3" fill="#1e293b"/>
+      <rect x="14" y="82" width="220" height="6" rx="3" fill="#38bdf8"/>
+    </g>
+  </g>
+</svg>
