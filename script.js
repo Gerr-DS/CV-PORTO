@@ -405,6 +405,203 @@ const gondolasHTML = PROJECTS.map((p, i) => {
     </div>`;
 }).join("");
 
+// Desain grafis stan pasar malam & orang-orang jualan di bawah kincir ria
+const marketHTML = `
+  <svg viewBox="0 0 520 142" class="carnival-market-svg" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="popcornGlow" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fef08a" stop-opacity="0.95" />
+        <stop offset="100%" stop-color="#fbbf24" stop-opacity="0.75" />
+      </linearGradient>
+      <linearGradient id="awningPinkGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fb7185" />
+        <stop offset="100%" stop-color="#e11d48" />
+      </linearGradient>
+      <linearGradient id="awningRedGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#f87171" />
+        <stop offset="100%" stop-color="#dc2626" />
+      </linearGradient>
+      <linearGradient id="awningBlueGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#38bdf8" />
+        <stop offset="100%" stop-color="#0284c7" />
+      </linearGradient>
+    </defs>
+
+    <!-- 1. Garis Dasar Jalur Paving Pasar Malam (Groundline) -->
+    <path d="M 10 132 Q 260 134 510 132" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.35" />
+    <path d="M 15 135 Q 260 137 505 135" stroke="#cbd5e1" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.4" />
+    <circle cx="50" cy="133.5" r="1.5" fill="#94a3b8" opacity="0.4" />
+    <circle cx="120" cy="133" r="1.2" fill="#94a3b8" opacity="0.4" />
+    <circle cx="210" cy="134" r="1.5" fill="#94a3b8" opacity="0.4" />
+    <circle cx="280" cy="134" r="1.2" fill="#94a3b8" opacity="0.4" />
+    <circle cx="360" cy="133" r="1.5" fill="#94a3b8" opacity="0.4" />
+    <circle cx="440" cy="133.5" r="1.2" fill="#94a3b8" opacity="0.4" />
+    <path d="M 18 132 L 20 128 L 22 132 M 160 133 L 162 129 L 164 133 M 340 133 L 342 129 L 344 133 M 500 132 L 502 128 L 504 132" stroke="#10b981" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.6" />
+
+    <!-- 2. Tali Lentera Lampu & Umbul-umbul Menggantung Antar Stan -->
+    <path d="M 98 52 Q 155 70 208 44" fill="none" stroke="rgba(217, 119, 6, 0.45)" stroke-width="1" stroke-dasharray="2 3" />
+    <path d="M 292 44 Q 338 68 382 50" fill="none" stroke="rgba(217, 119, 6, 0.45)" stroke-width="1" stroke-dasharray="2 3" />
+    <polygon points="120,62 128,64 124,72" fill="#f59e0b" />
+    <polygon points="140,66 148,67 144,75" fill="#0f766e" />
+    <polygon points="160,67 168,66 164,74" fill="#f43f5e" />
+    <polygon points="180,63 188,60 184,69" fill="#0284c7" />
+    <polygon points="312,52 320,56 316,64" fill="#0f766e" />
+    <polygon points="332,60 340,62 336,70" fill="#f59e0b" />
+    <polygon points="352,62 360,60 356,69" fill="#ec4899" />
+    <circle cx="110" cy="58" r="2.5" fill="#fbbf24" class="market-bulb b1" />
+    <circle cx="134" cy="65" r="2.5" fill="#f43f5e" class="market-bulb b2" />
+    <circle cx="154" cy="67" r="2.5" fill="#38bdf8" class="market-bulb b3" />
+    <circle cx="174" cy="64" r="2.5" fill="#10b981" class="market-bulb b4" />
+    <circle cx="194" cy="56" r="2.5" fill="#fbbf24" class="market-bulb b1" />
+    <circle cx="304" cy="48" r="2.5" fill="#f43f5e" class="market-bulb b2" />
+    <circle cx="326" cy="58" r="2.5" fill="#fbbf24" class="market-bulb b3" />
+    <circle cx="346" cy="62" r="2.5" fill="#a855f7" class="market-bulb b4" />
+    <circle cx="366" cy="57" r="2.5" fill="#14b8a6" class="market-bulb b1" />
+
+    <!-- STAN 1: GULALI / ARUM MANIS -->
+    <circle cx="46" cy="122" r="11" fill="none" stroke="#be123c" stroke-width="2.5" />
+    <circle cx="46" cy="122" r="3" fill="#be123c" />
+    <line x1="46" y1="111" x2="46" y2="133" stroke="#be123c" stroke-width="1.2" />
+    <line x1="35" y1="122" x2="57" y2="122" stroke="#be123c" stroke-width="1.2" />
+    <line x1="38" y1="114" x2="54" y2="130" stroke="#be123c" stroke-width="1.2" />
+    <line x1="38" y1="130" x2="54" y2="114" stroke="#be123c" stroke-width="1.2" />
+    <rect x="88" y="116" width="4" height="15" rx="1.5" fill="#be123c" />
+    <rect x="32" y="84" width="66" height="34" rx="4" fill="url(#awningPinkGrad)" stroke="#be123c" stroke-width="1.5" />
+    <rect x="38" y="90" width="54" height="22" rx="2.5" fill="#fff1f2" />
+    <text x="65" y="104" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="900" fill="#be123c" text-anchor="middle" letter-spacing="1">GULALI</text>
+    <line x1="35" y1="84" x2="35" y2="48" stroke="#be123c" stroke-width="2" />
+    <line x1="95" y1="84" x2="95" y2="48" stroke="#be123c" stroke-width="2" />
+    <path d="M 28 48 Q 65 38 102 48 L 102 56 Q 65 50 28 56 Z" fill="url(#awningPinkGrad)" />
+    <path d="M 28 56 Q 37 62 46 56 Q 55 62 65 56 Q 74 62 83 56 Q 92 62 102 56" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" />
+    <ellipse cx="78" cy="82" rx="13" ry="4.5" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1" />
+    <ellipse cx="78" cy="81.5" rx="9" ry="2.5" fill="#fbcfe8" />
+    <line x1="78" y1="81" x2="78" y2="62" stroke="#d97706" stroke-width="1.5" />
+    <circle cx="78" cy="64" r="8" fill="#fbcfe8" stroke="#f472b6" stroke-width="1" />
+    <circle cx="83" cy="67" r="5.5" fill="#f472b6" opacity="0.75" />
+    <circle cx="73" cy="66" r="5" fill="#bae6fd" opacity="0.8" />
+    <path d="M 45 68 C 45 60, 57 60, 57 68 L 59 86 L 43 86 Z" fill="#e11d48" />
+    <rect x="47" y="70" width="8" height="15" rx="1" fill="#fff" />
+    <circle cx="51" cy="55" r="6" fill="#fed7aa" />
+    <circle cx="53" cy="54" r="0.7" fill="#1e293b" />
+    <path d="M 52 57 Q 54 59 56 57" fill="none" stroke="#1e293b" stroke-width="0.7" stroke-linecap="round" />
+    <ellipse cx="51" cy="49" rx="5" ry="2" fill="#fff" />
+    <circle cx="51" cy="46" r="4.5" fill="#fff" />
+    <line x1="56" y1="72" x2="68" y2="70" stroke="#fed7aa" stroke-width="2" stroke-linecap="round" />
+    <circle cx="68" cy="69" r="4.5" fill="#bae6fd" />
+    <path d="M 110 92 C 110 86, 120 86, 120 92 L 122 116 L 108 116 Z" fill="#0284c7" />
+    <line x1="112" y1="116" x2="112" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <line x1="118" y1="116" x2="118" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <circle cx="115" cy="80" r="5.5" fill="#fed7aa" />
+    <path d="M 109 79 C 109 72, 121 72, 121 79 Z" fill="#78350f" />
+    <line x1="112" y1="92" x2="103" y2="82" stroke="#fed7aa" stroke-width="2" stroke-linecap="round" />
+
+    <!-- STAN 2: POPCORN & JAGUNG BAKAR -->
+    <circle cx="226" cy="121" r="12" fill="none" stroke="#78350f" stroke-width="2.5" />
+    <circle cx="226" cy="121" r="3" fill="#f59e0b" />
+    <line x1="226" y1="109" x2="226" y2="133" stroke="#78350f" stroke-width="1.2" />
+    <line x1="214" y1="121" x2="238" y2="121" stroke="#78350f" stroke-width="1.2" />
+    <line x1="217" y1="112" x2="235" y2="130" stroke="#78350f" stroke-width="1.2" />
+    <line x1="217" y1="130" x2="235" y2="112" stroke="#78350f" stroke-width="1.2" />
+    <rect x="282" y="115" width="4" height="17" rx="1.5" fill="#78350f" />
+    <rect x="212" y="78" width="78" height="40" rx="4" fill="url(#awningRedGrad)" stroke="#78350f" stroke-width="1.5" />
+    <rect x="220" y="84" width="62" height="26" rx="2.5" fill="#78350f" />
+    <text x="251" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="900" fill="#fef08a" text-anchor="middle" letter-spacing="1">POPCORN</text>
+    <line x1="214" y1="78" x2="214" y2="40" stroke="#78350f" stroke-width="2" />
+    <line x1="288" y1="78" x2="288" y2="40" stroke="#78350f" stroke-width="2" />
+    <path d="M 206 40 Q 251 30 296 40 L 296 48 Q 251 42 206 48 Z" fill="url(#awningRedGrad)" />
+    <path d="M 206 48 Q 215 54 224 48 Q 233 54 242 48 Q 251 54 260 48 Q 269 54 278 48 Q 287 54 296 48" fill="none" stroke="#fef08a" stroke-width="2.8" stroke-linecap="round" />
+    <rect x="216" y="50" width="34" height="28" rx="2" fill="url(#popcornGlow)" stroke="#f59e0b" stroke-width="1.2" />
+    <circle cx="223" cy="72" r="2.2" fill="#fff" />
+    <circle cx="229" cy="71" r="2.5" fill="#fef08a" />
+    <circle cx="235" cy="72" r="2" fill="#fff" />
+    <circle cx="241" cy="71" r="2.2" fill="#fef08a" />
+    <circle cx="226" cy="67" r="2" fill="#fff" />
+    <circle cx="232" cy="65" r="2.4" fill="#fef08a" />
+    <circle cx="238" cy="66" r="1.8" fill="#fff" />
+    <circle cx="233" cy="56" r="2" fill="#fff" class="popcorn-flake" />
+    <rect x="256" y="70" width="28" height="8" rx="1.5" fill="#334155" />
+    <rect x="258" y="72" width="24" height="2" fill="#ef4444" />
+    <ellipse cx="264" cy="68" rx="6" ry="2.2" fill="#facc15" stroke="#ca8a04" stroke-width="0.8" />
+    <ellipse cx="276" cy="68" rx="6" ry="2.2" fill="#facc15" stroke="#ca8a04" stroke-width="0.8" />
+    <path class="steam-puff" d="M 264 64 Q 262 57 265 51 Q 267 45 264 39" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" />
+    <path class="steam-puff p2" d="M 276 64 Q 278 58 275 52 Q 273 46 276 40" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 293 66 C 293 58, 306 58, 306 66 L 308 98 L 291 98 Z" fill="#b45309" />
+    <rect x="295" y="68" width="9" height="23" fill="#fef3c7" rx="1" />
+    <line x1="295" y1="98" x2="295" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <line x1="304" y1="98" x2="304" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <circle cx="300" cy="52" r="6.5" fill="#fed7aa" />
+    <ellipse cx="300" cy="47" rx="9" ry="2.5" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8" />
+    <rect x="295" y="40" width="10" height="7" fill="#fef08a" stroke="#ca8a04" stroke-width="0.8" />
+    <rect x="295" y="44" width="10" height="2" fill="#dc2626" />
+    <line x1="293" y1="70" x2="282" y2="72" stroke="#fed7aa" stroke-width="2" stroke-linecap="round" />
+    <path d="M 278 70 L 284 70 L 282 78 L 279 78 Z" fill="#ef4444" />
+    <circle cx="281" cy="68" r="2.2" fill="#fef08a" />
+    <path d="M 176 74 C 176 66, 187 66, 187 74 L 189 104 L 174 104 Z" fill="#0f766e" />
+    <circle cx="181" cy="60" r="6" fill="#fde68a" />
+    <path d="M 175 58 C 175 51, 187 51, 187 58 Z" fill="#334155" />
+    <line x1="178" y1="104" x2="178" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <line x1="185" y1="104" x2="185" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <line x1="184" y1="76" x2="195" y2="76" stroke="#fde68a" stroke-width="2" stroke-linecap="round" />
+
+    <!-- STAN 3: ES KRIM & BALON TERBANG -->
+    <circle cx="394" cy="121" r="11" fill="none" stroke="#0369a1" stroke-width="2.5" />
+    <circle cx="394" cy="121" r="3" fill="#38bdf8" />
+    <line x1="394" y1="110" x2="394" y2="132" stroke="#0369a1" stroke-width="1.2" />
+    <line x1="383" y1="121" x2="405" y2="121" stroke="#0369a1" stroke-width="1.2" />
+    <line x1="386" y1="113" x2="402" y2="129" stroke="#0369a1" stroke-width="1.2" />
+    <line x1="386" y1="129" x2="402" y2="113" stroke="#0369a1" stroke-width="1.2" />
+    <rect x="444" y="115" width="4" height="16" rx="1.5" fill="#0369a1" />
+    <rect x="382" y="84" width="72" height="34" rx="4" fill="url(#awningBlueGrad)" stroke="#0369a1" stroke-width="1.5" />
+    <rect x="390" y="90" width="56" height="22" rx="2.5" fill="#f0f9ff" />
+    <text x="418" y="104" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="1">ES KRIM</text>
+    <path d="M 426 84 L 430 76 L 434 84 Z" fill="#d97706" />
+    <circle cx="430" cy="75" r="3" fill="#ec4899" />
+    <path d="M 436 84 L 440 76 L 444 84 Z" fill="#d97706" />
+    <circle cx="440" cy="75" r="3" fill="#38bdf8" />
+    <line x1="418" y1="84" x2="418" y2="40" stroke="#0369a1" stroke-width="2" />
+    <path d="M 380 48 Q 418 34 456 48 L 452 56 Q 418 48 384 56 Z" fill="url(#awningBlueGrad)" />
+    <path d="M 384 56 Q 396 62 407 56 Q 418 62 429 56 Q 441 62 452 56" fill="none" stroke="#fef08a" stroke-width="2.5" stroke-linecap="round" />
+    <path d="M 462 72 C 462 64, 474 64, 474 72 L 476 102 L 460 102 Z" fill="#0284c7" />
+    <line x1="464" y1="102" x2="464" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <line x1="472" y1="102" x2="472" y2="131" stroke="#1e293b" stroke-width="2.5" />
+    <circle cx="468" cy="56" r="6.5" fill="#fed7aa" />
+    <path d="M 461 53 Q 468 50 475 53 L 479 54 L 460 54 Z" fill="#38bdf8" />
+    <line x1="468" y1="72" x2="473" y2="76" stroke="#fed7aa" stroke-width="2" stroke-linecap="round" />
+    <path d="M 473 76 Q 468 54 463 36" fill="none" stroke="#64748b" stroke-width="0.8" />
+    <path d="M 473 76 Q 477 50 481 28" fill="none" stroke="#64748b" stroke-width="0.8" />
+    <path d="M 473 76 Q 471 56 492 40" fill="none" stroke="#64748b" stroke-width="0.8" />
+    <path d="M 473 76 Q 466 58 452 44" fill="none" stroke="#64748b" stroke-width="0.8" />
+    <g class="balloon b1">
+      <ellipse cx="463" cy="34" rx="6.5" ry="8" fill="#f43f5e" />
+      <polygon points="462,42 464,42 463,44" fill="#f43f5e" />
+      <ellipse cx="461" cy="32" rx="1.5" ry="3" fill="#fff" opacity="0.4" />
+    </g>
+    <g class="balloon b2">
+      <ellipse cx="481" cy="26" rx="7" ry="8.5" fill="#f59e0b" />
+      <polygon points="480,34.5 482,34.5 481,36.5" fill="#f59e0b" />
+      <ellipse cx="479" cy="24" rx="1.5" ry="3.5" fill="#fff" opacity="0.4" />
+    </g>
+    <g class="balloon b3">
+      <ellipse cx="492" cy="38" rx="6" ry="7.5" fill="#14b8a6" />
+      <polygon points="491,45.5 493,45.5 492,47.5" fill="#14b8a6" />
+      <ellipse cx="490" cy="36" rx="1.2" ry="2.8" fill="#fff" opacity="0.4" />
+    </g>
+    <g class="balloon b4">
+      <ellipse cx="452" cy="42" rx="6" ry="7.5" fill="#a855f7" />
+      <polygon points="451,49.5 453,49.5 452,51.5" fill="#a855f7" />
+      <ellipse cx="450" cy="40" rx="1.2" ry="2.8" fill="#fff" opacity="0.4" />
+    </g>
+    <path d="M 362 94 C 362 88, 372 88, 372 94 L 374 116 L 360 116 Z" fill="#ec4899" />
+    <circle cx="367" cy="82" r="5.5" fill="#fed7aa" />
+    <path d="M 362 81 C 362 75, 372 75, 372 81 Z" fill="#92400e" />
+    <line x1="364" y1="116" x2="364" y2="131" stroke="#1e293b" stroke-width="2" />
+    <line x1="370" y1="116" x2="370" y2="131" stroke="#1e293b" stroke-width="2" />
+    <line x1="370" y1="94" x2="377" y2="90" stroke="#fed7aa" stroke-width="1.8" stroke-linecap="round" />
+    <polygon points="378,89 381,95 376,94" fill="#d97706" />
+    <circle cx="377.5" cy="87.5" r="2.5" fill="#38bdf8" />
+  </svg>
+`;
+
 grid.innerHTML = `
   <div class="project-wheel-column" data-reveal style="--i: 1;">
     <div class="project-wheel-meta"><span data-project-wheel-meta>${escapeHTML(t("wheel.meta"))}</span><span data-wheel-count>01 / ${String(PROJECTS.length).padStart(2, "0")}</span></div>
@@ -423,6 +620,7 @@ grid.innerHTML = `
       </div>
       <div class="project-wheel-stand" aria-hidden="true"></div>
     </div>
+    <div class="wheel-carnival-market" aria-hidden="true">${marketHTML}</div>
     <p class="project-wheel-hint" data-project-wheel-hint>${escapeHTML(t("wheel.hint"))}</p>
   </div>
   <article class="project-detail" data-reveal style="--i: 2;" aria-live="polite" aria-atomic="true">

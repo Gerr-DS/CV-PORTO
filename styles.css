@@ -918,6 +918,73 @@ img, svg { display: block; max-width: 100%; }
 .project-wheel-stand::before { transform: rotate(20deg); }
 .project-wheel-stand::after { transform: rotate(-20deg); }
 
+/* ---------- Suasana Pasar Malam: Penjual & Stan di Bawah Kincir ---------- */
+.wheel-carnival-market {
+  position: relative;
+  width: min(100%, 480px);
+  margin: -10px auto 4px;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+.carnival-market-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 6px 14px rgba(11, 16, 38, 0.1));
+}
+
+/* Animasi Balon Berayun Tertiup Angin */
+.balloon {
+  transform-origin: 473px 76px;
+  animation: balloonSway 3.8s ease-in-out infinite alternate;
+}
+.balloon.b1 { animation-delay: 0s; }
+.balloon.b2 { animation-delay: 0.8s; }
+.balloon.b3 { animation-delay: 1.6s; }
+.balloon.b4 { animation-delay: 2.4s; }
+@keyframes balloonSway {
+  0% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(1deg) translateY(-2px); }
+  100% { transform: rotate(4deg) translateY(-4px); }
+}
+
+/* Animasi Uap Wangi Jagung Bakar */
+.steam-puff {
+  animation: steamDrift 2.4s ease-in-out infinite alternate;
+}
+.steam-puff.p2 {
+  animation-delay: 1.2s;
+}
+@keyframes steamDrift {
+  0% { opacity: 0.2; transform: translateY(2px) scaleX(0.9); }
+  50% { opacity: 0.8; transform: translateY(-3px) scaleX(1.1); }
+  100% { opacity: 0.15; transform: translateY(-7px) scaleX(1.25); }
+}
+
+/* Animasi Popcorn Meletup */
+.popcorn-flake {
+  animation: popcornPop 1.5s ease-in-out infinite alternate;
+}
+@keyframes popcornPop {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-4px); }
+}
+
+/* Animasi Lampu Lentera Stan Pasar Malam */
+.market-bulb {
+  animation: marketBulbGlow 1.8s ease-in-out infinite alternate;
+}
+.market-bulb.b1 { animation-delay: 0.1s; }
+.market-bulb.b2 { animation-delay: 0.55s; }
+.market-bulb.b3 { animation-delay: 1s; }
+.market-bulb.b4 { animation-delay: 1.45s; }
+@keyframes marketBulbGlow {
+  0% { opacity: 0.45; filter: drop-shadow(0 0 1px currentColor); }
+  100% { opacity: 1; filter: drop-shadow(0 0 5px currentColor); }
+}
+
 .project-wheel-hint { margin: 2px 0 0; color: var(--ink-soft); font-size: 11px; text-align: center; }
 .project-detail { min-width: 0; align-self: start; }
 .project-detail-cover {
@@ -1488,5 +1555,5 @@ html.is-preload .hero-bar {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal-ready [data-reveal] { transition: none; opacity: 1; translate: none; transform: none; filter: none; }
-  .switch-icon, .project-wheel-rotor, .project-gondola, .project-thumb, .project-open-link { transition: none; }
+  .switch-icon, .project-wheel-rotor, .project-gondola, .project-thumb, .project-open-link, .balloon, .steam-puff, .popcorn-flake, .market-bulb { transition: none; animation: none; }
 }
