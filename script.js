@@ -1226,22 +1226,25 @@ if (switchBtn) {
   });
 }
 
-// ---------- Animasi reveal saat scroll ----------
+// ---------- Animasi reveal saat scroll (Dua Arah: scroll ke bawah & scroll ke atas) ----------
 document.body.classList.add("reveal-ready");
 
 const revealObserver = new IntersectionObserver((entries) => {
   for (const entry of entries) {
     if (entry.isIntersecting) {
       entry.target.classList.add("is-visible");
-      revealObserver.unobserve(entry.target);
+    } else {
+      // Ketika elemen keluar dari viewport, hilangkan class agar beranimasi kembali saat di-scroll
+      entry.target.classList.remove("is-visible");
     }
   }
-}, { threshold: 0.12 });
+}, {
+  threshold: 0.1,
+  rootMargin: "0px 0px -40px 0px"
+});
 
 function observeReveal(scope) {
   (scope || document).querySelectorAll("[data-reveal]").forEach((el) => {
-    if (el.dataset.revealSeen) return;
-    el.dataset.revealSeen = "1";
     revealObserver.observe(el);
   });
 }

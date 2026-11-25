@@ -73,15 +73,15 @@
 
       <div class="hero-grid">
         <div class="hero-intro">
-          <h1 class="hero-name"><span>Gerry</span> <span>Dimasarya</span></h1>
-          <ul class="hero-meta">
+          <h1 class="hero-name" data-reveal style="--i: 0;"><span>Gerry</span> <span>Dimasarya</span></h1>
+          <ul class="hero-meta" data-reveal style="--i: 1;">
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="hero.location">Bogor, Indonesia</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9 12 4l9.5 5L12 14 2.5 9Z"/><path d="M6.5 11v4.5c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V11"/></svg><span data-i18n="hero.major">Teknologi Rekayasa Perangkat Lunak, IPB University</span></li>
             <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 12.5 12 4l8.5 8.5"/><path d="M6 11v9h12v-9"/><path d="M10 20v-5h4v5"/></svg><span data-i18n="hero.field">Data, Web &amp; Cyber</span></li>
           </ul>
         </div>
 
-        <div class="hero-stage">
+        <div class="hero-stage" data-reveal style="--i: 1;">
           <div class="hero-portrait" id="heroPortrait">
             <div class="layer layer-photo" role="img" aria-label="Potret dummy Gerry Dimasarya" data-i18n-attr="aria-label:hero.portrait_alt"></div>
             <div class="layer layer-aura" aria-hidden="true"></div>
@@ -90,7 +90,7 @@
           <p class="hero-hint" id="heroHint" data-i18n="hero.hint_mouse">Gerakkan kursor di atas potret</p>
         </div>
 
-        <aside class="hero-panels" aria-label="Ringkasan" data-i18n-attr="aria-label:hero.panels_aria">
+        <aside class="hero-panels" data-reveal style="--i: 2;" aria-label="Ringkasan" data-i18n-attr="aria-label:hero.panels_aria">
           <div class="panel">
             <p class="panel-label" data-i18n="hero.currently">Saat ini</p>
             <p class="panel-value" data-i18n="hero.student">Mahasiswa</p>
@@ -107,7 +107,7 @@
         </aside>
       </div>
 
-      <div class="hero-bar">
+      <div class="hero-bar" data-reveal style="--i: 3;">
         <button class="hero-switch" id="switchBtn" type="button" aria-pressed="false">
           <span class="switch-icon" aria-hidden="true">↻</span>
           <span class="switch-text">
@@ -121,40 +121,40 @@
 
     <!-- ================= ABOUT ================= -->
     <section class="section tone-ink" id="about">
-      <div class="sec-head" data-reveal>
+      <div class="sec-head" data-reveal style="--i: 0;">
         <h2 class="sec-title" data-i18n="about.title">Tentang</h2>
         <div class="sec-meta"><span>01</span><span data-i18n="about.meta">Siapa saya</span></div>
       </div>
       <div class="about-grid">
-        <p class="lead" data-reveal data-i18n="about.lead">Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.</p>
+        <p class="lead" data-reveal style="--i: 1;" data-i18n="about.lead">Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.</p>
         <div class="facts">
-          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3.5 3 8.5 3 12 0v-5M22 9v6"/></svg><span data-i18n="about.studying">Pendidikan</span></span><p data-i18n="about.studying_desc">Teknologi Rekayasa Perangkat Lunak, IPB University</p></div>
-          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="about.based">Domisili</span></span><p data-i18n="about.based_desc">Bogor, Indonesia</p></div>
-          <div class="fact" data-reveal><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><span data-i18n="about.works">Fokus</span></span><p data-i18n="about.works_desc">Web, mobile, data, UI/UX</p></div>
+          <div class="fact" data-reveal style="--i: 2;"><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5L2 9Z"/><path d="M6 11v5c3.5 3 8.5 3 12 0v-5M22 9v6"/></svg><span data-i18n="about.studying">Pendidikan</span></span><p data-i18n="about.studying_desc">Teknologi Rekayasa Perangkat Lunak, IPB University</p></div>
+          <div class="fact" data-reveal style="--i: 3;"><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="about.based">Domisili</span></span><p data-i18n="about.based_desc">Bogor, Indonesia</p></div>
+          <div class="fact" data-reveal style="--i: 4;"><span class="fact-label"><svg class="fact-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg><span data-i18n="about.works">Fokus</span></span><p data-i18n="about.works_desc">Web, mobile, data, UI/UX</p></div>
         </div>
       </div>
     </section>
 
     <!-- ================= SKILLS ================= -->
     <section class="section" id="skills">
-      <div class="sec-head" data-reveal>
+      <div class="sec-head" data-reveal style="--i: 0;">
         <h2 class="sec-title" data-i18n="skills.title">Keahlian</h2>
         <div class="sec-meta"><span>02</span><span data-i18n="skills.meta">Teknologi yang saya gunakan</span></div>
       </div>
       <div class="skills-grid">
-        <article class="skill" data-reveal>
+        <article class="skill" data-reveal style="--i: 1;">
           <p class="skill-num">01</p>
           <h3 data-i18n="skills.s1_title">Data</h3>
           <p class="skill-desc" data-i18n="skills.s1_desc">Basis data MySQL dan MongoDB, dengan Python dan SQL.</p>
           <ul class="chips"><li>Python</li><li>SQL</li><li>MySQL</li><li>MongoDB</li></ul>
         </article>
-        <article class="skill" data-reveal>
+        <article class="skill" data-reveal style="--i: 2;">
           <p class="skill-num">02</p>
           <h3 data-i18n="skills.s2_title">Build</h3>
           <p class="skill-desc" data-i18n="skills.s2_desc">Backend dan REST API dengan Laravel/PHP, integrasi Flutter, serta game dengan Unity/C#.</p>
           <ul class="chips"><li>Laravel / PHP</li><li>REST API</li><li>Flutter / Dart</li><li>Unity / C#</li></ul>
         </article>
-        <article class="skill" data-reveal>
+        <article class="skill" data-reveal style="--i: 3;">
           <p class="skill-num">03</p>
           <h3 data-i18n="skills.s3_title">Design &amp; Security</h3>
           <p class="skill-desc" data-i18n="skills.s3_desc">UI/UX dan aset 3D untuk game, ditambah forensik digital dan keamanan aplikasi web.</p>
@@ -228,52 +228,52 @@
           </div>
         </div>
       </div>
-      <div class="sec-head" data-reveal>
+      <div class="sec-head" data-reveal style="--i: 0;">
         <h2 class="sec-title" data-i18n="projects.title">Proyek</h2>
         <div class="sec-meta"><span>03</span><span data-i18n="projects.meta">Karya terpilih</span></div>
       </div>
-      <div class="project-gallery" id="projectsGrid"></div>
+      <div class="project-gallery" id="projectsGrid" data-reveal style="--i: 1;"></div>
     </section>
 
     <!-- ================= CERTIFICATE ================= -->
     <section class="section" id="certificate">
-      <div class="sec-head" data-reveal>
+      <div class="sec-head" data-reveal style="--i: 0;">
         <h2 class="sec-title" data-i18n="cert.title">Sertifikat</h2>
         <div class="sec-meta"><span>04</span><span data-i18n="cert.meta">Kredensial &amp; pencapaian</span></div>
       </div>
-      <div class="certificate-gallery" id="certificateGallery" data-reveal></div>
+      <div class="certificate-gallery" id="certificateGallery" data-reveal style="--i: 1;"></div>
     </section>
 
     <!-- ================= CONTACT ================= -->
     <section class="section contact tone-ink" id="contact">
-      <div class="sec-head" data-reveal>
+      <div class="sec-head" data-reveal style="--i: 0;">
         <h2 class="sec-title" data-i18n="contact.title">Kontak</h2>
         <div class="sec-meta"><span>05</span><span data-i18n="contact.meta">Mari berkolaborasi</span></div>
       </div>
-      <p class="lead" data-reveal data-i18n="contact.lead">Tertarik berkolaborasi? Hubungi saya melalui platform pilihan Anda.</p>
-      <div class="contact-links" data-reveal>
-        <a class="contact-link" href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328" target="_blank" rel="noopener noreferrer" aria-label="Buka profil LinkedIn Gerry Dimasarya" data-i18n-attr="aria-label:contact.linkedin_aria">
+      <p class="lead" data-reveal style="--i: 1;" data-i18n="contact.lead">Tertarik berkolaborasi? Hubungi saya melalui platform pilihan Anda.</p>
+      <div class="contact-links">
+        <a class="contact-link" data-reveal style="--i: 2;" href="https://www.linkedin.com/in/gerry-dimasarya-4bb5b3328" target="_blank" rel="noopener noreferrer" aria-label="Buka profil LinkedIn Gerry Dimasarya" data-i18n-attr="aria-label:contact.linkedin_aria">
           <span class="contact-icon linkedin-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="22" height="22" rx="4" fill="currentColor"/><path d="M7 9.2v8M7 6.4v.1M11 17.2v-8h3v1.2c.5-.9 1.4-1.4 2.5-1.4 2 0 2.5 1.3 2.5 3.4v4.8h-3v-4.2c0-1-.2-1.7-1.2-1.7s-1.5.8-1.5 1.8v4.1Z" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7" cy="6.45" r="1.1" fill="#fff"/></svg></span>
           <span class="contact-copy"><span class="contact-platform">LinkedIn</span><span class="contact-value">linkedin.com/in/gerry-dimasarya-4bb5b3328</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-link" href="https://github.com/Gerr-DS" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub Gerr-DS" data-i18n-attr="aria-label:contact.github_aria">
+        <a class="contact-link" data-reveal style="--i: 3;" href="https://github.com/Gerr-DS" target="_blank" rel="noopener noreferrer" aria-label="Buka GitHub Gerr-DS" data-i18n-attr="aria-label:contact.github_aria">
           <span class="contact-icon github-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.33-3.8-1.33-.5-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.7 2.62 1.21 3.26.92.1-.72.39-1.21.71-1.49-2.51-.29-5.15-1.25-5.15-5.56 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44.11-2.99 0 0 .95-.3 3.08 1.16a10.7 10.7 0 0 1 5.6 0c2.13-1.46 3.08-1.16 3.08-1.16.61 1.55.23 2.7.11 2.99.72.79 1.16 1.8 1.16 3.03 0 4.32-2.65 5.26-5.17 5.54.41.36.76 1.04.76 2.1v3.1c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8Z"/></svg></span>
           <span class="contact-copy"><span class="contact-platform">GitHub</span><span class="contact-value">github.com/Gerr-DS</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-link" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerrydimasarya15%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Tulis email ke Gerry Dimasarya" data-i18n-attr="aria-label:contact.email_aria">
+        <a class="contact-link" data-reveal style="--i: 4;" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=gerrydimasarya15%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Tulis email ke Gerry Dimasarya" data-i18n-attr="aria-label:contact.email_aria">
           <span class="contact-icon email-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3" fill="#fff"/><path d="m4 7 8 6 8-6" fill="none" stroke="#ea4335" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 18v-8M20 18v-8" stroke="#4285f4" stroke-width="2.2" stroke-linecap="round"/><path d="m4 7 8 6 4-3" fill="none" stroke="#34a853" stroke-width="2.2" stroke-linecap="round"/></svg></span>
           <span class="contact-copy"><span class="contact-platform">Email</span><span class="contact-value">gerrydimasarya15@gmail.com</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-link" href="https://wa.me/6281918575580" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Gerry Dimasarya melalui WhatsApp" data-i18n-attr="aria-label:contact.wa_aria">
+        <a class="contact-link" data-reveal style="--i: 5;" href="https://wa.me/6281918575580" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Gerry Dimasarya melalui WhatsApp" data-i18n-attr="aria-label:contact.wa_aria">
           <span class="contact-icon whatsapp-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="currentColor"/><path d="m6.5 18 1-3a7 7 0 1 1 2.2 2.1Z" fill="none" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 8.7c.2-.5.5-.5.8-.5h.4c.2 0 .3.1.4.4l.7 1.6c.1.2.1.4-.1.6l-.5.6c-.2.2-.2.4-.1.6.5.9 1.2 1.6 2.1 2 .2.1.4.1.6-.1l.7-.8c.2-.2.4-.2.6-.1l1.5.7c.3.1.4.3.4.5-.1.7-.5 1.3-1.1 1.6-.6.3-1.4.3-2.2 0-1.1-.4-2.5-1.2-3.6-2.3-1-1-1.7-2.2-1.9-3.1-.2-.7-.1-1.3.2-1.7Z" fill="#fff"/></svg></span>
           <span class="contact-copy"><span class="contact-platform">WhatsApp</span><span class="contact-value">+62 819-1857-5580</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
-        <a class="contact-link" href="https://www.instagram.com/_grydz/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram grydz" data-i18n-attr="aria-label:contact.ig_aria">
+        <a class="contact-link" data-reveal style="--i: 6;" href="https://www.instagram.com/_grydz/" target="_blank" rel="noopener noreferrer" aria-label="Buka Instagram grydz" data-i18n-attr="aria-label:contact.ig_aria">
           <span class="contact-icon instagram-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><defs><linearGradient id="instagramGradient" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#ffbf45"/><stop offset=".48" stop-color="#f04465"/><stop offset="1" stop-color="#8655d8"/></linearGradient></defs><rect x="1" y="1" width="22" height="22" rx="6" fill="url(#instagramGradient)"/><rect x="5.3" y="5.3" width="13.4" height="13.4" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.1" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="17.1" cy="6.9" r="1.1" fill="#fff"/></svg></span>
           <span class="contact-copy"><span class="contact-platform">Instagram</span><span class="contact-value">@_grydz</span></span><span class="contact-arrow" aria-hidden="true">↗</span>
         </a>
       </div>
-      <footer class="foot">
+      <footer class="foot" data-reveal style="--i: 2;">
         <p>GERRY DIMASARYA</p>
         <p data-i18n="contact.footer_copy">Portfolio pribadi · 2026</p>
       </footer>

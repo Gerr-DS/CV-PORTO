@@ -421,12 +421,19 @@ img, svg { display: block; max-width: 100%; }
 }
 .tone-ink .contours path { stroke-opacity: 0.08; }
 
-/* ---------- Reveal saat scroll ---------- */
+/* ---------- Reveal saat scroll (Dua Arah: scroll ke bawah & scroll ke atas) ---------- */
 .reveal-ready [data-reveal] {
-  --d: calc(var(--i, 0) * 90ms);
-  transition: opacity 0.9s var(--ease) var(--d), translate 0.9s var(--ease) var(--d);
+  --d: calc(var(--i, 0) * 85ms);
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d);
+  will-change: opacity, transform;
 }
-.reveal-ready [data-reveal]:not(.is-visible) { opacity: 0; translate: 0 36px; }
+.reveal-ready [data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 /* ---------- About ---------- */
 .about-grid {
