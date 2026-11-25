@@ -32,6 +32,7 @@ const TRANSLATIONS = {
     "hero.switch_photo": "Tampilkan foto",
     "hero.switch_sub": "Ganti potret",
     "hero.view_cv": "Lihat CV",
+    "hero.cv_url": "https://drive.google.com/file/d/1JR8nMMHUF6aoPG53Uv0rVVSIukp9_dM0/view?usp=sharing",
 
     // About
     "about.title": "Tentang",
@@ -123,6 +124,7 @@ const TRANSLATIONS = {
     "hero.switch_photo": "Show photo",
     "hero.switch_sub": "Switch portrait",
     "hero.view_cv": "View CV",
+    "hero.cv_url": "https://drive.google.com/file/d/1o34ITOkCunaHiCVXi0MYI7r7LlaGIaut/view?usp=sharing",
 
     // About
     "about.title": "About",
@@ -1164,6 +1166,12 @@ function setLanguage(lang) {
     updateHeroHint();
   }
   updateSwitchButtonText();
+
+  // Update dynamic CV link based on language
+  const cvLink = document.getElementById("heroCvLink");
+  if (cvLink && TRANSLATIONS[lang] && TRANSLATIONS[lang]["hero.cv_url"]) {
+    cvLink.href = TRANSLATIONS[lang]["hero.cv_url"];
+  }
 }
 
 // Inisialisasi event listener tombol pengalih bahasa
