@@ -409,13 +409,13 @@ function easeOutQuart(x) {
   return 1 - Math.pow(1 - x, 4);
 }
 
-function renderWheelPositions(sway = 0) {
+function renderWheelPositions() {
   rotor.style.transform = `rotate(${currentAngle}deg)`;
   gondolas.forEach((gondola, i) => {
     const angle_i = currentAngle + i * slot;
     const button = gondola.querySelector("button");
     gondola.style.transform = `translate(-50%, -50%) rotate(${angle_i}deg) translateY(calc(0px - var(--wheel-orbit)))`;
-    button.style.transform = `rotate(${-angle_i + sway}deg) scale(${i === activeProject ? 1.08 : 0.92})`;
+    button.style.transform = `rotate(${-angle_i}deg)`;
   });
 }
 
@@ -523,8 +523,7 @@ function animateWheel(now) {
     currentVelocity = 0;
   }
 
-  const sway = Math.max(-5.5, Math.min(5.5, currentVelocity * 0.035));
-  renderWheelPositions(sway);
+  renderWheelPositions();
 
   requestAnimationFrame(animateWheel);
 }
