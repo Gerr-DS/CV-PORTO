@@ -1,14 +1,308 @@
 /* Portofolio Gerry Dimasarya */
 
-// ---------- Proyek ----------
+// ---------- Kamus Terjemahan Dwibahasa (ID / EN) ----------
+const TRANSLATIONS = {
+  id: {
+    "page.title": "Gerry Dimasarya — Portfolio",
+    "page.desc": "Portfolio dummy untuk Gerry Dimasarya. Dibuat sebagai contoh belajar.",
+    "skip": "Lewati ke konten",
+
+    // Nav
+    "nav.about": "Tentang",
+    "nav.skills": "Keahlian",
+    "nav.projects": "Proyek",
+    "nav.certificate": "Sertifikat",
+    "nav.contact": "Kontak",
+
+    // Hero
+    "hero.location": "Bogor, Indonesia",
+    "hero.major": "Teknologi Rekayasa Perangkat Lunak, IPB University",
+    "hero.field": "Data, Web & Cyber",
+    "hero.portrait_alt": "Potret dummy Gerry Dimasarya",
+    "hero.hint_mouse": "Gerakkan kursor di atas potret",
+    "hero.hint_touch": "Geser jari di atas potret",
+    "hero.panels_aria": "Ringkasan",
+    "hero.currently": "Saat ini",
+    "hero.student": "Mahasiswa",
+    "hero.at_glance": "Sekilas",
+    "hero.stat_projects": "Proyek",
+    "hero.stat_skills": "Keahlian",
+    "hero.stat_cert": "Sertifikat",
+    "hero.switch_aura": "Tampilkan aura",
+    "hero.switch_photo": "Tampilkan foto",
+    "hero.switch_sub": "Ganti potret",
+    "hero.view_cv": "Lihat CV",
+
+    // About
+    "about.title": "Tentang",
+    "about.meta": "Siapa saya",
+    "about.lead": "Saya memiliki keunggulan dalam merancang arsitektur aplikasi secara komprehensif, adaptif terhadap teknologi baru, dan solid dalam kolaborasi tim. Walaupun terkadang perfeksionis terhadap detail teknis yang kompleks, saya selalu memastikan efisiensi kerja dengan menerapkan skala prioritas Minimum Viable Product (MVP) dan manajemen waktu yang ketat.",
+    "about.studying": "Pendidikan",
+    "about.studying_desc": "Teknologi Rekayasa Perangkat Lunak, IPB University",
+    "about.based": "Domisili",
+    "about.based_desc": "Bogor, Indonesia",
+    "about.works": "Fokus",
+    "about.works_desc": "Web, mobile, data, UI/UX",
+
+    // Skills
+    "skills.title": "Keahlian",
+    "skills.meta": "Teknologi yang saya gunakan",
+    "skills.s1_title": "Data",
+    "skills.s1_desc": "Basis data MySQL dan MongoDB, dengan Python dan SQL.",
+    "skills.s2_title": "Build",
+    "skills.s2_desc": "Backend dan REST API dengan Laravel/PHP, integrasi Flutter, serta game dengan Unity/C#.",
+    "skills.s3_title": "Design & Security",
+    "skills.s3_desc": "UI/UX dan aset 3D untuk game, ditambah forensik digital dan keamanan aplikasi web.",
+
+    // Projects
+    "projects.title": "Proyek",
+    "projects.meta": "Karya terpilih",
+    "wheel.meta": "Project wheel",
+    "wheel.hint": "Geser roda atau gunakan tombol panah",
+    "wheel.aria": "Galeri proyek. Gunakan tombol panah kiri dan kanan untuk memilih proyek.",
+    "wheel.prev": "Proyek sebelumnya",
+    "wheel.next": "Proyek berikutnya",
+    "wheel.view_project": "Lihat proyek",
+    "wheel.view_item": "Lihat",
+    "wheel.of": "dari",
+
+    // Certificate
+    "cert.title": "Sertifikat",
+    "cert.meta": "Kredensial & pencapaian",
+    "cert.rail": "Rel sertifikat",
+    "cert.aria": "Galeri sertifikat. Pilih bingkai untuk membaca deskripsi.",
+    "cert.open": "Lihat sertifikat",
+    "cert.back": "Kembali ke semua sertifikat",
+    "cert.prev": "Sertifikat sebelumnya",
+    "cert.next": "Sertifikat berikutnya",
+    "cert.view_detail": "Lihat detail",
+    "cert.of": "dari",
+
+    // Contact
+    "contact.title": "Kontak",
+    "contact.meta": "Mari berkolaborasi",
+    "contact.lead": "Tertarik berkolaborasi? Hubungi saya melalui platform pilihan Anda.",
+    "contact.linkedin_aria": "Buka profil LinkedIn Gerry Dimasarya",
+    "contact.github_aria": "Buka GitHub Gerr-DS",
+    "contact.email_aria": "Tulis email ke Gerry Dimasarya",
+    "contact.wa_aria": "Hubungi Gerry Dimasarya melalui WhatsApp",
+    "contact.ig_aria": "Buka Instagram grydz",
+    "contact.footer_copy": "Portfolio pribadi · 2026",
+
+    // Status
+    "status.loading": "Memuat…",
+    "status.offline": "Koneksi terputus — menunggu jaringan pulih…"
+  },
+  en: {
+    "page.title": "Gerry Dimasarya — Portfolio",
+    "page.desc": "Personal portfolio for Gerry Dimasarya.",
+    "skip": "Skip to content",
+
+    // Nav
+    "nav.about": "About",
+    "nav.skills": "Skills",
+    "nav.projects": "Projects",
+    "nav.certificate": "Certificate",
+    "nav.contact": "Contact",
+
+    // Hero
+    "hero.location": "Bogor, Indonesia",
+    "hero.major": "Software Engineering Technology, IPB University",
+    "hero.field": "Data, Web & Cyber",
+    "hero.portrait_alt": "Portrait of Gerry Dimasarya",
+    "hero.hint_mouse": "Move cursor over portrait",
+    "hero.hint_touch": "Swipe finger over portrait",
+    "hero.panels_aria": "Summary",
+    "hero.currently": "Currently",
+    "hero.student": "Student",
+    "hero.at_glance": "At a glance",
+    "hero.stat_projects": "Projects",
+    "hero.stat_skills": "Skills",
+    "hero.stat_cert": "Certificate",
+    "hero.switch_aura": "Show aura",
+    "hero.switch_photo": "Show photo",
+    "hero.switch_sub": "Switch portrait",
+    "hero.view_cv": "View CV",
+
+    // About
+    "about.title": "About",
+    "about.meta": "Who I am",
+    "about.lead": "I specialize in architecting comprehensive systems, adapting rapidly to emerging technologies, and collaborating effectively in cross-functional teams. While detail-oriented toward technical precision, I maintain swift execution through Minimum Viable Product (MVP) prioritization and disciplined time management.",
+    "about.studying": "Studying",
+    "about.studying_desc": "Software Engineering Technology, IPB University",
+    "about.based": "Based in",
+    "about.based_desc": "Bogor, Indonesia",
+    "about.works": "Works across",
+    "about.works_desc": "Web, mobile, data, UI/UX",
+
+    // Skills
+    "skills.title": "Skills",
+    "skills.meta": "What I work with",
+    "skills.s1_title": "Data",
+    "skills.s1_desc": "MySQL and MongoDB databases, with Python and SQL.",
+    "skills.s2_title": "Build",
+    "skills.s2_desc": "Backend and REST APIs with Laravel/PHP, Flutter integration, and games with Unity/C#.",
+    "skills.s3_title": "Design & Security",
+    "skills.s3_desc": "UI/UX and 3D assets for games, along with digital forensics and web application security.",
+
+    // Projects
+    "projects.title": "Projects",
+    "projects.meta": "Selected work",
+    "wheel.meta": "Project wheel",
+    "wheel.hint": "Drag wheel or use arrow keys",
+    "wheel.aria": "Project gallery. Use left and right arrow keys to select a project.",
+    "wheel.prev": "Previous project",
+    "wheel.next": "Next project",
+    "wheel.view_project": "View project",
+    "wheel.view_item": "View",
+    "wheel.of": "of",
+
+    // Certificate
+    "cert.title": "Certificate",
+    "cert.meta": "Credentials & recognition",
+    "cert.rail": "Certificate rail",
+    "cert.aria": "Certificate gallery. Select a frame to view description.",
+    "cert.open": "View certificate",
+    "cert.back": "Back to all certificates",
+    "cert.prev": "Previous certificate",
+    "cert.next": "Next certificate",
+    "cert.view_detail": "View details for",
+    "cert.of": "of",
+
+    // Contact
+    "contact.title": "Contact",
+    "contact.meta": "Let's work",
+    "contact.lead": "Interested in collaborating? Reach out through your preferred platform.",
+    "contact.linkedin_aria": "Open Gerry Dimasarya's LinkedIn profile",
+    "contact.github_aria": "Open Gerr-DS GitHub",
+    "contact.email_aria": "Send email to Gerry Dimasarya",
+    "contact.wa_aria": "Contact Gerry Dimasarya on WhatsApp",
+    "contact.ig_aria": "Open grydz Instagram",
+    "contact.footer_copy": "Personal portfolio · 2026",
+
+    // Status
+    "status.loading": "Loading…",
+    "status.offline": "Connection lost — waiting for network to recover…"
+  }
+};
+
+let currentLang = localStorage.getItem("portfolio_lang") || "id";
+function t(key) {
+  return (TRANSLATIONS[currentLang] && TRANSLATIONS[currentLang][key]) || (TRANSLATIONS.id && TRANSLATIONS.id[key]) || key;
+}
+function tText(val) {
+  if (!val) return "";
+  if (typeof val === "object") return val[currentLang] || val.id || Object.values(val)[0] || "";
+  return String(val);
+}
+
+// ---------- Proyek (Dwibahasa) ----------
 const PROJECTS = [
-  { tag: "Aplikasi web & mobile · 2026", title: "IPB Kehilangan", desc: "Aplikasi barang hilang dan ditemukan dengan REST API, MongoDB, serta integrasi backend Laravel ke Flutter.", cover: "assets/project-1.svg", alt: "Mockup antarmuka peta kampus dan kartu barang hilang", year: "Feb–Jun 2026", link: "https://github.com/Gerr-DS/IPB-KEHILANGANV.git" },
-  { tag: "Game edukasi · 2026", title: "AR Games", desc: "Game edukasi Pancasila dengan gameplay interaktif di Unity/C# dan aset 3D dari Blender.", cover: "assets/project-2.svg", alt: "Desain visual game edukasi dengan dunia 3D dan kontrol interaktif", year: "Jan–Jun 2026", link: "https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing" },
-  { tag: "Sistem informasi · 2026", title: "Digital Agensi UMKM", desc: "Sistem informasi manajemen katering berbasis web; pengembangan backend menggunakan Laravel, PHP, dan MySQL.", cover: "assets/project-3.svg", alt: "Mockup desain sistem informasi pesanan katering", year: "Feb–Jun 2026", link: "https://github.com/Gerr-DS/Catering.git" },
-  { tag: "Website bisnis · 2025", title: "FIFIFA Multimedia", desc: "Website untuk mendukung kehadiran daring usaha kecil dan menengah, dikembangkan sesuai kebutuhan bisnis.", cover: "assets/project-4.svg", alt: "Mockup desain website bisnis kreatif pada layar desktop", year: "Jan–Jun 2025", link: "https://www.fififa-multimedia.com/" },
-  { tag: "Website layanan", title: "Bengkel Valentino Motor", desc: "Website bengkel yang menyajikan informasi servis, produk, lokasi, dan kontak Valentino Motor.", cover: "assets/project-5.svg", alt: "Mockup desain website bengkel dengan ilustrasi sepeda motor", year: "Bogor, Indonesia", link: "https://valentinomotorbogor.asia/" },
-  { tag: "Website solusi keamanan", title: "Marino Inti Solusi", desc: "Website solusi keamanan hardware dengan informasi produk CCTV, access control, dan layanan instalasi.", cover: "assets/project-6.svg", alt: "Mockup katalog perangkat CCTV dan kontrol akses", year: "CCTV · Access control", link: "https://marinointisolusi.com/" },
-  { tag: "WebGIS · AI", title: "GeoSentry", desc: "Dasbor WebGIS untuk mencari dan memantau berita serta postingan publik, menggabungkan feed, pencarian sumber, klasifikasi AI, dan peta Leaflet dengan PostgreSQL/PostGIS.", cover: "assets/project-7.svg", alt: "Mockup dasbor WebGIS dengan peta, titik data, dan panel analisis", year: "Leaflet · PostgreSQL/PostGIS", link: "https://github.com/Gerr-DS/GeoSentry.git" },
+  {
+    tag: { id: "Aplikasi web & mobile · 2026", en: "Web & mobile app · 2026" },
+    title: { id: "IPB Kehilangan", en: "IPB Kehilangan" },
+    desc: {
+      id: "Aplikasi barang hilang dan ditemukan dengan REST API, MongoDB, serta integrasi backend Laravel ke Flutter.",
+      en: "Lost and found reporting application with REST API, MongoDB, and Laravel backend integration with Flutter."
+    },
+    cover: "assets/project-1.svg",
+    alt: {
+      id: "Mockup antarmuka peta kampus dan kartu barang hilang",
+      en: "Campus map interface mockup and lost item cards"
+    },
+    year: "Feb–Jun 2026",
+    link: "https://github.com/Gerr-DS/IPB-KEHILANGANV.git"
+  },
+  {
+    tag: { id: "Game edukasi · 2026", en: "Educational game · 2026" },
+    title: { id: "AR Games", en: "AR Games" },
+    desc: {
+      id: "Game edukasi Pancasila dengan gameplay interaktif di Unity/C# dan aset 3D dari Blender.",
+      en: "Pancasila educational game with interactive gameplay in Unity/C# and 3D assets from Blender."
+    },
+    cover: "assets/project-2.svg",
+    alt: {
+      id: "Desain visual game edukasi dengan dunia 3D dan kontrol interaktif",
+      en: "Educational game visual design with 3D world and interactive controls"
+    },
+    year: "Jan–Jun 2026",
+    link: "https://drive.google.com/drive/folders/1PTte5DsS-fWWMT4NmNGsc0fISGLQ4gQz?usp=sharing"
+  },
+  {
+    tag: { id: "Sistem informasi · 2026", en: "Information system · 2026" },
+    title: { id: "Digital Agensi UMKM", en: "Digital Agency for SMEs" },
+    desc: {
+      id: "Sistem informasi manajemen katering berbasis web; pengembangan backend menggunakan Laravel, PHP, dan MySQL.",
+      en: "Web-based catering management information system; backend development using Laravel, PHP, and MySQL."
+    },
+    cover: "assets/project-3.svg",
+    alt: {
+      id: "Mockup desain sistem informasi pesanan katering",
+      en: "Catering order information system design mockup"
+    },
+    year: "Feb–Jun 2026",
+    link: "https://github.com/Gerr-DS/Catering.git"
+  },
+  {
+    tag: { id: "Website bisnis · 2025", en: "Business website · 2025" },
+    title: { id: "FIFIFA Multimedia", en: "FIFIFA Multimedia" },
+    desc: {
+      id: "Website untuk mendukung kehadiran daring usaha kecil dan menengah, dikembangkan sesuai kebutuhan bisnis.",
+      en: "Website supporting online presence for small and medium enterprises, tailored to specific business needs."
+    },
+    cover: "assets/project-4.svg",
+    alt: {
+      id: "Mockup desain website bisnis kreatif pada layar desktop",
+      en: "Creative business website design mockup on desktop screen"
+    },
+    year: "Jan–Jun 2025",
+    link: "https://www.fififa-multimedia.com/"
+  },
+  {
+    tag: { id: "Website layanan", en: "Service website" },
+    title: { id: "Bengkel Valentino Motor", en: "Valentino Motor Workshop" },
+    desc: {
+      id: "Website bengkel yang menyajikan informasi servis, produk, lokasi, dan kontak Valentino Motor.",
+      en: "Workshop website presenting service information, products, location, and Valentino Motor contact."
+    },
+    cover: "assets/project-5.svg",
+    alt: {
+      id: "Mockup desain website bengkel dengan ilustrasi sepeda motor",
+      en: "Workshop website design mockup with motorcycle illustration"
+    },
+    year: "Bogor, Indonesia",
+    link: "https://valentinomotorbogor.asia/"
+  },
+  {
+    tag: { id: "Website solusi keamanan", en: "Security solutions website" },
+    title: { id: "Marino Inti Solusi", en: "Marino Inti Solusi" },
+    desc: {
+      id: "Website solusi keamanan hardware dengan informasi produk CCTV, access control, dan layanan instalasi.",
+      en: "Hardware security solutions website with CCTV products, access control, and installation services."
+    },
+    cover: "assets/project-6.svg",
+    alt: {
+      id: "Mockup katalog perangkat CCTV dan kontrol akses",
+      en: "CCTV devices and access control catalog mockup"
+    },
+    year: "CCTV · Access control",
+    link: "https://marinointisolusi.com/"
+  },
+  {
+    tag: { id: "WebGIS · AI", en: "WebGIS · AI" },
+    title: { id: "GeoSentry", en: "GeoSentry" },
+    desc: {
+      id: "Dasbor WebGIS untuk mencari dan memantau berita serta postingan publik, menggabungkan feed, pencarian sumber, klasifikasi AI, dan peta Leaflet dengan PostgreSQL/PostGIS.",
+      en: "WebGIS dashboard for searching and monitoring news and public posts, combining feeds, source retrieval, AI classification, and Leaflet maps with PostgreSQL/PostGIS."
+    },
+    cover: "assets/project-7.svg",
+    alt: {
+      id: "Mockup dasbor WebGIS dengan peta, titik data, dan panel analisis",
+      en: "WebGIS dashboard mockup with map, data points, and analytics panel"
+    },
+    year: "Leaflet · PostgreSQL/PostGIS",
+    link: "https://github.com/Gerr-DS/GeoSentry.git"
+  },
 ];
 
 // ---------- Indikator loading (dipakai bila jaringan bermasalah) ----------
@@ -20,7 +314,7 @@ const loadingMessages = new Map();
 function showDataLoading(reason, message) {
   loadingReasons.add(reason);
   if (message) loadingMessages.set(reason, message);
-  dataLoadingText.textContent = loadingMessages.get(reason) || "Memuat…";
+  dataLoadingText.textContent = loadingMessages.get(reason) || t("status.loading");
   dataLoading.hidden = false;
 }
 
@@ -28,21 +322,19 @@ function hideDataLoading(reason) {
   loadingReasons.delete(reason);
   loadingMessages.delete(reason);
   if (loadingReasons.size === 0) {
-    dataLoadingText.textContent = "Memuat…";
+    dataLoadingText.textContent = t("status.loading");
     dataLoading.hidden = true;
     return;
   }
   const lastReason = [...loadingReasons][loadingReasons.size - 1];
-  dataLoadingText.textContent = loadingMessages.get(lastReason) || "Memuat…";
+  dataLoadingText.textContent = loadingMessages.get(lastReason) || t("status.loading");
 }
 
-// API publik bila nanti perlu indikator loading saat mengambil data.
 window.cvaLoading = { show: showDataLoading, hide: hideDataLoading };
 
-// Jaringan terputus/pulih
 function onNetworkChange() {
   if (!navigator.onLine) {
-    showDataLoading("network", "Koneksi terputus — menunggu jaringan pulih…");
+    showDataLoading("network", t("status.offline"));
   } else {
     hideDataLoading("network");
   }
@@ -61,17 +353,17 @@ const wheelLights = Array.from({ length: 28 }, (_, i) => {
 }).join("");
 grid.innerHTML = `
   <div class="project-wheel-column">
-    <div class="project-wheel-meta"><span>Project wheel</span><span data-wheel-count>01 / ${String(PROJECTS.length).padStart(2, "0")}</span></div>
-    <div class="project-wheel" data-project-wheel role="group" tabindex="0" aria-label="Galeri proyek. Gunakan tombol panah kiri dan kanan untuk memilih proyek.">
+    <div class="project-wheel-meta"><span data-project-wheel-meta>${escapeHTML(t("wheel.meta"))}</span><span data-wheel-count>01 / ${String(PROJECTS.length).padStart(2, "0")}</span></div>
+    <div class="project-wheel" data-project-wheel role="group" tabindex="0" aria-label="${escapeHTML(t("wheel.aria"))}">
       <div class="project-wheel-rotor" data-wheel-rotor aria-hidden="true"><span class="project-wheel-inner"></span><span class="project-wheel-spokes"><i></i><i></i><i></i><i></i></span>${wheelLights}</div>
-      <div class="project-wheel-items">${PROJECTS.map((p, i) => `<div class="project-gondola" data-gondola="${i}"><button class="project-thumb" type="button" data-project-index="${i}" aria-label="Lihat ${escapeHTML(p.title)}, ${i + 1} dari ${PROJECTS.length}" aria-pressed="false"><img src="${escapeHTML(p.cover)}" alt="" draggable="false"><span>${String(i + 1).padStart(2, "0")}</span></button></div>`).join("")}</div>
+      <div class="project-wheel-items">${PROJECTS.map((p, i) => `<div class="project-gondola" data-gondola="${i}"><button class="project-thumb" type="button" data-project-index="${i}" aria-label="${escapeHTML(t("wheel.view_item"))} ${escapeHTML(tText(p.title))}, ${i + 1} ${escapeHTML(t("wheel.of"))} ${PROJECTS.length}" aria-pressed="false"><img src="${escapeHTML(p.cover)}" alt="" draggable="false"><span>${String(i + 1).padStart(2, "0")}</span></button></div>`).join("")}</div>
       <div class="project-wheel-hub" aria-hidden="true"><strong>${String(PROJECTS.length).padStart(2, "0")}</strong><span>PROJECTS</span></div>
       <div class="project-wheel-stand" aria-hidden="true"></div>
     </div>
-    <p class="project-wheel-hint">Geser roda atau gunakan tombol panah</p>
+    <p class="project-wheel-hint" data-project-wheel-hint>${escapeHTML(t("wheel.hint"))}</p>
   </div>
   <article class="project-detail" aria-live="polite" aria-atomic="true">
-    <div class="project-detail-cover"><img data-project-image src="${escapeHTML(PROJECTS[0].cover)}" alt="${escapeHTML(PROJECTS[0].alt)}"></div>
+    <div class="project-detail-cover"><img data-project-image src="${escapeHTML(PROJECTS[0].cover)}" alt="${escapeHTML(tText(PROJECTS[0].alt))}"></div>
     <div class="project-detail-copy">
       <p class="project-tag" data-project-tag></p>
       <p class="project-number" data-project-number></p>
@@ -79,9 +371,9 @@ grid.innerHTML = `
       <p class="project-description" data-project-description></p>
       <p class="project-year" data-project-year></p>
       <div class="project-detail-actions">
-        <button type="button" class="project-nav-button" data-project-previous aria-label="Proyek sebelumnya">←</button>
-        <button type="button" class="project-nav-button is-next" data-project-next aria-label="Proyek berikutnya">→</button>
-        <a class="project-open-link" data-project-link target="_blank" rel="noopener noreferrer">Lihat proyek <span aria-hidden="true">↗</span></a>
+        <button type="button" class="project-nav-button" data-project-previous aria-label="${escapeHTML(t("wheel.prev"))}">←</button>
+        <button type="button" class="project-nav-button is-next" data-project-next aria-label="${escapeHTML(t("wheel.next"))}">→</button>
+        <a class="project-open-link" data-project-link target="_blank" rel="noopener noreferrer">${escapeHTML(t("wheel.view_project"))} <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </article>
@@ -101,26 +393,46 @@ function showProject(index, announce = false) {
   const slot = 360 / PROJECTS.length;
   const rotation = -activeProject * slot;
   rotor.style.transform = `rotate(${rotation}deg)`;
+  const projectTitle = tText(project.title);
+
   gondolas.forEach((gondola, i) => {
+    const p = PROJECTS[i];
+    const pTitle = tText(p.title);
     const angle = (i - activeProject) * slot;
     const button = gondola.querySelector("button");
     gondola.style.transform = `translate(-50%, -50%) rotate(${angle}deg) translateY(calc(0px - var(--wheel-orbit)))`;
     button.style.transform = `rotate(${-angle}deg) scale(${i === activeProject ? 1.08 : 0.92})`;
     button.setAttribute("aria-pressed", String(i === activeProject));
+    button.setAttribute("aria-label", `${t("wheel.view_item")} ${pTitle}, ${i + 1} ${t("wheel.of")} ${PROJECTS.length}`);
     gondola.classList.toggle("is-active", i === activeProject);
   });
+
+  const wheelMeta = grid.querySelector("[data-project-wheel-meta]");
+  if (wheelMeta) wheelMeta.textContent = t("wheel.meta");
+  if (wheel) wheel.setAttribute("aria-label", t("wheel.aria"));
+  const wheelHint = grid.querySelector("[data-project-wheel-hint]");
+  if (wheelHint) wheelHint.textContent = t("wheel.hint");
+
   grid.querySelector("[data-wheel-count]").textContent = `${String(activeProject + 1).padStart(2, "0")} / ${String(PROJECTS.length).padStart(2, "0")}`;
   const detailImage = grid.querySelector("[data-project-image]");
   detailImage.src = project.cover;
-  detailImage.alt = project.alt;
-  grid.querySelector("[data-project-tag]").textContent = project.tag;
+  detailImage.alt = tText(project.alt);
+  grid.querySelector("[data-project-tag]").textContent = tText(project.tag);
   grid.querySelector("[data-project-number]").textContent = `PROJECT ${String(activeProject + 1).padStart(2, "0")}`;
-  grid.querySelector("[data-project-title]").textContent = project.title;
-  grid.querySelector("[data-project-description]").textContent = project.desc;
-  grid.querySelector("[data-project-year]").textContent = project.year;
+  grid.querySelector("[data-project-title]").textContent = projectTitle;
+  grid.querySelector("[data-project-description]").textContent = tText(project.desc);
+  grid.querySelector("[data-project-year]").textContent = tText(project.year);
+
+  const prevBtn = grid.querySelector("[data-project-previous]");
+  if (prevBtn) prevBtn.setAttribute("aria-label", t("wheel.prev"));
+  const nextBtn = grid.querySelector("[data-project-next]");
+  if (nextBtn) nextBtn.setAttribute("aria-label", t("wheel.next"));
+
   const link = grid.querySelector("[data-project-link]");
   link.href = project.link;
-  if (announce) grid.querySelector("[data-project-status]").textContent = `${project.title}, ${activeProject + 1} dari ${PROJECTS.length}`;
+  link.innerHTML = `${escapeHTML(t("wheel.view_project"))} <span aria-hidden="true">↗</span>`;
+
+  if (announce) grid.querySelector("[data-project-status]").textContent = `${projectTitle}, ${activeProject + 1} ${t("wheel.of")} ${PROJECTS.length}`;
 }
 
 gondolas.forEach((gondola, i) => gondola.querySelector("button").addEventListener("click", () => {
@@ -148,18 +460,98 @@ wheel.addEventListener("pointerup", (event) => {
 wheel.addEventListener("pointercancel", () => { dragStart = null; });
 showProject(0);
 
-// ---------- Galeri Certificate: bingkai cetak pada rel ----------
+// ---------- Galeri Certificate: bingkai cetak pada rel (Dwibahasa) ----------
 const CERTIFICATES = [
-  { title: "Data Science", kind: "Training", mark: "01", style: "data", artDesc: "Python, SQL, dan analisis data.", desc: "Sertifikat Data Science yang melengkapi kemampuan Python, SQL, pemikiran analitis, dan problem-solving yang tercantum di CV.", link: "https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view" },
-  { title: "Green Jobs Training", kind: "Training", mark: "02", style: "green", artDesc: "Wawasan Green Jobs dan peluang kerja berkelanjutan.", desc: "Sertifikat Green Jobs Training yang menambah wawasan profesional dan melengkapi ketertarikan pada eksplorasi solusi inovatif.", link: "https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view" },
-  { title: "Semifinal Business Plan", kind: "International competition · 25–26 Oct 2025", mark: "03", style: "business", artDesc: "Memimpin tim menyusun rencana bisnis hingga semifinal.", desc: "Memimpin tim dalam International Business Plan di Universitas Brawijaya, mengoordinasikan kolaborasi dan penyusunan rencana bisnis hingga mencapai babak semifinal.", link: "https://drive.google.com/file/d/1LlFqA8i1HR11LpqRPZTJCF3ujoSkNlt6/view" },
-  { title: "Digital Forensic · Juara 3", kind: "Cyber Rise The Ranger 2 · 2026", mark: "04", style: "forensic", artDesc: "Juara 3 kompetisi forensik digital berbasis tim.", desc: "Meraih juara ketiga dalam kompetisi forensik digital berbasis tim yang diselenggarakan Mabes TNI, dengan berkolaborasi menyelesaikan tantangan keamanan siber.", link: "https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view" },
-  { title: "Lomba UI/UX", kind: "UI/UX in Action 2025", mark: "05", style: "ux", artDesc: "Ketua tim · konsep desain multimedia dan industri.", desc: "Ketua tim UI/UX in Action 2025. Mengoordinasikan kolaborasi tim dan berkontribusi pada konsep desain serta pemecahan masalah untuk tema multimedia dan industri.", link: "https://drive.google.com/file/d/1qOc3ABcqXth8GMsV3FAd8vP9-PPfay_i/view" },
-  { title: "UI/UX Innovation", kind: "Product & interaction design", mark: "06", style: "innovation", artDesc: "Ide inovatif lewat desain dan problem-solving kolaboratif.", desc: "Sertifikat bidang UI/UX yang selaras dengan kemampuan Figma, pemikiran kreatif, analisis, dan kolaborasi tim dalam mengembangkan konsep desain.", link: "https://drive.google.com/file/d/12hZ6Q-zl95MJrsRI9kjNGWKkIZaex8DU/view" },
-  { title: "SQL", kind: "Database skills", mark: "07", style: "sql", artDesc: "Keterampilan basis data, relevan dengan pengalaman MySQL.", desc: "Sertifikat SQL yang mendukung keterampilan basis data, relevan dengan pengalaman pengembangan backend Laravel/PHP dan integrasi MySQL.", link: "https://drive.google.com/file/d/1lMWDG3B7pZ5rqANKxw4pm6Pd83jx_vNP/view" },
+  {
+    title: { id: "Data Science", en: "Data Science" },
+    kind: { id: "Pelatihan", en: "Training" },
+    mark: "01",
+    style: "data",
+    artDesc: { id: "Python, SQL, dan analisis data.", en: "Python, SQL, and data analysis." },
+    desc: {
+      id: "Sertifikat Data Science yang melengkapi kemampuan Python, SQL, pemikiran analitis, dan problem-solving yang tercantum di CV.",
+      en: "Data Science certificate complementing Python, SQL, analytical thinking, and problem-solving skills listed in the CV."
+    },
+    link: "https://drive.google.com/file/d/1jBKUJuQA-r_wH_aZEwE9GN48osBCW4ik/view"
+  },
+  {
+    title: { id: "Green Jobs Training", en: "Green Jobs Training" },
+    kind: { id: "Pelatihan", en: "Training" },
+    mark: "02",
+    style: "green",
+    artDesc: { id: "Wawasan Green Jobs dan peluang kerja berkelanjutan.", en: "Green Jobs insights & sustainable careers." },
+    desc: {
+      id: "Sertifikat Green Jobs Training yang menambah wawasan profesional dan melengkapi ketertarikan pada eksplorasi solusi inovatif.",
+      en: "Green Jobs Training certificate expanding professional knowledge and complementing interest in innovative sustainable solutions."
+    },
+    link: "https://drive.google.com/file/d/1VQAlwPO8iX31lwyOJJRvWWBfe1BfIS5B/view"
+  },
+  {
+    title: { id: "Semifinal Business Plan", en: "Business Plan Semifinalist" },
+    kind: { id: "Kompetisi internasional · 25–26 Okt 2025", en: "International competition · 25–26 Oct 2025" },
+    mark: "03",
+    style: "business",
+    artDesc: { id: "Memimpin tim menyusun rencana bisnis hingga semifinal.", en: "Led business plan team to the semifinals." },
+    desc: {
+      id: "Memimpin tim dalam International Business Plan di Universitas Brawijaya, mengoordinasikan kolaborasi dan penyusunan rencana bisnis hingga mencapai babak semifinal.",
+      en: "Led team in the International Business Plan competition at Brawijaya University, coordinating collaboration and business planning to reach the semifinals."
+    },
+    link: "https://drive.google.com/file/d/1LlFqA8i1HR11LpqRPZTJCF3ujoSkNlt6/view"
+  },
+  {
+    title: { id: "Digital Forensic · Juara 3", en: "Digital Forensics · 3rd Place" },
+    kind: { id: "Cyber Rise The Ranger 2 · 2026", en: "Cyber Rise The Ranger 2 · 2026" },
+    mark: "04",
+    style: "forensic",
+    artDesc: { id: "Juara 3 kompetisi forensik digital berbasis tim.", en: "3rd Place in team digital forensics." },
+    desc: {
+      id: "Meraih juara ketiga dalam kompetisi forensik digital berbasis tim yang diselenggarakan Mabes TNI, dengan berkolaborasi menyelesaikan tantangan keamanan siber.",
+      en: "Achieved 3rd place in a team-based digital forensics competition organized by TNI Headquarters, collaborating to solve cybersecurity challenges."
+    },
+    link: "https://drive.google.com/file/d/1jip2r-KvFKLdzlx6eFpAGoMtJ0otnI-3/view"
+  },
+  {
+    title: { id: "Lomba UI/UX", en: "UI/UX Competition" },
+    kind: { id: "UI/UX in Action 2025", en: "UI/UX in Action 2025" },
+    mark: "05",
+    style: "ux",
+    artDesc: { id: "Ketua tim · konsep desain multimedia dan industri.", en: "Team lead · multimedia & industrial UX concepts." },
+    desc: {
+      id: "Ketua tim UI/UX in Action 2025. Mengoordinasikan kolaborasi tim dan berkontribusi pada konsep desain serta pemecahan masalah untuk tema multimedia dan industri.",
+      en: "Team lead for UI/UX in Action 2025. Coordinated team collaboration and contributed to design concepts and problem solving for multimedia and industrial themes."
+    },
+    link: "https://drive.google.com/file/d/1qOc3ABcqXth8GMsV3FAd8vP9-PPfay_i/view"
+  },
+  {
+    title: { id: "UI/UX Innovation", en: "UI/UX Innovation" },
+    kind: { id: "Desain produk & interaksi", en: "Product & interaction design" },
+    mark: "06",
+    style: "innovation",
+    artDesc: { id: "Ide inovatif lewat desain dan problem-solving kolaboratif.", en: "Innovative ideas through collaborative UX design." },
+    desc: {
+      id: "Sertifikat bidang UI/UX yang selaras dengan kemampuan Figma, pemikiran kreatif, analisis, dan kolaborasi tim dalam mengembangkan konsep desain.",
+      en: "UI/UX certificate aligning with Figma proficiency, creative thinking, analysis, and team collaboration in developing design concepts."
+    },
+    link: "https://drive.google.com/file/d/12hZ6Q-zl95MJrsRI9kjNGWKkIZaex8DU/view"
+  },
+  {
+    title: { id: "SQL", en: "SQL" },
+    kind: { id: "Keahlian basis data", en: "Database skills" },
+    mark: "07",
+    style: "sql",
+    artDesc: { id: "Keterampilan basis data, relevan dengan pengalaman MySQL.", en: "Database skills, relevant to MySQL experience." },
+    desc: {
+      id: "Sertifikat SQL yang mendukung keterampilan basis data, relevan dengan pengalaman pengembangan backend Laravel/PHP dan integrasi MySQL.",
+      en: "SQL certificate supporting database proficiency, relevant to Laravel/PHP backend development and MySQL integration."
+    },
+    link: "https://drive.google.com/file/d/1lMWDG3B7pZ5rqANKxw4pm6Pd83jx_vNP/view"
+  },
 ];
 
 const certificateGallery = document.getElementById("certificateGallery");
+let showCertificate = null;
+let updateCertificateTexts = null;
+
 if (certificateGallery) {
   const certificateArtTitle = (title) => escapeHTML(title).replace(" · ", "<br>").replace(" ", "<br>");
   const certificateArtwork = (certificate) => `
@@ -168,29 +560,30 @@ if (certificateGallery) {
         <span class="certificate-print-head"><span>GERRY DIMASARYA</span><span>${certificate.mark}</span></span>
         <svg class="certificate-seal" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 3 38 9l9-1 3 9 8 5-2 9 4 8-6 7-1 9-10 1-7 6-8-4-9 3-6-8-9-2v-9l-6-7 5-8-1-9 9-4 4-8 9 2Z"/><circle cx="32" cy="32" r="17"/><path d="m24 32 5 5 11-12"/></svg>
         <span class="certificate-art-kicker">CERTIFICATE</span>
-        <span class="certificate-art-title">${certificateArtTitle(certificate.title)}</span>
-        <span class="certificate-art-description">${escapeHTML(certificate.artDesc)}</span>
+        <span class="certificate-art-title">${certificateArtTitle(tText(certificate.title))}</span>
+        <span class="certificate-art-description">${escapeHTML(tText(certificate.artDesc))}</span>
         <span class="certificate-art-rule"></span>
-        <span class="certificate-art-kind">${escapeHTML(certificate.kind)}</span>
+        <span class="certificate-art-kind">${escapeHTML(tText(certificate.kind))}</span>
         <span class="certificate-print-foot">IPB UNIVERSITY <i>✦</i> PORTFOLIO</span>
       </span>
     </span>`;
+
   certificateGallery.innerHTML = `
-    <div class="certificate-gallery-top"><span>Certificate rail</span><span data-certificate-count>01 / ${String(CERTIFICATES.length).padStart(2, "0")}</span></div>
-    <div class="certificate-stage" data-certificate-stage role="group" aria-label="Galeri sertifikat. Pilih bingkai untuk membaca deskripsi.">
+    <div class="certificate-gallery-top"><span data-cert-rail-title>${escapeHTML(t("cert.rail"))}</span><span data-certificate-count>01 / ${String(CERTIFICATES.length).padStart(2, "0")}</span></div>
+    <div class="certificate-stage" data-certificate-stage role="group" aria-label="${escapeHTML(t("cert.aria"))}">
       <div class="certificate-rail" aria-hidden="true"><span></span></div>
       <div class="certificate-frames">
         ${CERTIFICATES.map((certificate, index) => `
-          <button class="certificate-frame-button${index === 0 ? " is-active" : ""}" type="button" data-certificate-index="${index}" aria-label="Lihat detail ${escapeHTML(certificate.title)}" aria-pressed="${index === 0}">
+          <button class="certificate-frame-button${index === 0 ? " is-active" : ""}" type="button" data-certificate-index="${index}" aria-label="${escapeHTML(t("cert.view_detail"))} ${escapeHTML(tText(certificate.title))}" aria-pressed="${index === 0}">
             <span class="certificate-cord" aria-hidden="true"></span>
             ${certificateArtwork(certificate)}
-            <span class="certificate-frame-caption">${escapeHTML(certificate.title)}</span>
+            <span class="certificate-frame-caption">${escapeHTML(tText(certificate.title))}</span>
           </button>`).join("")}
       </div>
     </div>
     <div class="certificate-detail" data-certificate-detail hidden aria-live="polite" aria-atomic="true">
       <div class="certificate-detail-copy"><p class="certificate-kind" data-certificate-kind></p><h3 data-certificate-title></h3><p class="certificate-description" data-certificate-description></p></div>
-      <div class="certificate-detail-actions"><button class="certificate-nav" type="button" data-certificate-prev aria-label="Sertifikat sebelumnya">←</button><button class="certificate-nav" type="button" data-certificate-next aria-label="Sertifikat berikutnya">→</button><a class="certificate-open" data-certificate-link target="_blank" rel="noopener noreferrer">Lihat sertifikat <span aria-hidden="true">↗</span></a><button class="certificate-back" type="button" data-certificate-back>Kembali ke semua sertifikat</button></div>
+      <div class="certificate-detail-actions"><button class="certificate-nav" type="button" data-certificate-prev aria-label="${escapeHTML(t("cert.prev"))}">←</button><button class="certificate-nav" type="button" data-certificate-next aria-label="${escapeHTML(t("cert.next"))}">→</button><a class="certificate-open" data-certificate-link target="_blank" rel="noopener noreferrer">${escapeHTML(t("cert.open"))} <span aria-hidden="true">↗</span></a><button class="certificate-back" type="button" data-certificate-back>${escapeHTML(t("cert.back"))}</button></div>
     </div>
     <span class="certificate-status" data-certificate-status role="status" aria-live="polite" aria-atomic="true"></span>
   `;
@@ -198,23 +591,67 @@ if (certificateGallery) {
   let activeCertificate = 0;
   const certificateButtons = [...certificateGallery.querySelectorAll("[data-certificate-index]")];
   const certificateDetail = certificateGallery.querySelector("[data-certificate-detail]");
-  function showCertificate(index, announce = false, focusMode = certificateGallery.classList.contains("has-selection")) {
+
+  showCertificate = function (index, announce = false, focusMode = certificateGallery.classList.contains("has-selection")) {
     activeCertificate = (index + CERTIFICATES.length) % CERTIFICATES.length;
     const certificate = CERTIFICATES[activeCertificate];
+    const certTitle = tText(certificate.title);
+    const certKind = tText(certificate.kind);
+    const certDesc = tText(certificate.desc);
+
     certificateButtons.forEach((button, i) => {
       const active = i === activeCertificate;
       button.classList.toggle("is-active", active);
       button.setAttribute("aria-pressed", String(active));
     });
+
     certificateGallery.querySelector("[data-certificate-count]").textContent = `${String(activeCertificate + 1).padStart(2, "0")} / ${String(CERTIFICATES.length).padStart(2, "0")}`;
     certificateGallery.classList.toggle("has-selection", focusMode);
     certificateDetail.hidden = !focusMode;
-    certificateGallery.querySelector("[data-certificate-kind]").textContent = certificate.kind;
-    certificateGallery.querySelector("[data-certificate-title]").textContent = certificate.title;
-    certificateGallery.querySelector("[data-certificate-description]").textContent = certificate.desc;
+    certificateGallery.querySelector("[data-certificate-kind]").textContent = certKind;
+    certificateGallery.querySelector("[data-certificate-title]").textContent = certTitle;
+    certificateGallery.querySelector("[data-certificate-description]").textContent = certDesc;
     certificateGallery.querySelector("[data-certificate-link]").href = certificate.link;
-    if (announce) certificateGallery.querySelector("[data-certificate-status]").textContent = `${certificate.title}, ${activeCertificate + 1} dari ${CERTIFICATES.length}`;
-  }
+
+    if (announce) {
+      certificateGallery.querySelector("[data-certificate-status]").textContent = `${certTitle}, ${activeCertificate + 1} ${t("cert.of")} ${CERTIFICATES.length}`;
+    }
+  };
+
+  updateCertificateTexts = function () {
+    const railTitle = certificateGallery.querySelector("[data-cert-rail-title]");
+    if (railTitle) railTitle.textContent = t("cert.rail");
+    const stage = certificateGallery.querySelector("[data-certificate-stage]");
+    if (stage) stage.setAttribute("aria-label", t("cert.aria"));
+    const prevBtn = certificateGallery.querySelector("[data-certificate-prev]");
+    if (prevBtn) prevBtn.setAttribute("aria-label", t("cert.prev"));
+    const nextBtn = certificateGallery.querySelector("[data-certificate-next]");
+    if (nextBtn) nextBtn.setAttribute("aria-label", t("cert.next"));
+    const openLink = certificateGallery.querySelector("[data-certificate-link]");
+    if (openLink) openLink.innerHTML = `${escapeHTML(t("cert.open"))} <span aria-hidden="true">↗</span>`;
+    const backBtn = certificateGallery.querySelector("[data-certificate-back]");
+    if (backBtn) backBtn.textContent = t("cert.back");
+
+    certificateButtons.forEach((button, index) => {
+      const cert = CERTIFICATES[index];
+      const title = tText(cert.title);
+      const kind = tText(cert.kind);
+      const artDesc = tText(cert.artDesc);
+
+      button.setAttribute("aria-label", `${t("cert.view_detail")} ${title}`);
+      const caption = button.querySelector(".certificate-frame-caption");
+      if (caption) caption.textContent = title;
+      const artTitle = button.querySelector(".certificate-art-title");
+      if (artTitle) artTitle.innerHTML = certificateArtTitle(title);
+      const artDescEl = button.querySelector(".certificate-art-description");
+      if (artDescEl) artDescEl.textContent = artDesc;
+      const artKind = button.querySelector(".certificate-art-kind");
+      if (artKind) artKind.textContent = kind;
+    });
+
+    showCertificate(activeCertificate, false, certificateGallery.classList.contains("has-selection"));
+  };
+
   certificateButtons.forEach((button, index) => button.addEventListener("click", () => showCertificate(index, true, true)));
   certificateGallery.querySelector("[data-certificate-prev]").addEventListener("click", () => showCertificate(activeCertificate - 1, true));
   certificateGallery.querySelector("[data-certificate-next]").addEventListener("click", () => showCertificate(activeCertificate + 1, true));
@@ -232,14 +669,14 @@ if (certificateGallery) {
   showCertificate(0);
 }
 
-// ---------- Petunjuk potret menyesuaikan perangkat ----------
-// Di layar sentuh tidak ada kursor, jadi kalimatnya diganti. Deteksinya memakai
-// "hover: none" saja: di HP/jarak jauh pointer halus sekalipun tetap berarti
-// tidak ada kursor yang bisa diarahkan.
+// ---------- Petunjuk potret menyesuaikan perangkat & bahasa ----------
 const heroHintEl = document.querySelector(".hero-hint");
-if (heroHintEl && window.matchMedia("(hover: none)").matches) {
-  heroHintEl.textContent = "Geser jari di atas potret";
+function updateHeroHint() {
+  if (!heroHintEl) return;
+  const isTouch = window.matchMedia("(hover: none)").matches;
+  heroHintEl.textContent = isTouch ? t("hero.hint_touch") : t("hero.hint_mouse");
 }
+updateHeroHint();
 
 // ---------- Efek potret: jejak kursor membuka versi "aura" ----------
 const stage = document.getElementById("heroPortrait");
@@ -568,16 +1005,24 @@ stage.addEventListener("pointercancel", endDrag);
 const switchBtn = document.getElementById("switchBtn");
 const switchTitle = document.getElementById("switchTitle");
 
-switchBtn.addEventListener("click", () => {
-  const showingAura = stage.classList.toggle("show-aura");
-  switchBtn.setAttribute("aria-pressed", String(showingAura));
-  switchTitle.textContent = showingAura ? "Show photo" : "Show aura";
-  points = [];
-  lastActive = 0;
-  tctx.clearRect(0, 0, cssW, cssH);
-  gctx.clearRect(0, 0, cssW, cssH);
-  ctx.clearRect(0, 0, cssW, cssH);
-});
+function updateSwitchButtonText() {
+  if (!switchTitle) return;
+  const showingAura = stage && stage.classList.contains("show-aura");
+  switchTitle.textContent = showingAura ? t("hero.switch_photo") : t("hero.switch_aura");
+}
+
+if (switchBtn) {
+  switchBtn.addEventListener("click", () => {
+    const showingAura = stage.classList.toggle("show-aura");
+    switchBtn.setAttribute("aria-pressed", String(showingAura));
+    updateSwitchButtonText();
+    points = [];
+    lastActive = 0;
+    tctx.clearRect(0, 0, cssW, cssH);
+    gctx.clearRect(0, 0, cssW, cssH);
+    ctx.clearRect(0, 0, cssW, cssH);
+  });
+}
 
 // ---------- Animasi reveal saat scroll ----------
 document.body.classList.add("reveal-ready");
@@ -673,3 +1118,65 @@ observeReveal(document);
     if (collapsed) setCollapsed(false);
   });
 })();
+
+// ---------- Pengaturan Bahasa (ID / EN) ----------
+function setLanguage(lang) {
+  if (!TRANSLATIONS[lang]) lang = "id";
+  currentLang = lang;
+  localStorage.setItem("portfolio_lang", lang);
+  document.documentElement.lang = lang;
+
+  // Update text content for elements with data-i18n
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.getAttribute("data-i18n");
+    if (TRANSLATIONS[lang] && TRANSLATIONS[lang][key] !== undefined) {
+      el.textContent = TRANSLATIONS[lang][key];
+    }
+  });
+
+  // Update attributes for elements with data-i18n-attr (e.g. "aria-label:key")
+  document.querySelectorAll("[data-i18n-attr]").forEach((el) => {
+    const mappings = el.getAttribute("data-i18n-attr").split(",");
+    mappings.forEach((m) => {
+      const [attr, key] = m.split(":");
+      if (attr && key && TRANSLATIONS[lang] && TRANSLATIONS[lang][key.trim()] !== undefined) {
+        el.setAttribute(attr.trim(), TRANSLATIONS[lang][key.trim()]);
+      }
+    });
+  });
+
+  // Update toggle buttons UI
+  document.querySelectorAll(".lang-btn").forEach((btn) => {
+    const btnLang = btn.getAttribute("data-lang");
+    const isActive = btnLang === lang;
+    btn.classList.toggle("is-active", isActive);
+    btn.setAttribute("aria-pressed", String(isActive));
+  });
+
+  // Update dynamic components
+  if (typeof showProject === "function") {
+    showProject(activeProject, false);
+  }
+  if (typeof updateCertificateTexts === "function") {
+    updateCertificateTexts();
+  }
+  if (typeof updateHeroHint === "function") {
+    updateHeroHint();
+  }
+  updateSwitchButtonText();
+}
+
+// Inisialisasi event listener tombol pengalih bahasa
+document.querySelectorAll(".lang-btn").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const targetLang = btn.getAttribute("data-lang");
+    if (targetLang && targetLang !== currentLang) {
+      setLanguage(targetLang);
+    }
+  });
+});
+
+// Terapkan bahasa pilihan saat halaman dimuat
+setLanguage(currentLang);
+
