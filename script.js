@@ -201,6 +201,21 @@ function tText(val) {
 // ---------- Proyek (Dwibahasa) ----------
 const PROJECTS = [
   {
+    tag: { id: "WebGIS · AI & Intelijen Sumber Terbuka · 2026", en: "WebGIS · AI & Open-Source Intelligence · 2026" },
+    title: { id: "GeoSentry", en: "GeoSentry" },
+    desc: {
+      id: "Dasbor WebGIS untuk memantau berita dan media sosial publik secara real-time. Dilengkapi klasifikasi AI (fakta vs hoaks), verifikasi sumber otomatis, peta interaktif Leaflet, serta database geospasial PostgreSQL/PostGIS.",
+      en: "Real-time WebGIS dashboard monitoring news and public social media. Features AI classification (fact vs hoax), automated source verification, interactive Leaflet maps, and PostgreSQL/PostGIS geospatial database."
+    },
+    cover: "assets/project-7.svg",
+    alt: {
+      id: "Mockup dasbor WebGIS dengan peta, titik data, dan panel analisis",
+      en: "WebGIS dashboard mockup with map, data points, and analytics panel"
+    },
+    year: "Node.js · Python · PostGIS · Leaflet",
+    link: "https://github.com/Gerr-DS/GeoSentry.git"
+  },
+  {
     tag: { id: "Aplikasi web & mobile · 2026", en: "Web & mobile app · 2026" },
     title: { id: "IPB Kehilangan", en: "IPB Kehilangan" },
     desc: {
@@ -289,21 +304,6 @@ const PROJECTS = [
     },
     year: "CCTV · Access control",
     link: "https://marinointisolusi.com/"
-  },
-  {
-    tag: { id: "WebGIS · AI", en: "WebGIS · AI" },
-    title: { id: "GeoSentry", en: "GeoSentry" },
-    desc: {
-      id: "Dasbor WebGIS untuk mencari dan memantau berita serta postingan publik, menggabungkan feed, pencarian sumber, klasifikasi AI, dan peta Leaflet dengan PostgreSQL/PostGIS.",
-      en: "WebGIS dashboard for searching and monitoring news and public posts, combining feeds, source retrieval, AI classification, and Leaflet maps with PostgreSQL/PostGIS."
-    },
-    cover: "assets/project-7.svg",
-    alt: {
-      id: "Mockup dasbor WebGIS dengan peta, titik data, dan panel analisis",
-      en: "WebGIS dashboard mockup with map, data points, and analytics panel"
-    },
-    year: "Leaflet · PostgreSQL/PostGIS",
-    link: "https://github.com/Gerr-DS/GeoSentry.git"
   },
 ];
 
