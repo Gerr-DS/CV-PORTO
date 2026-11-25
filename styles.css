@@ -371,8 +371,8 @@ img, svg { display: block; max-width: 100%; }
   gap: 8px;
   padding: 12px 18px;
   border: 1px solid var(--teal);
-  color: var(--teal);
-  background: rgba(238, 243, 244, 0.88);
+  color: var(--paper);
+  background: var(--teal);
   clip-path: var(--cut);
   font-size: 13px;
   font-weight: 600;
@@ -380,17 +380,22 @@ img, svg { display: block; max-width: 100%; }
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(11, 16, 38, 0.05);
-  transition: background-color 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+  box-shadow: 0 4px 14px rgba(15, 118, 110, 0.28);
+  transition: background-color 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
-.hero-cta:hover {
-  background: var(--teal);
-  color: var(--paper);
+.hero-cta:hover,
+.hero-cta:focus-visible {
+  background: rgba(238, 243, 244, 0.95);
+  color: var(--teal);
+  border-color: var(--teal);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(15, 118, 110, 0.22);
+  box-shadow: 0 6px 18px rgba(11, 16, 38, 0.1);
 }
 .hero-cta:active {
+  background: rgba(238, 243, 244, 0.85);
+  color: var(--teal);
   transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(11, 16, 38, 0.08);
 }
 
 /* ---------- Section ---------- */
