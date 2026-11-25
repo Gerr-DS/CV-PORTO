@@ -406,7 +406,7 @@ const gondolasHTML = PROJECTS.map((p, i) => {
 }).join("");
 
 grid.innerHTML = `
-  <div class="project-wheel-column">
+  <div class="project-wheel-column" data-reveal style="--i: 1;">
     <div class="project-wheel-meta"><span data-project-wheel-meta>${escapeHTML(t("wheel.meta"))}</span><span data-wheel-count>01 / ${String(PROJECTS.length).padStart(2, "0")}</span></div>
     <div class="project-wheel" data-project-wheel role="group" tabindex="0" aria-label="${escapeHTML(t("wheel.aria"))}">
       <div class="project-wheel-rotor" data-wheel-rotor aria-hidden="true">
@@ -425,7 +425,7 @@ grid.innerHTML = `
     </div>
     <p class="project-wheel-hint" data-project-wheel-hint>${escapeHTML(t("wheel.hint"))}</p>
   </div>
-  <article class="project-detail" aria-live="polite" aria-atomic="true">
+  <article class="project-detail" data-reveal style="--i: 2;" aria-live="polite" aria-atomic="true">
     <div class="project-detail-cover"><img data-project-image src="${escapeHTML(PROJECTS[0].cover)}" alt="${escapeHTML(tText(PROJECTS[0].alt))}"></div>
     <div class="project-detail-copy">
       <p class="project-tag" data-project-tag></p>
@@ -771,8 +771,8 @@ if (certificateGallery) {
     </span>`;
 
   certificateGallery.innerHTML = `
-    <div class="certificate-gallery-top"><span data-cert-rail-title>${escapeHTML(t("cert.rail"))}</span><span data-certificate-count>01 / ${String(CERTIFICATES.length).padStart(2, "0")}</span></div>
-    <div class="certificate-stage" data-certificate-stage role="group" aria-label="${escapeHTML(t("cert.aria"))}">
+    <div class="certificate-gallery-top" data-reveal style="--i: 1;"><span data-cert-rail-title>${escapeHTML(t("cert.rail"))}</span><span data-certificate-count>01 / ${String(CERTIFICATES.length).padStart(2, "0")}</span></div>
+    <div class="certificate-stage" data-reveal style="--i: 2;" data-certificate-stage role="group" aria-label="${escapeHTML(t("cert.aria"))}">
       <div class="certificate-rail" aria-hidden="true"><span></span></div>
       <div class="certificate-frames">
         ${CERTIFICATES.map((certificate, index) => `
@@ -1239,8 +1239,8 @@ const revealObserver = new IntersectionObserver((entries) => {
     }
   }
 }, {
-  threshold: 0.1,
-  rootMargin: "0px 0px -40px 0px"
+  threshold: 0.08,
+  rootMargin: "0px 0px -60px 0px"
 });
 
 function observeReveal(scope) {

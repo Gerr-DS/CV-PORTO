@@ -423,16 +423,22 @@ img, svg { display: block; max-width: 100%; }
 
 /* ---------- Reveal saat scroll (Dua Arah: scroll ke bawah & scroll ke atas) ---------- */
 .reveal-ready [data-reveal] {
-  --d: calc(var(--i, 0) * 85ms);
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--d);
-  will-change: opacity, transform;
+  transform: translateY(50px) scale(0.95);
+  filter: blur(8px);
+  /* Reset cepat tanpa delay ketika keluar layar agar langsung siap animasi lagi */
+  transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+  will-change: opacity, transform, filter;
 }
 .reveal-ready [data-reveal].is-visible {
+  --d: calc(var(--i, 0) * 110ms);
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+  /* Transisi dramatis, halus, dan sangat terlihat dengan efek cascade/stagger */
+  transition: opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--d),
+              transform 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--d),
+              filter 0.85s cubic-bezier(0.22, 1, 0.36, 1) var(--d);
 }
 
 /* ---------- About ---------- */
@@ -1365,6 +1371,6 @@ html.is-preload .hero-bar {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .reveal-ready [data-reveal] { transition: none; opacity: 1; translate: none; }
+  .reveal-ready [data-reveal] { transition: none; opacity: 1; translate: none; transform: none; filter: none; }
   .switch-icon, .project-wheel-rotor, .project-gondola, .project-thumb, .project-open-link { transition: none; }
 }
